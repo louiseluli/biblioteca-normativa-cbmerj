@@ -2,6 +2,7 @@ import './style.css'
 import MiniSearch from 'minisearch'
 import { collectedAt, documents } from './data/documents.js'
 import { searchIndexOptions, searchQueryOptions } from './search-options.js'
+import { initLivro } from './livro.js'
 
 const officialSources = { cbmerj: 'https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/', alerj: 'https://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144' }
 const documentsById = new Map(documents.map((document) => [document.id, document]))
@@ -29,7 +30,7 @@ document.querySelector('#app').innerHTML = `
 <a class="skip-link" href="#top">Pular para o conteúdo</a>
 <header class="site-header"><div class="header-inner">
   <a class="brand" href="#top" aria-label="Biblioteca Normativa CBMERJ, início"><span class="brand-mark">CB</span><span><strong>Biblioteca Normativa</strong><small>Corpo de Bombeiros Militar do Estado do Rio de Janeiro</small></span></a>
-  <nav aria-label="Navegação principal"><a href="#acervo">Acervo</a><a href="#situacao">Situação jurídica</a><a href="#sobre">Sobre o projeto</a><a class="header-button" href="${officialSources.cbmerj}" target="_blank" rel="noreferrer">Fontes oficiais <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Navegação principal"><a href="#acervo">Acervo</a><a href="#livro">Livro de Ordens</a><a href="#situacao">Situação jurídica</a><a href="#sobre">Sobre o projeto</a><a class="header-button" href="${officialSources.cbmerj}" target="_blank" rel="noreferrer">Fontes oficiais <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="top" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title"><div class="hero-inner">
@@ -69,6 +70,10 @@ document.querySelector('#app').innerHTML = `
     <div id="active-filters" class="active-filters" aria-live="polite"></div>
     <div id="results-list" class="results-list"></div>
     <nav id="pagination" class="pagination" aria-label="Paginação dos resultados"></nav>
+  </section>
+  <section id="livro" class="results-section livro-section" aria-labelledby="livro-title">
+    <div class="results-toolbar"><div><p class="eyebrow">LIVRO DE ORDENS</p><h2 id="livro-title">O que foi publicado em boletim</h2></div><p class="section-intro">Cada item indica onde o ato está:<br>no acervo, ou em qual boletim consultar.</p></div>
+    <div id="livro-root"></div>
   </section>
   <section id="situacao" class="status-section" aria-labelledby="status-title">
     <div><p class="eyebrow">SITUAÇÃO JURÍDICA</p><h2 id="status-title">De onde vem cada situação</h2></div>
@@ -197,11 +202,14 @@ function writeHash() {
   const params = new URLSearchParams()
   for (const [field, key] of Object.entries(hashKeys)) if (state[field] !== defaults[field]) params.set(key, state[field])
   const hash = params.toString()
+  // Âncoras de seção (#livro, #sobre...) não são estado de filtro e não devem ser apagadas.
+  if (!hash && !isFilterHash()) return
   if (hash !== location.hash.slice(1)) history.replaceState(null, '', hash ? `#${hash}` : location.pathname + location.search)
 }
+const isFilterHash = () => [...new URLSearchParams(location.hash.slice(1)).keys()].some((key) => Object.values(hashKeys).includes(key))
 function readHash() {
   const params = new URLSearchParams(location.hash.slice(1))
-  if (!params.toString() || [...params.keys()].every((key) => !Object.values(hashKeys).includes(key))) return
+  if (!isFilterHash()) return
   for (const [field, key] of Object.entries(hashKeys)) {
     const value = params.get(key)
     if (value === null) continue
@@ -219,6 +227,8 @@ function relatedMarkup(document) {
 function showDocument(id) {
   const document = documentsById.get(id)
   const extra = [
+    document.publication?.bulletin && ['Publicação', `Boletim da SEDEC/CBMERJ nº ${document.publication.bulletin}${document.publication.date ? `, de ${document.publication.date.split('-').reverse().join('/')}` : ''} (${document.publication.source})`],
+    document.yearSource && ['Origem do ano', document.yearSource],
     document.statusSource && ['Fonte da situação', document.statusSource],
     document.revocation && ['Texto da revogação', document.revocation],
     document.author && ['Autoria', document.author],
@@ -284,3 +294,4 @@ window.addEventListener('hashchange', () => { readHash(); render() })
 
 readHash()
 render()
+initLivro({ root: $('#livro-root'), documentsById, showDocument, escapeHtml, normalize, pageNumbers })

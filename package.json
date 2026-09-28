@@ -8,6 +8,8 @@
     "alerj:update": "node scripts/fetch-alerj.mjs",
     "catalog:update": "node scripts/build-catalog.mjs",
     "search:update": "node scripts/extract-text.mjs",
+    "livro:update": "node scripts/build-livro.mjs",
+    "data:update": "npm run catalog:update && npm run search:update && npm run catalog:update && npm run livro:update",
     "build": "vite build",
     "preview": "vite preview"
   },

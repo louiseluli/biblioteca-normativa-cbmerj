@@ -29,3 +29,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# PDF-fonte do Livro de Ordens: não é publicado no repositório (público). Versiona-se só a
+# extração, scripts/data/livro-de-ordens-2002-2019.json (ver scripts/build-livro.mjs).
+/LIVRO-DE-ORDENS-*.pdf
