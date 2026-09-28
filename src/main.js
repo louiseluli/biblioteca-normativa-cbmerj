@@ -50,7 +50,11 @@ document.querySelector('#app').innerHTML = `
     <div class="section-heading"><div><p class="eyebrow">NAVEGUE PELO ACERVO</p><h2>O que você procura?</h2></div><p class="section-intro">Comece por um tipo de documento<br>ou refine sua busca com filtros.</p></div>
     <div class="type-grid" id="type-grid"></div>
   </section>
-  <section class="results-section" aria-labelledby="results-title">
+  <div class="view-tabs" role="tablist" aria-label="Base de consulta">
+    <button type="button" role="tab" id="tab-acervo" aria-controls="painel-acervo" data-view="acervo">Acervo <span>${documents.length}</span></button>
+    <button type="button" role="tab" id="tab-livro" aria-controls="livro" data-view="livro">Livro de Ordens <span id="livro-tab-count"></span></button>
+  </div>
+  <section id="painel-acervo" class="results-section" role="tabpanel" aria-labelledby="tab-acervo">
     <div class="results-toolbar">
       <div><p class="eyebrow">RESULTADOS DA BUSCA</p><h2 id="results-title">Acervo completo <span id="result-count"></span></h2></div>
       <div class="toolbar-controls">
@@ -68,10 +72,11 @@ document.querySelector('#app').innerHTML = `
       <button id="clear-filters" class="clear-button" type="button">Limpar filtros</button>
     </div>
     <div id="active-filters" class="active-filters" aria-live="polite"></div>
+    <p id="cross-hint" class="cross-hint" hidden></p>
     <div id="results-list" class="results-list"></div>
     <nav id="pagination" class="pagination" aria-label="Paginação dos resultados"></nav>
   </section>
-  <section id="livro" class="results-section livro-section" aria-labelledby="livro-title">
+  <section id="livro" class="results-section livro-section" role="tabpanel" aria-labelledby="tab-livro" hidden>
     <div class="results-toolbar"><div><p class="eyebrow">LIVRO DE ORDENS</p><h2 id="livro-title">O que foi publicado em boletim</h2></div><p class="section-intro">Cada item indica onde o ato está:<br>no acervo, ou em qual boletim consultar.</p></div>
     <div id="livro-root"></div>
   </section>
@@ -183,6 +188,7 @@ function renderResults() {
   const chips = filterFields.filter((field) => state[field] !== 'Todos').map((field) => `<button type="button" class="chip" data-remove="${field}" aria-label="Remover filtro ${filterLabels[field]}: ${escapeHtml(state[field])}">${filterLabels[field]}: ${escapeHtml(state[field])} <span aria-hidden="true">×</span></button>`)
   if (state.query) chips.push(`<button type="button" class="chip" data-remove="query" aria-label="Remover busca">“${escapeHtml(state.query)}” <span aria-hidden="true">×</span></button>`)
   elements.active.innerHTML = chips.join('')
+  if (livro) updateLivroCounts()
   writeHash()
 }
 
@@ -198,7 +204,30 @@ function render() { renderTypes(); renderResults(); syncControls() }
 // Filtros e página ficam na URL (#q=...&tipo=...&p=2) para que uma busca possa ser
 // compartilhada ou recarregada sem perder o contexto.
 const hashKeys = { query: 'q', type: 'tipo', origin: 'fonte', theme: 'pagina', year: 'ano', status: 'situacao', sort: 'ordem', page: 'p', pageSize: 'por' }
+// Aba ativa: o acervo usa o hash para os filtros; o livro usa a âncora #livro.
+let view = 'acervo'
+let livro = null
+function setView(next, { focus = false } = {}) {
+  view = next
+  for (const tab of document.querySelectorAll('[role="tab"]')) { tab.setAttribute('aria-selected', String(tab.dataset.view === view)); tab.tabIndex = tab.dataset.view === view ? 0 : -1 }
+  $('#painel-acervo').hidden = view !== 'acervo'
+  $('#livro').hidden = view !== 'livro'
+  if (view === 'livro') { livro.start().then(updateLivroCounts, () => {}); if (location.hash !== '#livro') history.replaceState(null, '', '#livro') } else writeHash()
+  if (focus) document.querySelector(`#tab-${view}`).focus()
+}
+
+// Quantos itens do livro casam com a busca atual do acervo, e total do livro na aba.
+function updateLivroCounts() {
+  const total = livro.countMatches('')
+  if (total !== null) $('#livro-tab-count').textContent = total.toLocaleString('pt-BR')
+  const hint = $('#cross-hint')
+  const matches = state.query ? livro.countMatches(state.query) : null
+  hint.hidden = !matches
+  if (matches) hint.innerHTML = `Também há <strong>${matches.toLocaleString('pt-BR')}</strong> ${matches === 1 ? 'item' : 'itens'} no Livro de Ordens para “${escapeHtml(state.query)}”. <button type="button" class="text-link" data-view="livro">Ver no livro →</button>`
+}
+
 function writeHash() {
+  if (view === 'livro') return
   const params = new URLSearchParams()
   for (const [field, key] of Object.entries(hashKeys)) if (state[field] !== defaults[field]) params.set(key, state[field])
   const hash = params.toString()
@@ -233,6 +262,7 @@ function showDocument(id) {
     document.revocation && ['Texto da revogação', document.revocation],
     document.author && ['Autoria', document.author],
   ].filter(Boolean)
+  elements.dialogContent.dataset.id = id
   elements.dialogContent.innerHTML = `<p class="eyebrow">${escapeHtml(document.type)} · ${escapeHtml(document.origin)}</p>
     <h2 id="dialog-title" tabindex="-1">${escapeHtml(document.number || document.type)}</h2>
     <h3>${escapeHtml(document.title)}</h3>
@@ -253,19 +283,34 @@ function showDocument(id) {
     </div>`
   if (elements.dialog.open) elements.dialogContent.querySelector('#dialog-title').focus()
   else elements.dialog.showModal()
+  // Publicações do documento segundo o Livro de Ordens (carregado sob demanda).
+  livro.start().then(() => {
+    const items = livro.itemsForDocument(id)
+    if (!items.length || !elements.dialog.open || elements.dialogContent.dataset.id !== id) return
+    const list = items.map((item) => `<li>${item.b ? `Boletim nº ${escapeHtml(item.b)}${item.bd ? `, de ${livro.formatDate(item.bd)}` : ''}` : 'Boletim não identificado'}${item.n ? ` · item ${item.n} do livro (p. ${item.p})` : ''}${(item.f ?? []).includes('republicacao') ? ' · republicação' : ''}</li>`).join('')
+    elements.dialogContent.querySelector('.dialog-actions').insertAdjacentHTML('beforebegin', `<div class="dialog-related"><h4>Publicações em boletim (Livro de Ordens)</h4><ul class="dialog-publications">${list}</ul></div>`)
+  }, () => {})
 }
 
 function setQuery(value) {
   const hadQuery = Boolean(state.query)
   state.query = value
+  livro?.setQuery(value)
   state.page = 1
   if (value && !hadQuery) state.sort = 'relevance'
   if (!value && hadQuery) state.sort = 'recent'
 }
 function setFilter(field, value) { state[field] = value; state.page = 1; render() }
-const scrollToResults = () => $('.results-section').scrollIntoView({ behavior: 'smooth' })
+const scrollToResults = () => $('.view-tabs').scrollIntoView({ behavior: 'smooth' })
 
-$('#search-form').addEventListener('submit', (event) => { event.preventDefault(); setQuery(elements.searchInput.value.trim()); render(); scrollToResults() })
+$('#search-form').addEventListener('submit', (event) => {
+  event.preventDefault()
+  setQuery(elements.searchInput.value.trim())
+  livro.start().then(updateLivroCounts, () => {})
+  setView('acervo')
+  render()
+  scrollToResults()
+})
 elements.inlineSearch.addEventListener('input', (event) => { setQuery(event.target.value); renderResults(); syncControls() })
 for (const field of filterFields) elements[field].addEventListener('change', (event) => setFilter(field, event.target.value))
 elements.sort.addEventListener('change', (event) => { state.sort = event.target.value; state.page = 1; renderResults() })
@@ -282,7 +327,9 @@ document.addEventListener('click', (event) => {
   const query = event.target.closest('[data-query]')
   const open = event.target.closest('[data-open]')
   const remove = event.target.closest('[data-remove]')
-  if (type) { setFilter('type', type.dataset.type); scrollToResults() }
+  const tab = event.target.closest('[data-view]')
+  if (tab) { setView(tab.dataset.view); if (!tab.matches('[role="tab"]')) scrollToResults() }
+  if (type) { setView('acervo'); setFilter('type', type.dataset.type); scrollToResults() }
   if (query) { setQuery(query.dataset.query); render(); scrollToResults() }
   if (open) showDocument(open.dataset.open)
   if (remove) { if (remove.dataset.remove === 'query') { setQuery(''); render() } else setFilter(remove.dataset.remove, 'Todos') }
@@ -290,8 +337,21 @@ document.addEventListener('click', (event) => {
 })
 $('#dialog-close').addEventListener('click', () => elements.dialog.close())
 elements.dialog.addEventListener('click', (event) => { if (event.target === elements.dialog) elements.dialog.close() })
-window.addEventListener('hashchange', () => { readHash(); render() })
+window.addEventListener('hashchange', () => {
+  if (location.hash === '#livro') { setView('livro'); scrollToResults(); return }
+  readHash()
+  if (isFilterHash()) setView('acervo')
+  render()
+})
+// Setas do teclado alternam as abas (padrão WAI-ARIA de tabs).
+$('.view-tabs').addEventListener('keydown', (event) => {
+  if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return
+  setView(view === 'acervo' ? 'livro' : 'acervo', { focus: true })
+})
 
+livro = initLivro({ root: $('#livro-root'), documentsById, showDocument, escapeHtml, normalize, pageNumbers })
 readHash()
 render()
-initLivro({ root: $('#livro-root'), documentsById, showDocument, escapeHtml, normalize, pageNumbers })
+setView(location.hash === '#livro' ? 'livro' : 'acervo')
+// Pré-carrega o livro quando a página fica ociosa, para mostrar o total na aba.
+;(window.requestIdleCallback ?? ((callback) => setTimeout(callback, 2500)))(() => livro.start().then(updateLivroCounts, () => {}))

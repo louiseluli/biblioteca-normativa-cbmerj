@@ -1,7 +1,8 @@
 // Livro de Ordens: índice das publicações em Boletim da SEDEC/CBMERJ (public/livro-de-ordens.json,
-// gerado por scripts/build-livro.mjs). O arquivo tem ~7.600 itens e só é baixado quando a seção
-// chega perto da tela. Cada item mostra onde o ato está: se o documento está no acervo, abre
-// direto; se não, a localização (boletim, data e página do livro original) para consulta.
+// gerado por scripts/build-livro.mjs a cada build). O arquivo tem ~7.600 itens e só é baixado
+// quando alguém abre a aba do livro, faz uma busca ou abre um documento (ver start()). Cada item
+// mostra onde o ato está: se o documento está no acervo, abre direto; se não, a localização
+// (boletim, data e página do livro original) para consulta.
 const INTRANET = 'https://intranet.cbmerj.rj.gov.br/entrada'
 const ALERJ_SEARCH = 'https://www3.alerj.rj.gov.br/lotus_notes/consultaNotes.asp?hdfId=5&txtquery='
 const PAGE_SIZE = 25
@@ -17,26 +18,20 @@ export function initLivro({ root, documentsById, showDocument, escapeHtml, norma
 
   root.innerHTML = '<p class="livro-loading">Carregando o Livro de Ordens…</p>'
 
-  function load() {
-    fetch('./livro-de-ordens.json')
+  let ready = null
+  function start() {
+    ready ??= fetch('./livro-de-ordens.json')
       .then((response) => (response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`))))
       .then((data) => {
         meta = data
         items = data.items.map((item) => ({ ...item, haystack: normalize(`${item.n ?? ''} ${item.s} ${item.a ?? ''} ${item.b ?? ''} ${formatDate(item.bd)}`) }))
         renderShell()
         renderList()
+        return items
       })
-      .catch(() => { root.innerHTML = '<p class="livro-loading">Não foi possível carregar o Livro de Ordens.</p>' })
+      .catch((error) => { root.innerHTML = '<p class="livro-loading">Não foi possível carregar o Livro de Ordens.</p>'; throw error })
+    return ready
   }
-  // Baixa quando a seção se aproxima da tela, quando alguém navega até #livro ou, no máximo,
-  // alguns segundos depois de a página ficar ociosa.
-  let started = false
-  const start = () => { if (started) return; started = true; observer.disconnect(); load() }
-  const observer = new IntersectionObserver((entries) => { if (entries.some((entry) => entry.isIntersecting)) start() }, { rootMargin: '600px' })
-  observer.observe(root)
-  if (location.hash === '#livro') start()
-  window.addEventListener('hashchange', () => { if (location.hash === '#livro') start() })
-  setTimeout(start, 4000)
 
   function countBy(key) {
     return items.reduce((acc, item) => { const value = item[key]; if (value) acc[value] = (acc[value] || 0) + 1; return acc }, {})
@@ -66,6 +61,7 @@ export function initLivro({ root, documentsById, showDocument, escapeHtml, norma
       <p id="livro-count" class="livro-count" aria-live="polite"></p>
       <div id="livro-list" class="results-list"></div>
       <nav id="livro-pagination" class="pagination" aria-label="Paginação do Livro de Ordens"></nav>`
+    root.querySelector('#livro-search').value = state.query
     const bind = (id, field) => root.querySelector(id).addEventListener(field === 'query' ? 'input' : 'change', (event) => { state[field] = event.target.value; state.page = 1; renderList() })
     bind('#livro-search', 'query')
     bind('#livro-year', 'year')
@@ -85,9 +81,13 @@ export function initLivro({ root, documentsById, showDocument, escapeHtml, norma
     })
   }
 
+  const matchesQuery = (item, terms) => !terms.length || terms.every((term) => item.haystack.includes(term))
+  // Plural e singular casam entre si ("extintores" encontra "EXTINTOR"): o livro usa os dois.
+  const termsOf = (query) => normalize(query).split(/\s+/).filter(Boolean).map((term) => (term.length > 5 ? term.replace(/(?:es|s)$/, '') : term))
+
   function filtered() {
-    const terms = normalize(state.query).split(/\s+/).filter(Boolean)
-    return items.filter((item) => (!terms.length || terms.every((term) => item.haystack.includes(term)))
+    const terms = termsOf(state.query)
+    return items.filter((item) => matchesQuery(item, terms)
       && (state.year === 'Todos' || String(item.y) === state.year)
       && (state.type === 'Todos' || item.t === state.type)
       && (state.issuer === 'Todos' || item.o === state.issuer)
@@ -146,5 +146,21 @@ export function initLivro({ root, documentsById, showDocument, escapeHtml, norma
       <div class="page-buttons">${step(state.page - 1, '← Anterior', state.page === 1)}
         ${pageNumbers(state.page, totalPages).map((page) => (page === '…' ? '<span class="page-gap" aria-hidden="true">…</span>' : `<button type="button" class="page-button ${page === state.page ? 'current' : ''}" data-page="${page}" ${page === state.page ? 'aria-current="page"' : ''} aria-label="Página ${page}">${page}</button>`)).join('')}
         ${step(state.page + 1, 'Próxima →', state.page === totalPages)}</div>`
+  }
+
+  return {
+    start,
+    // Busca vinda do topo da página: aplica a mesma consulta no livro.
+    setQuery(query) {
+      state.query = query
+      state.page = 1
+      if (!items) return
+      root.querySelector('#livro-search').value = query
+      renderList()
+    },
+    countMatches: (query) => (items ? items.filter((item) => matchesQuery(item, termsOf(query))).length : null),
+    // Publicações de um documento do acervo segundo o livro (republicações incluídas).
+    itemsForDocument: (id) => (items ?? []).filter((item) => item.doc === id),
+    formatDate,
   }
 }

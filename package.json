@@ -10,12 +10,15 @@
     "search:update": "node scripts/extract-text.mjs",
     "livro:update": "node scripts/build-livro.mjs",
     "data:update": "npm run catalog:update && npm run search:update && npm run catalog:update && npm run livro:update",
+    "prebuild": "node scripts/build-livro.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:ui": "node scripts/check-ui.mjs"
   },
   "devDependencies": {
-    "vite": "^8.3.0",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "playwright-core": "^1.63.0",
+    "vite": "^8.3.0"
   },
   "dependencies": {
     "minisearch": "^7.2.0"
