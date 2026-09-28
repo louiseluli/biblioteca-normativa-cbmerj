@@ -1,4 +1,5 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { existsSync } from 'node:fs'
 
 const sources = [
   { page: 'https://www.cbmerj.rj.gov.br/notas-tecnicas/', collection: 'Notas técnicas' },
@@ -78,15 +79,33 @@ function classify(title, collection) {
   if (/^ICG\s*[-_]?\s*\d/i.test(head)) return 'Instrução normativa'
   if (/^decreto[\s-]*lei\b/i.test(head)) return 'Decreto-lei'
   if (/^(?:decreto\b|c[oó]digo de seguran[cç]a|coscip\b)/i.test(head)) return 'Decreto'
-  if (/^lei\b/i.test(head)) return 'Lei estadual'
+  if (/^lei\b/i.test(head)) return isFederalLaw(head) ? 'Lei federal' : 'Lei estadual'
   if (/^resolu[cç][aã]o/i.test(head)) return 'Resolução'
   if (/^portaria/i.test(head)) return 'Portaria'
   if (/^(?:nota\s+dgst|nota\s+chemg|aditamento administrativo)/i.test(head)) return 'Nota administrativa'
   return 'Documento relacionado'
 }
 
-function statusFrom(title) {
-  return /revogad|versões anteriores/i.test(title) ? 'Histórica' : 'Não verificada'
+// A numeração das leis estaduais do RJ só passou de 9.000 em 2020; um número acima disso com
+// ano anterior é de lei federal (ex.: Lei 10.519/2002, sobre rodeios, publicada na página de
+// regularização junto das estaduais).
+function isFederalLaw(title) {
+  const number = Number(title.match(/^lei\s*n?[ºo°.]*\s*([\d.]+)/i)?.[1]?.replace(/\./g, ''))
+  const year = yearFromTitle(title)
+  return number > 9000 && year && year < 2020
+}
+
+const isHistorical = (record) => /revogad|vers(?:ão|ões) anterior/i.test(`${record.title} ${record.group}`)
+
+// Situação jurídica só quando há uma fonte que a sustente. A página de Notas Técnicas separa
+// as versões atuais das "versões anteriores", e a de Instruções Normativas lista as ICGs em
+// vigor (marcando a versão anterior no título): para NT e ICG, estar listada como versão atual
+// na página oficial do próprio órgão emissor é evidência de vigência. Leis estaduais recebem a
+// situação da ALERJ mais abaixo. Os demais tipos continuam "Não verificada".
+function statusFor(record, type) {
+  if (isHistorical(record)) return { status: 'Histórica', statusSource: `Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de ${today})` }
+  if (type === 'Nota técnica' || type === 'Instrução normativa') return { status: 'Em vigor', statusSource: `Listada como versão atual na página oficial do CBMERJ (coleta de ${today})` }
+  return { status: 'Não verificada', statusSource: '' }
 }
 
 // Só a página de Notas Técnicas tem cabeçalhos de agrupamento confiáveis (GRUPO 1, Portarias,
@@ -116,6 +135,7 @@ function parsePage(html, source) {
   return items
 }
 
+const today = new Date().toISOString().slice(0, 10)
 const pages = await Promise.all(sources.map(async (source) => ({ source, html: await (await fetch(source.page)).text() })))
 const records = pages.flatMap(({ source, html }) => parsePage(html, source))
   .concat(publishedIcg.map(([number, title, url]) => ({ url, title: `ICG ${number} - ${title}`, group: `Grupo ${number.split('-')[0]} - Instruções Normativas`, collection: 'Instruções normativas' })))
@@ -141,13 +161,72 @@ const unique = [...bestByUrl.values()].map((record, index) => {
     title: record.title,
     year: yearFromTitle(record.title),
     theme: record.group.replace(/^NOTAS TÉCNICAS - /i, '').replace(/^Grupo \d+ - /i, ''),
-    status: statusFrom(record.title),
-    edition: /revogad/i.test(record.title) ? 'Versão histórica' : 'Publicação oficial',
+    ...statusFor(record, type),
+    edition: isHistorical(record) ? 'Versão histórica' : 'Publicação oficial',
+    origin: 'CBMERJ',
     source: sourcePage,
     pdf: record.url,
     description: `Registro coletado da página oficial: ${record.group}. Metadados sujeitos a revisão curatorial.`,
   }
 })
+
+// Leis estaduais da ALERJ (scripts/data/alerj-laws.json, gerado por fetch-alerj.mjs). A ficha
+// técnica da ALERJ informa a situação oficial de cada lei. Quando a mesma lei já veio da página
+// de regularização do CBMERJ (com o PDF), o registro do CBMERJ é mantido e só recebe a situação
+// e o link para o texto na ALERJ; as demais entram como registros próprios.
+const alerjKinds = { 'lei ordinária': 'Lei estadual', 'lei complementar': 'Lei complementar', 'emenda constitucional': 'Emenda constitucional' }
+const numberDigits = (value) => String(value ?? '').replace(/\D/g, '')
+const formatLawNumber = (value) => Number(numberDigits(value)).toLocaleString('pt-BR')
+
+function alerjStatus(law) {
+  const situation = law.situation.trim()
+  const adi = law.adiSituation && !/^n[aã]o consta$/i.test(law.adiSituation) ? ` Ação de inconstitucionalidade: ${law.adiSituation}.` : ''
+  const statusSource = `Ficha técnica da ALERJ: “${situation || 'situação não informada'}” (coleta de ${alerjData.collectedAt}).${adi}`
+  if (!situation) return { status: 'Não verificada', statusSource }
+  if (/em vigor/i.test(situation)) return { status: 'Em vigor', statusSource }
+  if (/revogad/i.test(situation)) return { status: 'Revogada', statusSource }
+  return { status: situation.charAt(0).toUpperCase() + situation.slice(1).toLowerCase(), statusSource }
+}
+
+// As ementas da ALERJ vêm em caixa alta; converte para caixa de frase, preservando siglas e
+// nomes próprios recorrentes neste acervo.
+const properNouns = ['Rio de Janeiro', 'Corpo de Bombeiros Militar', 'Corpo de Bombeiros', 'Bombeiros Militares', 'Polícia Militar', 'Defesa Civil', 'Estado', 'Governo', 'Poder Executivo', 'Assembleia Legislativa', 'Constituição']
+function sentenceCase(value) {
+  if (value !== value.toUpperCase()) return value
+  let text = value.toLowerCase().replace(/^./, (char) => char.toUpperCase())
+  for (const noun of properNouns) text = text.replace(new RegExp(noun.toLowerCase(), 'g'), noun)
+  return text.replace(/\b(cbmerj|sedec|pmerj|rj|ii|iii|iv|vi|vii|viii|ix|xi)\b/g, (match) => match.toUpperCase())
+}
+
+const alerjPath = 'scripts/data/alerj-laws.json'
+const alerjData = existsSync(alerjPath) ? JSON.parse(await readFile(alerjPath, 'utf8')) : { collectedAt: null, laws: [] }
+const alerjSource = 'https://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144'
+let alerjMerged = 0
+for (const law of alerjData.laws) {
+  const type = alerjKinds[law.kind.toLowerCase()]
+  if (!type) continue
+  const digits = numberDigits(law.number)
+  const existing = unique.find((doc) => doc.origin === 'CBMERJ' && doc.type === type && numberDigits(doc.number) === digits && doc.year === law.year)
+  const status = alerjStatus(law)
+  const extra = { ...status, alerjUrl: law.url, revocation: law.revocation || '', author: law.author || '' }
+  if (existing) { Object.assign(existing, extra); alerjMerged += 1; continue }
+  const label = type === 'Lei estadual' ? 'Lei' : type === 'Lei complementar' ? 'Lei Complementar' : 'Emenda Constitucional'
+  unique.push({
+    id: `alerj-${slugify(label)}-${digits}-${law.year}`,
+    type,
+    number: `${label} ${formatLawNumber(law.number)}`,
+    title: sentenceCase(law.title || `${label} nº ${law.number}/${law.year}`),
+    year: law.year,
+    theme: 'Legislação estadual (ALERJ)',
+    edition: 'Texto compilado pela ALERJ',
+    origin: 'ALERJ',
+    source: alerjSource,
+    pdf: law.url,
+    format: 'html',
+    description: sentenceCase(law.ementa),
+    ...extra,
+  })
+}
 
 // Relações entre atos: a página de notas técnicas guarda cada edição como um registro
 // isolado, mas o usuário precisa navegar entre versões da mesma NT/ICG e entre um ato e a
@@ -197,7 +276,9 @@ for (const doc of unique) {
 }
 
 await mkdir('src/data', { recursive: true })
-await writeFile('src/data/documents.js', `// Gerado por scripts/build-catalog.mjs em ${new Date().toISOString().slice(0, 10)}\nexport const documents = ${JSON.stringify(unique, null, 2)}\n`, 'utf8')
+await writeFile('src/data/documents.js', `// Gerado por scripts/build-catalog.mjs em ${today}\nexport const collectedAt = ${JSON.stringify(today)}\nexport const documents = ${JSON.stringify(unique, null, 2)}\n`, 'utf8')
 const counts = unique.reduce((acc, item) => ({ ...acc, [item.type]: (acc[item.type] || 0) + 1 }), {})
 console.log(`Catálogo gerado: ${unique.length} registros.`)
 console.log(counts)
+console.log(`ALERJ: ${alerjData.laws.length} leis lidas, ${alerjMerged} mescladas a registros do CBMERJ.`)
+console.log(unique.reduce((acc, item) => ({ ...acc, [item.status]: (acc[item.status] || 0) + 1 }), {}))

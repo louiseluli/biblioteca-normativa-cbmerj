@@ -5,6 +5,7 @@ import MiniSearch from 'minisearch'
 import { PDFParse } from 'pdf-parse'
 import { documents } from '../src/data/documents.js'
 import { searchIndexOptions, searchQueryOptions } from '../src/search-options.js'
+import { lawCacheId } from './lib/alerj.mjs'
 
 const CACHE_DIR = '.cache/pdf-text'
 const MAX_BYTES = 20 * 1024 * 1024 // não baixa arquivos maiores que 20MB (limite de tamanho, seção 12.1 do plano).
@@ -34,7 +35,17 @@ async function fetchWithLimits(url) {
   }
 }
 
+// Leis da ALERJ não têm PDF: o texto integral já foi lido por fetch-alerj.mjs e está no cache
+// local dele (a base da ALERJ limita a taxa de requisições, então não se baixa de novo aqui).
+async function alerjText(document) {
+  const cachePath = path.join('.cache/alerj', `${lawCacheId(document.pdf)}.json`)
+  if (!existsSync(cachePath)) return { id: document.id, pdf: document.pdf, text: '', pages: null, error: 'Texto não está no cache; rode npm run alerj:update' }
+  const { text = '' } = JSON.parse(await readFile(cachePath, 'utf8'))
+  return { id: document.id, pdf: document.pdf, text: text.replace(/\s+/g, ' ').trim().slice(0, MAX_TEXT_CHARS), pages: null, error: text ? null : 'Ficha sem texto' }
+}
+
 async function extractOne(document) {
+  if (document.format === 'html') return alerjText(document)
   const cachePath = path.join(CACHE_DIR, `${document.id}.json`)
   if (existsSync(cachePath)) {
     const cached = JSON.parse(await readFile(cachePath, 'utf8'))

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "alerj:update": "node scripts/fetch-alerj.mjs",
     "catalog:update": "node scripts/build-catalog.mjs",
     "search:update": "node scripts/extract-text.mjs",
     "build": "vite build",
