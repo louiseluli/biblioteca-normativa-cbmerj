@@ -4,7 +4,7 @@
 // texto, conta: o corpo de uma norma cita outros boletins (os das normas que ela altera).
 const monthNames = { janeiro: 1, fevereiro: 2, 'março': 3, marco: 3, abril: 4, maio: 5, junho: 6, julho: 7, agosto: 8, setembro: 9, outubro: 10, novembro: 11, dezembro: 12 }
 const pad = (value) => String(value).padStart(2, '0')
-const bulletin = /boletim\s+(?:ostensivo\s+)?(?:da\s+|do\s+)?(?:sedec\s*\/\s*cbmer[j3]|subsedec\s*\/\s*cbmer[j3]|cbmer[j3])?\s*(?:n[º°o.]*|número:?)\s*(\d{1,3})\s*,?\s*(?:de\s+)?(\d{1,2})[º°]?\s*(?:de\s+([a-zç]+)\s+de\s+(\d{4})|\/\s*(\d{1,2})\s*\/\s*(\d{2,4}))/i
+const bulletin = /boletim\s+(?:ostensivo\s+)?(?:da\s+|do\s+)?(?:sedec\s*\/\s*cbmer[j3]{1,2}|subsedec\s*\/\s*cbmer[j3]{1,2}|cbmer[j3]{1,2})?\s*(?:n[º°o.]*|número:?)\s*(\d{1,3})\s*,?\s*(?:de\s+)?(\d{1,2})[º°]?\s*(?:de\s+([a-zç]+)\s+de\s+(\d{4})|\/\s*(\d{1,2})\s*\/\s*(\d{2,4}))/i
 
 function toPublication(match) {
   const [, number, day, monthName, longYear, month, shortYear] = match

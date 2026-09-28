@@ -21,7 +21,7 @@ const publishedIcg = [
   ['1-3', 'Seleção, ingresso e incorporação', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/03_ICG_1-3_Ingresso_FORMATADA_BM1_04.04.22v_SITE.pdf'],
   ['1-4', 'Registro geral e carteira de identidade', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/04_ICG_1-4_RG_FORMATADA_BM1_04.04.22v_SITE.pdf'],
   ['1-5', 'Capacitação', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/05_ICG_1-5_Capacitao_TEMPORRIOS_FORMATADA_BM1_04.04.22v_SITE.pdf'],
-  ['1-6', 'Áreas de atuação e habilidades técnicas', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-6.pdf'],
+  ['1-6', 'Áreas de atuação e habilitações técnicas', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-6.pdf'],
   ['1-7', 'Normas de referenciação dos cargos militares', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-7.pdf'],
   ['1-8', 'Exclusão', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/08/ICG_1_8_Boletim_113__de_26.06.26.pdf'],
   ['1-9', 'Prorrogação', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/07/ICG-1-9.pdf'],
@@ -38,7 +38,7 @@ const publishedIcg = [
   ['4-4', 'Almoxarifado geral do CBMERJ', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_4.pdf'],
   ['5-1', 'Concessão da gratificação de raio X e outras providências', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/ICG-5-01.pdf'],
   ['6-1', 'Regimento interno do Fundo de Saúde do CBMERJ', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/02/ICG-6-01.pdf'],
-  ['6-2', 'Regimento interno do Fundo de Saúde do CBMERJ', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_6-2.pdf'],
+  ['6-2', 'Regimento interno do Sistema Interno de Saúde do CBMERJ', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_6-2.pdf'],
   ['7-1', 'Diretrizes gerais para implementação e emprego da função de subtenente adjunto ao comando', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_7-1.pdf'],
   ['1-8', 'ICG 1-08 - versão anterior', 'https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/138064-_ICG-08-EXCLUSAO-TEMPORARIO.pdf'],
 ]
