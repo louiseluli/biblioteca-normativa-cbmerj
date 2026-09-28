@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { urlId } from './lib/ids.mjs'
+import { parseCsv } from './lib/csv.mjs'
 
 const sources = [
   { page: 'https://www.cbmerj.rj.gov.br/notas-tecnicas/', collection: 'Notas técnicas' },
@@ -251,6 +252,68 @@ for (const doc of unique) {
   if (doc.year && publicationYear < doc.year) continue
   doc.publication = { ...publication, source: 'Cabeçalho do PDF' }
   if (!doc.year) { doc.year = publicationYear; doc.yearSource = `Boletim da SEDEC/CBMERJ nº ${publication.bulletin}, de ${publication.date.split('-').reverse().join('/')}` }
+}
+
+// Curadoria versionada em data/ (planilhas CSV, editáveis no Excel ou no Google Planilhas):
+// - documentos-manuais.csv: um documento por linha, para cadastrar em lote o que não está em
+//   nenhuma página coletada (o PDF pode ser uma URL oficial ou um arquivo em public/acervo/);
+// - correcoes.csv: correções de um campo de um registro coletado, pelo id, com justificativa.
+// Ambas sobrevivem a novas coletas, porque são reaplicadas a cada execução. Uma linha inválida
+// interrompe a geração: dado errado não deve ir para o site sem que alguém veja o erro.
+const curationErrors = []
+const allowedStatuses = ['Em vigor', 'Revogada', 'Histórica', 'Não verificada', 'Suspensa', 'Inconstitucional']
+const readCsv = async (file) => (existsSync(file) ? parseCsv(await readFile(file, 'utf8')) : [])
+
+for (const row of await readCsv('data/documentos-manuais.csv')) {
+  const where = `data/documentos-manuais.csv, linha ${row.line}`
+  const url = row.url_pdf || row.url_fonte
+  if (!row.tipo || !row.titulo || !url) { curationErrors.push(`${where}: tipo, titulo e url_pdf (ou url_fonte) são obrigatórios`); continue }
+  if (row.ano && !/^\d{4}$/.test(row.ano)) { curationErrors.push(`${where}: ano "${row.ano}" deve ter 4 dígitos`); continue }
+  if (row.data_publicacao && !/^\d{4}-\d{2}-\d{2}$/.test(row.data_publicacao)) { curationErrors.push(`${where}: data_publicacao deve estar no formato AAAA-MM-DD`); continue }
+  const status = row.situacao || 'Não verificada'
+  if (!allowedStatuses.includes(status)) { curationErrors.push(`${where}: situacao "${status}" não é uma de ${allowedStatuses.join(', ')}`); continue }
+  if (status !== 'Não verificada' && !row.fonte_situacao) { curationErrors.push(`${where}: situacao "${status}" exige fonte_situacao (onde isso foi verificado)`); continue }
+  if (row.url_pdf && !/^https?:\/\//.test(row.url_pdf) && !existsSync(`public/${row.url_pdf}`)) { curationErrors.push(`${where}: arquivo public/${row.url_pdf} não existe`); continue }
+  if (unique.some((doc) => doc.pdf === url)) { curationErrors.push(`${where}: ${url} já está no catálogo; use correcoes.csv para alterar o registro`); continue }
+  unique.push({
+    id: `manual-${slugify(row.tipo)}-${urlId(url)}`,
+    type: row.tipo,
+    number: row.numero,
+    title: row.titulo,
+    year: Number(row.ano) || (row.data_publicacao ? Number(row.data_publicacao.slice(0, 4)) : null),
+    theme: row.tema || 'Cadastro manual',
+    status,
+    statusSource: row.fonte_situacao,
+    edition: 'Publicação oficial',
+    origin: 'Cadastro manual',
+    source: row.url_fonte || url,
+    pdf: url,
+    description: row.descricao || 'Registro cadastrado manualmente pela curadoria.',
+    ...(row.boletim || row.data_publicacao ? { publication: { bulletin: row.boletim, date: row.data_publicacao, source: 'Cadastro manual' } } : {}),
+  })
+}
+
+const correctableFields = { tipo: 'type', numero: 'number', titulo: 'title', ano: 'year', tema: 'theme', situacao: 'status', fonte_situacao: 'statusSource', descricao: 'description', edicao: 'edition', boletim: 'publication.bulletin', data_publicacao: 'publication.date' }
+for (const row of await readCsv('data/correcoes.csv')) {
+  const where = `data/correcoes.csv, linha ${row.line}`
+  const doc = unique.find((candidate) => candidate.id === row.id)
+  const field = correctableFields[row.campo]
+  if (!doc) { curationErrors.push(`${where}: id "${row.id}" não existe no catálogo`); continue }
+  if (!field) { curationErrors.push(`${where}: campo "${row.campo}" não é corrigível (use: ${Object.keys(correctableFields).join(', ')})`); continue }
+  if (!row.justificativa) { curationErrors.push(`${where}: justificativa é obrigatória`); continue }
+  if (field === 'status' && !allowedStatuses.includes(row.valor)) { curationErrors.push(`${where}: situacao "${row.valor}" inválida`); continue }
+  if (field === 'year' && !/^\d{4}$/.test(row.valor)) { curationErrors.push(`${where}: ano "${row.valor}" deve ter 4 dígitos`); continue }
+  const value = field === 'year' ? Number(row.valor) : row.valor
+  if (field.startsWith('publication.')) doc.publication = { ...doc.publication, [field.split('.')[1]]: value, source: 'Correção curatorial' }
+  else doc[field] = value
+  if (field === 'status') doc.statusSource = `${row.justificativa} (correção curatorial)`
+  if (field === 'year') doc.yearSource = `${row.justificativa} (correção curatorial)`
+  doc.corrections = [...(doc.corrections ?? []), `${row.campo}: ${row.justificativa}`]
+}
+
+if (curationErrors.length) {
+  console.error(`Curadoria com ${curationErrors.length} erro(s); nada foi gravado:\n${curationErrors.map((error) => ` - ${error}`).join('\n')}`)
+  process.exit(1)
 }
 
 // Relações entre atos: a página de notas técnicas guarda cada edição como um registro
