@@ -149,6 +149,53 @@ const unique = [...bestByUrl.values()].map((record, index) => {
   }
 })
 
+// Relações entre atos: a página de notas técnicas guarda cada edição como um registro
+// isolado, mas o usuário precisa navegar entre versões da mesma NT/ICG e entre um ato e a
+// portaria/decreto que o aprovou ou alterou (ver seções 3.2 e 10 do plano — "alterada" é uma
+// relação, não um campo booleano). Derivamos essas ligações só de padrões já presentes no
+// próprio título coletado, nunca inventando uma relação sem evidência textual.
+function baseCode(number) {
+  const match = number && number.match(/^(?:NT|ICG)\s*[-_]?\s*\d+[-_]\d+/i)
+  return match ? match[0].toUpperCase() : null
+}
+function findPortariaReference(title) {
+  return title.match(/portaria(?:\s+cbmerj)?\s*n?[ºo°.]*\s*(\d+)\s*\/\s*\d{4}/i)?.[1] ?? null
+}
+function findDecreeReference(title) {
+  return title.match(/alterado pelo decreto\s*n?[ºo°.]*\s*([\d.]+)/i)?.[1]?.replace(/\./g, '') ?? null
+}
+function findByNumericNumber(type, digits) {
+  return unique.find((candidate) => candidate.type === type && candidate.number && candidate.number.replace(/\D/g, '') === digits)
+}
+
+const byId = new Map(unique.map((doc) => [doc.id, doc]))
+const byBaseCode = new Map()
+for (const doc of unique) {
+  const code = baseCode(doc.number)
+  if (!code) continue
+  if (!byBaseCode.has(code)) byBaseCode.set(code, [])
+  byBaseCode.get(code).push(doc.id)
+}
+for (const doc of unique) {
+  const related = new Set()
+  const code = baseCode(doc.number)
+  if (code) for (const id of byBaseCode.get(code)) related.add(id)
+  const portariaDigits = findPortariaReference(doc.title)
+  const portariaTarget = portariaDigits && findByNumericNumber('Portaria', portariaDigits)
+  if (portariaTarget) related.add(portariaTarget.id)
+  const decreeDigits = findDecreeReference(doc.title)
+  const decreeTarget = decreeDigits && findByNumericNumber('Decreto', decreeDigits)
+  if (decreeTarget) related.add(decreeTarget.id)
+  related.delete(doc.id)
+  doc.relatedIds = [...related]
+}
+for (const doc of unique) {
+  for (const relatedId of doc.relatedIds) {
+    const target = byId.get(relatedId)
+    if (target && target.id !== doc.id && !target.relatedIds.includes(doc.id)) target.relatedIds.push(doc.id)
+  }
+}
+
 await mkdir('src/data', { recursive: true })
 await writeFile('src/data/documents.js', `// Gerado por scripts/build-catalog.mjs em ${new Date().toISOString().slice(0, 10)}\nexport const documents = ${JSON.stringify(unique, null, 2)}\n`, 'utf8')
 const counts = unique.reduce((acc, item) => ({ ...acc, [item.type]: (acc[item.type] || 0) + 1 }), {})

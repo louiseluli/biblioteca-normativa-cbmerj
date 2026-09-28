@@ -11,7 +11,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO-LEI-No-247-DE-21-DE-JULHO-DE-1975.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-2",
@@ -24,7 +25,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/COSCIP_DEC_42-2018_COMPILADO.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "decreto-88"
+    ]
   },
   {
     "id": "portaria-3",
@@ -37,7 +41,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_CBMERJ_1071_2019.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-4",
@@ -50,7 +55,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/Portaria-CBMERJ-1102-2020_DOERJ-070_17.04.2020.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-5",
@@ -63,7 +69,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/PORTARIA-CBMERJ-no-1109_20.05.2020_DOERJ_093_fl.9-e-fl.10.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-6",
@@ -76,7 +83,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/Portaria-CBMERJ-no-1120-DE-22-DE-SETEMBRO-DE-2020_1601400145.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-7",
@@ -89,7 +97,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/portaria_CBMERJ_1125_de_21.10.2020-DOERJ_196_de_22.10.2020.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-8",
@@ -102,7 +111,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/PORTARIA-CBMERJ-N-1151-DE-10-DE-MAIO-DE-2021_1643733018.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-9",
@@ -115,7 +125,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/Portaria_CBMERJ_1167_2022_DOERJ_023_04.02.2022.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-10",
@@ -128,7 +139,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/05/PORTARIA-CBMERJ-N-1179-DE-11-DE-ABRIL-DE-2022.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-11",
@@ -141,7 +153,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/PORTARIA-CBMERJ-N.-1239_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-12",
@@ -154,7 +167,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/PORTARIA-CBMERJ-1244_2024.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-13",
@@ -167,7 +181,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/12/PORTARIA-CBMERJ-1280_2024.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-14",
@@ -180,7 +195,14 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/PORTARIA_CBMERJ_1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-15",
+      "nota-tecnica-24",
+      "nota-tecnica-31",
+      "nota-tecnica-42",
+      "nota-tecnica-46"
+    ]
   },
   {
     "id": "nota-tecnica-15",
@@ -193,7 +215,12 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_1-01_Parte1_alterada_Portaria_1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-16",
+      "nota-tecnica-67",
+      "portaria-14"
+    ]
   },
   {
     "id": "nota-tecnica-16",
@@ -206,7 +233,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT_1-01-Procedimentos-Administrativos-para-Regularizacao-e-Fiscalizacao-Parte-2-Fiscalizacao_2021_1620759470.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-15",
+      "nota-tecnica-67"
+    ]
   },
   {
     "id": "nota-tecnica-17",
@@ -219,7 +250,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-02-Terminologia-de-seguranca-contra-incendio-e-panico.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-18",
@@ -232,7 +264,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT1-03_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-68"
+    ]
   },
   {
     "id": "nota-tecnica-19",
@@ -245,7 +280,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-04-Classificacao-das-edificacoes-e-areas-de-risco-quanto-ao-risco-de-incendio.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-20",
@@ -258,7 +294,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-05-Edificacoes-anteriores-Adequacao-ao-COSCIP.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-21",
@@ -271,7 +308,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT1-06_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-69"
+    ]
   },
   {
     "id": "nota-tecnica-22",
@@ -284,7 +324,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-07-Atividades-economicas-de-baixo-risco-2020.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-23",
@@ -297,7 +338,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-02-Aprovada-pela-Portaria-CBMERJ-1120_2020_1601400175.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-70"
+    ]
   },
   {
     "id": "nota-tecnica-24",
@@ -310,7 +354,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_2-02_alterada-pela-Portaria-1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "portaria-14"
+    ]
   },
   {
     "id": "nota-tecnica-25",
@@ -323,7 +370,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-Sistemas-de-chuveiros-automticos-sprinklers-Parte-1-Requisitos-gerais-2019-atualizada_1647374313.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-26"
+    ]
   },
   {
     "id": "nota-tecnica-26",
@@ -336,7 +386,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-sprinklers-Parte-2-Minuta-das-alteracoes_1604941555.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-25"
+    ]
   },
   {
     "id": "nota-tecnica-27",
@@ -349,7 +402,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-04_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-71"
+    ]
   },
   {
     "id": "nota-tecnica-28",
@@ -362,7 +418,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-05_3Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-72",
+      "nota-tecnica-73"
+    ]
   },
   {
     "id": "nota-tecnica-29",
@@ -375,7 +435,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-06-Iluminacao-de-emergencia-Minuta-das-alteracoes_1605536471.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-30",
@@ -388,7 +449,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-07-Sistema-de-deteccao-e-alarme-de-incendio.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-31",
@@ -401,7 +463,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_2-08_1Ed_2019_alterada_Portaria_1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "portaria-14"
+    ]
   },
   {
     "id": "nota-tecnica-32",
@@ -414,7 +479,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/12/NT_2_09_2Ed_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-74"
+    ]
   },
   {
     "id": "nota-tecnica-33",
@@ -427,7 +495,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-10-Plano-de-emergencia-contra-incendio-e-panico-PECIP.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-34",
@@ -440,7 +509,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-11-Brigadas-de-incendio.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-35",
@@ -453,7 +523,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT-2-12-SPDA-2019-Atualizada-Portaria_1179_2022.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-36",
@@ -466,7 +537,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-13_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-75"
+    ]
   },
   {
     "id": "nota-tecnica-37",
@@ -479,7 +553,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-14-Controle-de-fumaca.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-38",
@@ -492,7 +567,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/12/NT_2_15_2Ed_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-76"
+    ]
   },
   {
     "id": "nota-tecnica-39",
@@ -505,7 +583,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-16-Acesso-de-viaturas-em-edificacoes-2020-versao-02.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-77"
+    ]
   },
   {
     "id": "nota-tecnica-40",
@@ -518,7 +599,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-17-Separacao-entre-edificacoes.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-41",
@@ -531,7 +613,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT-2-18-Compartimentao-horizontal-e-vertical-2022_1649879739.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-78"
+    ]
   },
   {
     "id": "nota-tecnica-42",
@@ -544,7 +629,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT2_19_2Ed_2025_alterada_Portaria_1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-79",
+      "portaria-14"
+    ]
   },
   {
     "id": "nota-tecnica-43",
@@ -557,7 +646,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-20-Controle-de-materiais-de-acabamento-e-de-revestimento.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-44",
@@ -570,7 +660,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-01-Cozinha-profissional.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-45",
@@ -583,7 +674,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/02/NT3-02_2Ed_2023_alterada_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-80"
+    ]
   },
   {
     "id": "nota-tecnica-46",
@@ -596,7 +690,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_3-03_1Ed_2019_alterada_Portaria_1317_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "portaria-14"
+    ]
   },
   {
     "id": "nota-tecnica-47",
@@ -609,7 +706,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-04-Subestacoes-eletricas.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-48",
@@ -622,7 +720,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-05-Caldeiras-e-vasos-de-pressao.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-49",
@@ -635,7 +734,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-06-Armazenagem-de-liquidos-inflamaveis-e-combustiveis.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-50",
@@ -648,7 +748,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT3-07_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-51",
@@ -661,7 +762,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT4-01_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-52",
@@ -674,7 +776,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-02-Edificacoes-destinadas-a-restricao-de-liberdade.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-53",
@@ -687,7 +790,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-03-Edificacoes-tombadas.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-54",
@@ -700,7 +804,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-04-Municoes-explosivos-e-artefatos-pirotecnicos-Fabricacao-armazenagem-e-comercio.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-55",
@@ -713,7 +818,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT-4-05-Gas-GLPGN-Manipulacao-armazenamento-e-comercializacao-2022.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-56",
@@ -726,7 +832,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-06-Postos-de-servicos-e-abastecimento-de-veiculos.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-57",
@@ -739,7 +846,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-07-Edificacoes-e-estruturas-para-garagens.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-58",
@@ -752,7 +860,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-08-Patios-para-armazenagens-diversas.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-59",
@@ -765,7 +874,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-09-Tuneis.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-60",
@@ -778,7 +888,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-4-10-Canteiro-de-obras.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-61",
@@ -791,7 +902,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT4-11_2Edio_2023.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-62",
@@ -804,7 +916,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-5-01-Centros-esportivos-de-eventos-e-de-exibicao.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-63",
@@ -817,7 +930,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT_5-02_3Ed_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-81"
+    ]
   },
   {
     "id": "nota-tecnica-64",
@@ -830,7 +946,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT_5-03_2Ed_2025.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-82"
+    ]
   },
   {
     "id": "nota-tecnica-65",
@@ -843,7 +962,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT_5-04_alterada_pela_Portaria_1167_2022_1644255940_2022-02-07-1.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-66",
@@ -856,7 +976,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-5-05-Atendimento-medico-para-eventos-de-reuniao-de-publico.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-tecnica-67",
@@ -869,7 +990,11 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-01-Procedimentos-Administrativos-para-Regularizacao-e-Fiscalizacao-Parte-2-Fiscalizacao.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-15",
+      "nota-tecnica-16"
+    ]
   },
   {
     "id": "nota-tecnica-68",
@@ -882,7 +1007,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-03-Simbolos-graficos-para-projetos-de-seguranca-contra-incendio-e-panico.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-18"
+    ]
   },
   {
     "id": "nota-tecnica-69",
@@ -895,7 +1023,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-06-Processo-Administrativo-em-tramitacao-por-adequacao-normativa.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-21"
+    ]
   },
   {
     "id": "nota-tecnica-70",
@@ -908,7 +1039,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-01-2019_1601400198.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-23"
+    ]
   },
   {
     "id": "nota-tecnica-71",
@@ -921,7 +1055,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-04-Conjunto-de-pressurizacao-para-sistemas-de-combate-a-incendio-Minuta-das-alteracoes_1604941570.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-27"
+    ]
   },
   {
     "id": "nota-tecnica-72",
@@ -934,7 +1071,11 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-05-Sinalizacao-de-seguranca-contra-incendio-e-panico.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-28",
+      "nota-tecnica-73"
+    ]
   },
   {
     "id": "nota-tecnica-73",
@@ -947,7 +1088,11 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-05-Sinalizacao-de-seguranca-contra-incendio-e-panico-2020-versao-02.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-28",
+      "nota-tecnica-72"
+    ]
   },
   {
     "id": "nota-tecnica-74",
@@ -960,7 +1105,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-09-Pressurizacao-de-escada-de-emergencia-elevador-de-emergencia-antecamaras-e-areas-de-refugi.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-32"
+    ]
   },
   {
     "id": "nota-tecnica-75",
@@ -973,7 +1121,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-13-Sistemas-fixos-de-gases-para-combate-a-incendio.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-36"
+    ]
   },
   {
     "id": "nota-tecnica-76",
@@ -986,7 +1137,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-15-Hidrante-urbano.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-38"
+    ]
   },
   {
     "id": "nota-tecnica-77",
@@ -999,7 +1153,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-16-Acesso-de-viaturas-em-edificacoes.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-39"
+    ]
   },
   {
     "id": "nota-tecnica-78",
@@ -1012,7 +1169,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-18-Compartimentacao-horizontal-e-vertical.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-41"
+    ]
   },
   {
     "id": "nota-tecnica-79",
@@ -1025,7 +1185,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-19-Seguranca-estrutural-contra-incendio-Resistencia-ao-fogo-dos-elementos-de-construcao.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-42"
+    ]
   },
   {
     "id": "nota-tecnica-80",
@@ -1038,7 +1201,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-02-Gas-GLPGN-Uso-predial.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-45"
+    ]
   },
   {
     "id": "nota-tecnica-81",
@@ -1051,7 +1217,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT5-02_2Ed_2023_Revogada.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-63"
+    ]
   },
   {
     "id": "nota-tecnica-82",
@@ -1064,7 +1233,10 @@ export const documents = [
     "edition": "Versão histórica",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT5-03_1Ed_2019_Revogada.pdf",
-    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "nota-tecnica-64"
+    ]
   },
   {
     "id": "decreto-lei-83",
@@ -1077,7 +1249,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO_LEI_N_247_DE-21_DE_JULHO_DE_1975.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-84",
@@ -1090,7 +1263,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/COSCIP.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-85",
@@ -1103,7 +1277,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO_42_2018_COSCIP_COMPILADO.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "decreto-88"
+    ]
   },
   {
     "id": "decreto-86",
@@ -1116,7 +1293,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO_42-2018_-_COSCIP_-_26.12.18.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-87",
@@ -1129,7 +1307,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/decreto_N46792_19_compilado-CA-ASSISTIDO_1675715633.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-88",
@@ -1142,7 +1321,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto-No-46.925_05.02.2020_retificado_DOERJ-036_27.02.2020.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "decreto-2",
+      "decreto-85"
+    ]
   },
   {
     "id": "nota-administrativa-89",
@@ -1155,7 +1338,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/CADASTRAMENTO-DE-EMPRESAS-FORMADORAS-E-PRESTADORAS-DE-SERVICO-DE-BRIGADA_1715713612.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-90",
@@ -1168,7 +1352,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/aditamento-administrativo-01_2023-republicado_1715713612.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-91",
@@ -1181,7 +1366,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/ADITAMENTO-ADMINISTRATIVO-DE-SERVICOS-TECNICOS-No-02-2023-%E2%80%93-USO-DE-ASSINATURAS-ELETRONICAS-1_1715713612.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-92",
@@ -1194,7 +1380,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/123-BOL-085-DE-10-05-24-ADITAMENTO-ADMINISTRATIVO-RESPONSABILIDADE-TECNICA-REFERENTE-AO-LEVANTAMENTO-ARQUITETONICO.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-93",
@@ -1207,7 +1394,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/07/Aditamento-Administrativo-de-Servicos-Tecnicos-02-2024-Nota-DGST-195-2024-Isencao-de-hidrante-urbano_1722279095.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-94",
@@ -1220,7 +1408,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/08/Aditamento-Administrativo-de-Servicos-Tecnicos-03-2024-Nota-DGST-198-2024-Autorizacao-para-emissao-de-certificado-aprovacao-parcial.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-95",
@@ -1233,7 +1422,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/06/aditamento-administrativo-01-de-2025-consolidado-nota-DGST-034-2025-nota-DGST-080-2025-e-nota-DGST-091-2025_1750859331.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-96",
@@ -1246,7 +1436,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/04/aditamento-administrativo-01-de-2025-consolidado-nota-DGST-034-2025-e-nota-DGST-080-2025_1745592861.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-97",
@@ -1259,7 +1450,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/02/aditamento-administrativo-01-de-2025.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-98",
@@ -1272,7 +1464,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/05/NOTA-CHEMG-326-2025_1747939382.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-99",
@@ -1285,7 +1478,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/09/NOTA-DGST-149-2025-Novo-Portal-do-Requerente.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-100",
@@ -1298,7 +1492,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NOTA-DGST-001-2026-Novo-Portal-do-Requerente.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-101",
@@ -1311,7 +1506,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/03/adiamento-administrativo-01-2026.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-102",
@@ -1324,7 +1520,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_dgst_246_2019.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-103",
@@ -1337,7 +1534,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_analise_proj_seguranca_adequacao_normativa.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-104",
@@ -1350,7 +1548,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/pdfs/notas-tecnicas/163%20-%20prorroga%C3%A7%C3%A3o%20de%20prazo%20da%20nota%20274_1604516029.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-105",
@@ -1363,7 +1562,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/analise_de_solicitacao_de_desinterdicao_por_inercia_NOTA_DGST_090-2021_1624975476.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-106",
@@ -1376,7 +1576,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_dgst_115-2020.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-107",
@@ -1389,7 +1590,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____0938.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-108",
@@ -1402,7 +1604,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_Nr_1535_-_26-09-1989.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-109",
@@ -1415,7 +1618,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____1587.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-110",
@@ -1428,7 +1632,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____1866.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-111",
@@ -1441,7 +1646,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_n_2026_de_22_de_julho_de_1992.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-112",
@@ -1454,7 +1660,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____2780.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-113",
@@ -1467,7 +1674,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____2803.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-114",
@@ -1480,7 +1688,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____3021.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-115",
@@ -1493,7 +1702,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____3714.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "lei-estadual-116",
@@ -1506,7 +1716,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_N_10519_de_17_de_Julho_de_2002.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-117",
@@ -1519,7 +1730,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Dec_Est_N_00718.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-118",
@@ -1532,7 +1744,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto_n_-16695_de_12_de_Julho_de_1991.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-119",
@@ -1545,7 +1758,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto_Estadual_Nr_35671_-_09-06-2004.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-120",
@@ -1558,7 +1772,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Dec_Est_N_37913.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-121",
@@ -1571,7 +1786,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto_Estadual_nr_44035_18_janeiro_2013.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-122",
@@ -1584,7 +1800,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto_nr_44089-2013.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "decreto-123",
@@ -1597,7 +1814,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/pdfs/from_dgst/DECRETO_TAC_N%C2%BA_10.2018_-_DI%C3%81RIO_OFICIAL_DE_12.06.2018.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-124",
@@ -1610,7 +1828,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_-094_de_18_de_Junho_de_1991.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-125",
@@ -1623,7 +1842,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_097_de_04_de_novembro_de_1991.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-126",
@@ -1636,7 +1856,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_108_de_06_de_janeiro_de_1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-127",
@@ -1649,7 +1870,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_109_-_21-01-1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-128",
@@ -1662,7 +1884,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_124_-_17-06-1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-129",
@@ -1675,7 +1898,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_SEDEC_N_125_de_29_de_junho_de_1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-130",
@@ -1688,7 +1912,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_135_-_16-09-1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-131",
@@ -1701,7 +1926,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_142_DE_15_DE_MARCO_DE_1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-132",
@@ -1714,7 +1940,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_148_-_25-05-1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-133",
@@ -1727,7 +1954,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_166_-_10-11-1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-134",
@@ -1740,7 +1968,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_169_DE_28_DE_NOVEMBRO_DE_1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-135",
@@ -1753,7 +1982,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_SEDEC_N_-170_de_12_de_dezembro_de_1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-136",
@@ -1766,7 +1996,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_172_de_22_de_dezembro_de_1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-137",
@@ -1779,7 +2010,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_180_-_16-03-1999.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-138",
@@ -1792,7 +2024,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_186_de_26_de_maio_de_1999.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-139",
@@ -1805,7 +2038,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_N_206_de_12_de_julho_de_2000.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-140",
@@ -1818,7 +2052,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_278_de_21-12-2004.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-141",
@@ -1831,7 +2066,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_279_de_11_de_Janeiro_de_2005.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-142",
@@ -1844,7 +2080,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_284_-_25-04-2005.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-143",
@@ -1857,7 +2094,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__oN_-293_de_18_de_outubro_de_2005.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-144",
@@ -1870,7 +2108,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/resolucao_300_06.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-145",
@@ -1883,7 +2122,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_nr_31_10_de_-janeiro_de_2013.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-146",
@@ -1896,7 +2136,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_SSP_n_056_de_08_de_agosto_de_1995.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-147",
@@ -1909,7 +2150,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolu__o_SSP_N_071_de_18_de_setembro_de_1995.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "resolucao-148",
@@ -1922,7 +2164,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_CREMERJ_187_de_2003.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-149",
@@ -1935,7 +2178,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_CBMERJ_Nr_078_de_06_de_Setembro_de_1993.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-150",
@@ -1948,7 +2192,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_n_084_de_14_de_junho_de_1994.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-151",
@@ -1961,7 +2206,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_CBMERJ_Nr_156-31-10-2000.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-152",
@@ -1974,7 +2220,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_CBMERJ_N_383_de_10_de_Marco_de_2005.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-153",
@@ -1987,7 +2234,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_nr_722_de_04_de_fevereiro_de_2013.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-154",
@@ -2000,7 +2248,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/PORTARIA_Nr_727_DE_09_DE_ABRIL_DE_2013.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-155",
@@ -2013,7 +2262,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria_1008-2018.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "portaria-156",
@@ -2026,7 +2276,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Portaria-CBMERJ-1051-2019.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-157",
@@ -2039,7 +2290,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01_2011-Nota_DGST_247_2011.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-158",
@@ -2052,7 +2304,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_de_Servicos_Tecnicos_02_2011.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-159",
@@ -2065,7 +2318,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01_2012-Nota_DGST_108_2012-Jirau-Definicao.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-160",
@@ -2078,7 +2332,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_02_2012-Nt171-2012.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-161",
@@ -2091,7 +2346,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Anexo_Nota_DGST_171-2012-NBR_10898.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-162",
@@ -2104,7 +2360,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Anexo_Nota_DGST_171-2012-NBR_13434.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-163",
@@ -2117,7 +2374,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-DGST-2012-212-Aditamento-Administrativo-2012-02-Complemento.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-164",
@@ -2130,7 +2388,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento-Administrativo-03-2014-Nt133-2014.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-165",
@@ -2143,7 +2402,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento-Administrativo-06-2014-Nt208-14-Centrais-de-GLP-Republicacao.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-166",
@@ -2156,7 +2416,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_08_2014-Nota_DGST_225_2014.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-167",
@@ -2169,7 +2430,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_09-2014-Nt226-14-Competencia_para_Interdicao.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-168",
@@ -2182,7 +2444,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/254-BOL-047-DE-09-12-20-ADITAMENTO-TECNICO-ADM-N020_1614192661.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-169",
@@ -2195,7 +2458,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01-2015-Nt006-15.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-170",
@@ -2208,7 +2472,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt_135-2018-adit_adm.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-171",
@@ -2221,7 +2486,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/RT-BM5-001-2016-Parametros_Isencao_Sprinkler.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-172",
@@ -2234,7 +2500,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt207-14-Descentralizacao-das-SST.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-173",
@@ -2247,7 +2514,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt227-2014-Procedimentos-para-MEIs-Isencao-de-taxas.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "nota-administrativa-174",
@@ -2260,7 +2528,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-DGST-236-2018.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-175",
@@ -2273,7 +2542,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-GAB-CMDO-GERAL-012-2019.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-176",
@@ -2286,7 +2556,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Parecer_T_cnico_N_016_2008.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "documento-relacionado-177",
@@ -2299,7 +2570,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Parecer_Tecnico_PT-00012-11.pdf",
-    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-178",
@@ -2312,7 +2584,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/01_ICG_1-1_Uniformes_FORMATADA_BM1_04.04.2022v_SITE.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-179",
@@ -2325,7 +2598,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/02_ICG_1-2_Efetivo_e_atividades_FORMATADA_BM1_04.04.22v_SITE.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-180",
@@ -2338,7 +2612,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/03_ICG_1-3_Ingresso_FORMATADA_BM1_04.04.22v_SITE.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-181",
@@ -2351,7 +2626,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/04_ICG_1-4_RG_FORMATADA_BM1_04.04.22v_SITE.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-182",
@@ -2364,7 +2640,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/05_ICG_1-5_Capacitao_TEMPORRIOS_FORMATADA_BM1_04.04.22v_SITE.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-183",
@@ -2377,7 +2654,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-6.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-184",
@@ -2390,7 +2668,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-7.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-185",
@@ -2403,7 +2682,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/08/ICG_1_8_Boletim_113__de_26.06.26.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "instrucao-normativa-202"
+    ]
   },
   {
     "id": "instrucao-normativa-186",
@@ -2416,7 +2698,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/07/ICG-1-9.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-187",
@@ -2429,7 +2712,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/10_-ICG_1-10_Processo-Administrativo.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-188",
@@ -2442,7 +2726,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/11_ICG_1-11_Frias-Licenas-Afastamentos-e-Averbaes.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-189",
@@ -2455,7 +2740,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_2_1_Norma_Interna_de_Armamentos.pdf",
-    "description": "Registro coletado da página oficial: Grupo 2 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 2 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-190",
@@ -2468,7 +2754,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_3_1_SCCO.pdf",
-    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-191",
@@ -2481,7 +2768,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_3_2_GRD.pdf",
-    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-192",
@@ -2494,7 +2782,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/06/ICG_3_3.pdf",
-    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-193",
@@ -2507,7 +2796,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/08/ICG-3-4-Diretrizes-para-a-solicitacao-de-pagamento-do-RAS-em-Operacoes-Especiais.pdf",
-    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "instrucao-normativa-194"
+    ]
   },
   {
     "id": "instrucao-normativa-194",
@@ -2520,7 +2812,10 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_3-4.pdf",
-    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "instrucao-normativa-193"
+    ]
   },
   {
     "id": "instrucao-normativa-195",
@@ -2533,7 +2828,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_2.pdf",
-    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-196",
@@ -2546,7 +2842,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_3.pdf",
-    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-197",
@@ -2559,7 +2856,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_4.pdf",
-    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-198",
@@ -2572,7 +2870,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/ICG-5-01.pdf",
-    "description": "Registro coletado da página oficial: Grupo 5 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 5 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-199",
@@ -2585,7 +2884,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/02/ICG-6-01.pdf",
-    "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-200",
@@ -2598,7 +2898,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_6-2.pdf",
-    "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-201",
@@ -2611,7 +2912,8 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_7-1.pdf",
-    "description": "Registro coletado da página oficial: Grupo 7 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 7 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": []
   },
   {
     "id": "instrucao-normativa-202",
@@ -2624,6 +2926,9 @@ export const documents = [
     "edition": "Publicação oficial",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/138064-_ICG-08-EXCLUSAO-TEMPORARIO.pdf",
-    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial."
+    "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "relatedIds": [
+      "instrucao-normativa-185"
+    ]
   }
 ]
