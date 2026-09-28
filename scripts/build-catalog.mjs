@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { urlId } from './lib/ids.mjs'
 import { parseCsv } from './lib/csv.mjs'
+import { publicationFromText } from './lib/publication.mjs'
 
 const sources = [
   { page: 'https://www.cbmerj.rj.gov.br/notas-tecnicas/', collection: 'Notas técnicas' },
@@ -246,11 +247,14 @@ const pdfMetadata = existsSync(pdfMetadataPath) ? JSON.parse(await readFile(pdfM
 for (const doc of unique) {
   const meta = pdfMetadata[doc.pdf]
   if (meta?.textless) doc.textless = true
-  const publication = meta?.publication
+  // O título coletado ("Nota DGST Nº 246/2019 - Boletim Ostensivo SEDEC/CBMERJ nº 221, de
+  // 27/11/2019 - ...") é mais confiável que o corpo do PDF, que pode citar boletins de outros atos.
+  const fromTitle = publicationFromText(doc.title)
+  const publication = fromTitle ?? meta?.publication
   if (!publication) continue
   const publicationYear = Number(publication.date.slice(0, 4))
   if (doc.year && publicationYear < doc.year) continue
-  doc.publication = { ...publication, source: 'Cabeçalho do PDF' }
+  doc.publication = { ...publication, source: fromTitle ? 'Título na página oficial' : 'Cabeçalho do PDF' }
   if (!doc.year) { doc.year = publicationYear; doc.yearSource = `Boletim da SEDEC/CBMERJ nº ${publication.bulletin}, de ${publication.date.split('-').reverse().join('/')}` }
 }
 
