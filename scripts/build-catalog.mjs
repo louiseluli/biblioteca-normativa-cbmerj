@@ -185,7 +185,9 @@ const unique = [...bestByUrl.values()].map((record) => {
 // técnica da ALERJ informa a situação oficial de cada lei. Quando a mesma lei já veio da página
 // de regularização do CBMERJ (com o PDF), o registro do CBMERJ é mantido e só recebe a situação
 // e o link para o texto na ALERJ; as demais entram como registros próprios.
-const alerjKinds = { 'lei ordinária': 'Lei estadual', 'lei complementar': 'Lei complementar', 'emenda constitucional': 'Emenda constitucional' }
+const alerjKinds = { 'lei ordinária': 'Lei estadual', 'lei complementar': 'Lei complementar', 'emenda constitucional': 'Emenda constitucional', decreto: 'Decreto', 'decreto estadual': 'Decreto', 'resolução': 'Resolução', 'decreto legislativo': 'Decreto legislativo' }
+const alerjLabels = { 'Lei estadual': 'Lei', 'Lei complementar': 'Lei Complementar', 'Emenda constitucional': 'Emenda Constitucional', Decreto: 'Decreto', Resolução: 'Resolução ALERJ', 'Decreto legislativo': 'Decreto Legislativo' }
+const alerjType = (kind) => alerjKinds[kind.trim().toLowerCase()] ?? (kind.trim() ? kind.trim().charAt(0).toUpperCase() + kind.trim().slice(1).toLowerCase() : 'Norma estadual')
 const numberDigits = (value) => String(value ?? '').replace(/\D/g, '')
 const formatLawNumber = (value) => Number(numberDigits(value)).toLocaleString('pt-BR')
 
@@ -214,21 +216,23 @@ const alerjData = existsSync(alerjPath) ? JSON.parse(await readFile(alerjPath, '
 const alerjSource = 'https://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144'
 let alerjMerged = 0
 for (const law of alerjData.laws) {
-  const type = alerjKinds[law.kind.toLowerCase()]
-  if (!type) continue
+  const type = alerjType(law.kind)
   const digits = numberDigits(law.number)
   const existing = unique.find((doc) => doc.origin === 'CBMERJ' && doc.type === type && numberDigits(doc.number) === digits && doc.year === law.year)
   const status = alerjStatus(law)
   const extra = { ...status, alerjUrl: law.url, revocation: law.revocation || '', author: law.author || '' }
   if (existing) { Object.assign(existing, extra); alerjMerged += 1; continue }
-  const label = type === 'Lei estadual' ? 'Lei' : type === 'Lei complementar' ? 'Lei Complementar' : 'Emenda Constitucional'
+  const label = alerjLabels[type] ?? type
+  // Normas que só citam o CBMERJ (créditos orçamentários, estrutura do Executivo...) entram no
+  // acervo, mas separadas das que tratam do tema, para o filtro de página de origem.
+  const base = law.view === 'executivo' ? 'Decretos estaduais (ALERJ)' : 'Legislação estadual (ALERJ)'
   unique.push({
     id: `alerj-${slugify(label)}-${digits}-${law.year}`,
     type,
     number: `${label} ${formatLawNumber(law.number)}`,
     title: sentenceCase(law.title || `${label} nº ${law.number}/${law.year}`),
     year: law.year,
-    theme: 'Legislação estadual (ALERJ)',
+    theme: law.relevance === 'mencao' ? `${base} · cita o CBMERJ` : base,
     edition: 'Texto compilado pela ALERJ',
     origin: 'ALERJ',
     source: alerjSource,

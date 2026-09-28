@@ -1,21 +1,19 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import path from 'node:path'
-import { SEARCH_CAP, fetchLawLines, lawCacheId, parseLaw, searchLegislation } from './lib/alerj.mjs'
+import { SEARCH_CAP, VIEWS, fetchLawLines, lawCacheId, parseDecree, parseLaw, searchLegislation } from './lib/alerj.mjs'
 
-// Coleta leis estaduais relacionadas ao CBMERJ na base de legislação da ALERJ e grava os
-// metadados (incluindo a situação oficial informada pela ALERJ) em scripts/data/alerj-laws.json,
-// consumido por build-catalog.mjs. O texto integral fica só no cache local (.cache/alerj),
-// de onde extract-text.mjs o lê para o índice de busca.
-const queries = ['corpo de bombeiros', 'bombeiro militar', 'bombeiros militares', 'CBMERJ', 'incendio e panico', 'prevencao contra incendio', 'combate a incendio', 'guarda-vidas', 'salva-vidas', 'defesa civil', 'brigada de incendio', 'brigadista']
+// Coleta, na base da ALERJ, as normas estaduais que citam o CBMERJ — leis, emendas e resoluções
+// (visão "Legislação") e decretos (visão "Atos do Executivo") — e grava os metadados, com a
+// situação oficial informada pela ALERJ, em scripts/data/alerj-laws.json, consumido por
+// build-catalog.mjs. Todo resultado das consultas entra no acervo; "relevance" separa as normas
+// cuja ementa trata do tema das que só o citam no texto (orçamento, estrutura do Executivo...).
+// O texto integral fica só no cache local (.cache/alerj), de onde extract-text.mjs o lê.
+const queries = ['CBMERJ', 'corpo de bombeiros', 'bombeiro militar', 'bombeiros militares', 'bombeiro-militar', 'incendio e panico', 'prevencao contra incendio', 'combate a incendio', 'guarda-vidas', 'salva-vidas', 'defesa civil', 'brigada de incendio', 'brigadista', 'FUNESBOM']
 // Termos usados para particionar uma consulta que bateu no teto de 250 resultados:
 // "q AND termo" + "q AND NOT termo" cobrem o mesmo conjunto que "q".
-const splitTerms = ['militar', 'estadual', 'servidor', 'municipio', 'pensao', 'saude', 'educacao']
-// Só entram leis cuja ementa ou assunto indexado trata do tema; a busca full-text também
-// casa leis que citam o Corpo de Bombeiros só de passagem (orçamento, listas de órgãos...).
-const relevant = /bombeir|cbmerj|inc[eê]ndio|p[aâ]nico|defesa civil|guarda-?vidas|salva-?vidas|brigad/i
-const notNormative = /declara de utilidade p[uú]blica/i
-const keptKinds = /^(Lei Ordinária|Lei Complementar|Emenda Constitucional)$/i
+const splitTerms = ['militar', 'estadual', 'servidor', 'municipio', 'pensao', 'saude', 'educacao', 'orcamento', 'credito', 'policia', 'lei', 'decreto']
+const relevant = /bombeir|cbmerj|inc[eê]ndio|p[aâ]nico|defesa civil|guarda-?vidas|salva-?vidas|brigad|funesbom|sedec/i
 const CACHE_DIR = '.cache/alerj'
 // O servidor da ALERJ limita a taxa (cerca de 2 requisições a cada poucos segundos; acima
 // disso derruba a conexão): lê uma ficha por vez, com pausa entre elas e novas tentativas com
@@ -23,21 +21,27 @@ const CACHE_DIR = '.cache/alerj'
 const DELAY_MS = 2500
 const RETRIES = 4
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const warnings = []
 
-async function searchAll(query, depth = 0) {
-  const rows = await searchLegislation(query)
+async function searchAll(query, view, depth = 0) {
+  const rows = await searchLegislation(query, view)
+  await sleep(DELAY_MS)
   if (rows.length < SEARCH_CAP) return rows
   const term = splitTerms[depth]
-  if (!term) { console.warn(`Aviso: "${query}" ainda bate no teto de ${SEARCH_CAP} resultados; alguns podem faltar.`); return rows }
-  return [...await searchAll(`${query} AND ${term}`, depth + 1), ...await searchAll(`${query} AND NOT ${term}`, depth + 1)]
+  if (!term) { warnings.push(`"${query}" ainda bate no teto de ${SEARCH_CAP} resultados; alguns podem faltar.`); return rows }
+  return [...await searchAll(`${query} AND ${term}`, view, depth + 1), ...await searchAll(`${query} AND NOT ${term}`, view, depth + 1)]
 }
 
 const found = new Map()
-for (const query of queries) {
-  const rows = await searchAll(query)
-  for (const row of rows) found.set(row.url, row)
-  console.log(`ALERJ "${query}": ${rows.length} resultados (${found.size} únicos até agora)`)
+for (const [viewName, view] of Object.entries(VIEWS)) {
+  for (const query of queries) {
+    const rows = await searchAll(query, view)
+    for (const row of rows) found.set(row.url, { ...row, view: viewName })
+    console.log(`ALERJ [${viewName}] "${query}": ${rows.length} resultados (${found.size} únicos até agora)`)
+  }
 }
+
+const isDecree = (url) => /\/decest\.nsf\//i.test(url)
 
 async function loadLaw(url) {
   const id = lawCacheId(url)
@@ -48,32 +52,40 @@ async function loadLaw(url) {
     try { lines = await fetchLawLines(url); break } catch (error) { if (attempt >= RETRIES) throw error; await sleep(DELAY_MS * 4 * (attempt + 1)) }
   }
   await sleep(DELAY_MS)
-  const record = { ...parseLaw(lines), url, fetchedAt: new Date().toISOString() }
+  const record = { ...(isDecree(url) ? parseDecree(lines) : parseLaw(lines)), url, fetchedAt: new Date().toISOString() }
   await mkdir(CACHE_DIR, { recursive: true })
   await writeFile(cachePath, JSON.stringify(record), 'utf8')
   return record
 }
 
-// A ementa já vem na lista de resultados: só baixa a ficha (lenta, por causa do limite de
-// taxa) das normas cuja ementa indica relação com o tema. Perde-se apenas o que é relevante
-// só pelo campo "Assunto" da ficha, sem nenhuma menção na ementa.
-const urls = [...found.values()].filter((row) => relevant.test(row.ementa) && !notNormative.test(row.ementa)).map((row) => row.url)
-console.log(`${urls.length} de ${found.size} resultados têm ementa relacionada; lendo as fichas...`)
+const rows = [...found.values()]
+console.log(`${rows.length} normas únicas; lendo as fichas (as já lidas vêm do cache)...`)
 const laws = []
 const failures = []
-for (const url of urls) {
-  try { laws.push(await loadLaw(url)) } catch (error) { failures.push(`${url}: ${error.message}`) }
-  if ((laws.length + failures.length) % 50 === 0) console.log(`Fichas lidas: ${laws.length + failures.length}/${urls.length}`)
+for (const row of rows) {
+  try {
+    const law = await loadLaw(row.url)
+    // A lista de resultados traz número, ano e ementa mesmo quando a ficha vem incompleta.
+    laws.push({ ...law, number: law.number || row.number, year: law.year || row.year, ementa: law.ementa || row.ementa, author: law.author || row.author, published: row.published, view: row.view })
+  } catch (error) { failures.push(`${row.url}: ${error.message}`) }
+  if ((laws.length + failures.length) % 50 === 0) console.log(`Fichas lidas: ${laws.length + failures.length}/${rows.length}`)
 }
 
-const selected = laws.map(({ text, ...law }) => law)
-  .filter((law) => keptKinds.test(law.kind))
-  .filter((law) => relevant.test(`${law.ementa} ${law.subject} ${law.subSubject}`) && !notNormative.test(law.ementa))
-  .sort((a, b) => (a.year - b.year) || (Number(a.number.replace(/\D/g, '')) - Number(b.number.replace(/\D/g, ''))))
+const selected = laws.map(({ text, ...law }) => ({ ...law, relevance: relevant.test(`${law.ementa} ${law.subject} ${law.subSubject}`) ? 'tema' : 'mencao' }))
+  .sort((a, b) => (a.year - b.year) || (Number(String(a.number).replace(/\D/g, '')) - Number(String(b.number).replace(/\D/g, ''))))
+
+// Uma coleta que falhou em muitas fichas não substitui a anterior: melhor dados de uma semana
+// atrás do que um acervo que perdeu metade das leis por instabilidade do servidor.
+const previous = existsSync('scripts/data/alerj-laws.json') ? JSON.parse(await readFile('scripts/data/alerj-laws.json', 'utf8')).laws.length : 0
+if (failures.length > rows.length * 0.2 && selected.length < previous) {
+  console.error(`Falhas demais (${failures.length} de ${rows.length}); scripts/data/alerj-laws.json não foi alterado. Rode de novo: o que já foi lido está em cache.`)
+  process.exit(1)
+}
 
 await mkdir('scripts/data', { recursive: true })
 await writeFile('scripts/data/alerj-laws.json', `${JSON.stringify({ collectedAt: new Date().toISOString().slice(0, 10), laws: selected }, null, 2)}\n`, 'utf8')
-const bySituation = selected.reduce((acc, law) => ({ ...acc, [law.situation || '(vazio)']: (acc[law.situation || '(vazio)'] || 0) + 1 }), {})
-console.log(`Leis ALERJ: ${laws.length} fichas lidas, ${selected.length} relevantes gravadas em scripts/data/alerj-laws.json.`)
-console.log(bySituation)
+const tally = (key) => selected.reduce((acc, law) => ({ ...acc, [law[key] || '(vazio)']: (acc[law[key] || '(vazio)'] || 0) + 1 }), {})
+console.log(`ALERJ: ${selected.length} normas gravadas em scripts/data/alerj-laws.json.`)
+console.log(tally('kind'), tally('relevance'), tally('situation'))
+for (const warning of warnings) console.warn(`Aviso: ${warning}`)
 if (failures.length) console.log(`Falhas (${failures.length}):\n${failures.join('\n')}`)

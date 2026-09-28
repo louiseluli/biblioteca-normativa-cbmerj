@@ -6,7 +6,10 @@ import https from 'node:https'
 // 250 resultados por consulta; os documentos individuais são servidos pelo alerjln1, que
 // fecha a conexão sem resposta quando a requisição não traz um User-Agent de navegador.
 const SEARCH_URL = 'https://www3.alerj.rj.gov.br/lotus_notes/consultaNotes.asp'
-const LEGISLACAO_VIEW = 5 // índice da visão "Legislação" no seletor de pesquisa da ALERJ
+// Índices das visões no seletor de pesquisa da ALERJ: 5 = "Legislação" (leis, emendas,
+// resoluções), 0 = "Atos do Executivo" (decretos estaduais). As demais visões são processo
+// legislativo, discursos e constituições, não normas em vigor.
+export const VIEWS = { legislacao: 5, executivo: 0 }
 export const SEARCH_CAP = 250
 const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36'
 const TIMEOUT_MS = 120_000
@@ -32,9 +35,9 @@ function decodeEntities(value) {
   return value.replace(/&nbsp;|&#160;/gi, ' ').replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
 }
 
-// Uma consulta à visão "Legislação": devolve as linhas da tabela de resultados.
-export async function searchLegislation(query) {
-  const html = await get(`${SEARCH_URL}?txtquery=${encodeURIComponent(query)}&hdfId=${LEGISLACAO_VIEW}`, 'utf-8')
+// Uma consulta a uma visão da base: devolve as linhas da tabela de resultados.
+export async function searchLegislation(query, view = VIEWS.legislacao) {
+  const html = await get(`${SEARCH_URL}?txtquery=${encodeURIComponent(query)}&hdfId=${view}`, 'utf-8')
   if (/Caracteres inv[aá]lidos/i.test(html)) throw new Error(`Consulta rejeitada pela ALERJ: ${query}`)
   const rows = []
   for (const [row] of html.matchAll(/<tr><td[\s\S]*?<\/tr>/g)) {
@@ -42,7 +45,7 @@ export async function searchLegislation(query) {
     const href = row.match(/href="([^"]+\?OpenDocument)/)?.[1]
     if (!href) continue
     const text = (cell) => decodeEntities(cell.replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim()
-    rows.push({ url: decodeEntities(href).replace(/^http:/, 'https:'), number: text(cells[2]), year: Number(text(cells[3])) || null, published: text(cells[4]), ementa: text(cells[5]), author: text(cells[6]) })
+    rows.push({ url: decodeEntities(href).replace(/&Highlight=.*$/, '').replace(/^http:/, 'https:'), number: text(cells[2]), year: Number(text(cells[3])) || null, published: text(cells[4]), ementa: text(cells[5]), author: text(cells[6]) })
   }
   return rows
 }
@@ -89,6 +92,35 @@ export function parseLaw(lines) {
     subject: field(lines, 'Assunto:', fichaStart),
     subSubject: field(lines, 'Sub Assunto:', fichaStart),
     text: lines.slice(titleIndex === -1 ? textStart + 1 : titleIndex, bodyEnd).join('\n'),
+  }
+}
+
+// Página de um decreto na base decest.nsf: "Decreto nº: | 32129 | / | 2002" no cabeçalho, a
+// situação entre colchetes em "Texto do Decreto Estadual [ Em Vigor ]" e, no rodapé, "Tipo de
+// Revogação:" seguido da situação e "Texto da Revogação :" seguido do texto, quando houver.
+export function parseDecree(lines) {
+  const numberIndex = lines.indexOf('Decreto nº:')
+  const header = lines.findIndex((line) => /^Texto do Decreto/i.test(line))
+  const titleIndex = lines.findIndex((line, i) => i > header && /^DECRETO/i.test(line))
+  const end = lines.findIndex((line) => /^Data da Publica[cç][aã]o:/i.test(line))
+  const revocationType = lines.indexOf('Tipo de Revogação:')
+  const bracket = header === -1 ? '' : lines[header].match(/\[\s*([^\]]+?)\s*\]/)?.[1] ?? ''
+  const afterType = revocationType === -1 ? '' : lines[revocationType + 1] ?? ''
+  const revocationLabel = lines.indexOf('Texto da Revogação :')
+  const revocation = revocationLabel === -1 ? '' : lines[revocationLabel + 1] ?? ''
+  return {
+    kind: 'Decreto',
+    number: numberIndex === -1 ? '' : lines[numberIndex + 1] ?? '',
+    year: numberIndex === -1 ? null : Number(lines[numberIndex + 3]) || null,
+    title: titleIndex === -1 ? '' : lines[titleIndex].replace(/\.$/, ''),
+    ementa: titleIndex === -1 ? '' : lines[titleIndex + 1] ?? '',
+    situation: bracket || (/^(Redação|Texto da|Atalho)/.test(afterType) ? '' : afterType),
+    revocation: /^(Tipo de Revoga|Redação Texto|Texto da Regulamenta|Atalho)/.test(revocation) ? '' : revocation,
+    adiSituation: '',
+    author: '',
+    subject: '',
+    subSubject: '',
+    text: lines.slice(titleIndex === -1 ? header + 1 : titleIndex, end === -1 ? lines.length : end).join('\n'),
   }
 }
 
