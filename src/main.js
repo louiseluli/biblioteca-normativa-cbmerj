@@ -8,7 +8,7 @@ const documentsById = new Map(documents.map((document) => [document.id, document
 const defaults = { query: '', type: 'Todos', year: 'Todos', theme: 'Todos', status: 'Todos', origin: 'Todos', sort: 'recent', page: 1, pageSize: 20 }
 const state = { ...defaults }
 const pageSizes = [10, 20, 50, 100]
-const typeIcons = { 'Nota técnica': 'NT', Portaria: 'PT', Decreto: 'DEC', 'Decreto-lei': 'DL', 'Lei estadual': 'LEI', 'Lei complementar': 'LC', 'Emenda constitucional': 'EC', 'Lei federal': 'LF', Resolução: 'RES', 'Nota administrativa': 'NA', 'Instrução normativa': 'IN', 'Documento relacionado': 'DOC' }
+const typeIcons = { 'Nota técnica': 'NT', Portaria: 'PT', Decreto: 'DEC', 'Decreto-lei': 'DL', 'Lei estadual': 'LEI', 'Lei complementar': 'LC', 'Emenda constitucional': 'EC', 'Lei federal': 'LF', Resolução: 'RES', 'Nota administrativa': 'NA', 'Instrução normativa': 'IN', 'Parecer técnico': 'PAR', 'Regulamento técnico': 'RT', 'Documento relacionado': 'DOC' }
 // Situações que vêm de uma fonte oficial (ALERJ, página do CBMERJ); "Não verificada" é o
 // padrão quando nenhuma fonte informa a vigência (ver statusSource em cada registro).
 const statusClasses = { 'Em vigor': 'in-force', Revogada: 'revoked', Histórica: 'historical', 'Não verificada': 'unverified' }

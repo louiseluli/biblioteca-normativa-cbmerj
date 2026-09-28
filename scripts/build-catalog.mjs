@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
+import { urlId } from './lib/ids.mjs'
 
 const sources = [
   { page: 'https://www.cbmerj.rj.gov.br/notas-tecnicas/', collection: 'Notas técnicas' },
@@ -64,7 +65,10 @@ function extractNumber(title) {
   const codeMatch = title.match(/\b(?:NT|ICG)\s*[-_]?\s*\d+[-_]\d+/i)
   if (codeMatch) return codeMatch[0].toUpperCase().replace(/_/g, '-').replace(/\s+/g, ' ')
   const actMatch = title.match(/\b(decreto[\s-]*lei|decreto|lei estadual|lei|portaria(?:\s+cbmerj)?|resolu[cç][aã]o(?:\s+[a-zà-ÿ]+)?|nota\s+dgst|nota\s+chemg|aditamento administrativo(?:\s+de\s+servi[cç]os\s+t[eé]cnicos)?)\s*n?[ºo°.]*\s*(\d+(?:\.\d+)?(?:\/\d+)?)/i)
-  if (actMatch) return `${actMatch[1].replace(/\s+/g, ' ').trim()} ${actMatch[2]}`.replace(/\s+/g, ' ')
+  // "Resolução Nº 094": o "N" do "Nº" não é sigla de órgão emissor.
+  if (actMatch) return `${actMatch[1].replace(/\s+N$/i, '').replace(/\s+/g, ' ').trim()} ${actMatch[2]}`.replace(/\s+/g, ' ')
+  const other = title.match(/\b(parecer t[eé]cnico|regulamento t[eé]cnico|nota\s+[A-Z][A-Z/.-]*(?:\s+[A-Z-]+)?)\s*n?[ºo°.]*\s*([\w/.-]*\d[\w/.-]*)/i)
+  if (other) return `${other[1].replace(/\s+/g, ' ')} ${other[2]}`
   return ''
 }
 
@@ -82,7 +86,12 @@ function classify(title, collection) {
   if (/^lei\b/i.test(head)) return isFederalLaw(head) ? 'Lei federal' : 'Lei estadual'
   if (/^resolu[cç][aã]o/i.test(head)) return 'Resolução'
   if (/^portaria/i.test(head)) return 'Portaria'
-  if (/^(?:nota\s+dgst|nota\s+chemg|aditamento administrativo)/i.test(head)) return 'Nota administrativa'
+  if (/^parecer t[eé]cnico/i.test(head)) return 'Parecer técnico'
+  if (/^regulamento t[eé]cnico/i.test(head)) return 'Regulamento técnico'
+  if (/^(?:nota\s+[a-z]|(?:anexo|complemento) ao aditamento|aditamento administrativo)/i.test(head)) return 'Nota administrativa'
+  // Títulos que começam pelo assunto e só citam o ato no fim ("Estações de recarga ... - Nota
+  // CHEMG 326/2025"): uma nota numerada no próprio título identifica o documento.
+  if (/\bnota\s+[A-Z][A-Z/.-]*(?:\s+[A-Z-]+)?\s+(?:n[ºo°.]*\s*)?\d+\/\d{4}/i.test(head)) return 'Nota administrativa'
   return 'Documento relacionado'
 }
 
@@ -151,11 +160,11 @@ for (const record of records) {
   if (!current || record.title.length > current.title.length) bestByUrl.set(record.url, record)
 }
 
-const unique = [...bestByUrl.values()].map((record, index) => {
+const unique = [...bestByUrl.values()].map((record) => {
   const type = classify(record.title, record.collection)
   const sourcePage = sources.find((source) => source.collection === record.collection)?.page ?? sources[0].page
   return {
-    id: `${slugify(type)}-${index + 1}`,
+    id: `${slugify(type)}-${urlId(record.url)}`,
     type,
     number: extractNumber(record.title),
     title: record.title,
@@ -226,6 +235,22 @@ for (const law of alerjData.laws) {
     description: sentenceCase(law.ementa),
     ...extra,
   })
+}
+
+// Boletim de publicação lido no próprio PDF (scripts/data/pdf-metadata.json, gerado por
+// extract-text.mjs). Uma menção a boletim anterior ao ano do ato é citação de outra norma, não
+// a publicação dele; quando o título não traz ano (caso das ICGs), o boletim o fornece.
+const pdfMetadataPath = 'scripts/data/pdf-metadata.json'
+const pdfMetadata = existsSync(pdfMetadataPath) ? JSON.parse(await readFile(pdfMetadataPath, 'utf8')) : {}
+for (const doc of unique) {
+  const meta = pdfMetadata[doc.pdf]
+  if (meta?.textless) doc.textless = true
+  const publication = meta?.publication
+  if (!publication) continue
+  const publicationYear = Number(publication.date.slice(0, 4))
+  if (doc.year && publicationYear < doc.year) continue
+  doc.publication = { ...publication, source: 'Cabeçalho do PDF' }
+  if (!doc.year) { doc.year = publicationYear; doc.yearSource = `Boletim da SEDEC/CBMERJ nº ${publication.bulletin}, de ${publication.date.split('-').reverse().join('/')}` }
 }
 
 // Relações entre atos: a página de notas técnicas guarda cada edição como um registro
