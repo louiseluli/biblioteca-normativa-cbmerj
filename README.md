@@ -15,14 +15,35 @@ O catálogo público é regenerado a partir das páginas oficiais configuradas n
 
 ```bash
 npm run alerj:update    # leis estaduais da ALERJ (lento: ~40 min na primeira vez, depois usa cache)
-npm run catalog:update
-npm run search:update
+npm run data:update     # catálogo → texto dos PDFs → catálogo de novo (usa o boletim lido no PDF) → Livro de Ordens
 npm run build
 ```
+
+Toda segunda-feira o workflow `Update data` (`.github/workflows/update-data.yml`) roda essa sequência no GitHub Actions e abre um pull request com o que mudou; o site só é atualizado quando a curadoria faz o merge. Ele também pode ser disparado manualmente na aba Actions.
 
 `alerj:update` consulta a base de legislação da ALERJ com termos ligados ao CBMERJ (corpo de bombeiros, bombeiro militar, incêndio e pânico, defesa civil, guarda-vidas...), mantém as leis ordinárias, complementares e emendas constitucionais cuja ementa trata do tema, lê a ficha técnica de cada uma (situação oficial, texto da revogação, autoria) e grava os metadados em `scripts/data/alerj-laws.json` (versionado). O servidor da ALERJ limita a taxa de requisições, por isso as fichas são lidas uma a uma, com pausa; o que já foi lido fica em `.cache/alerj/` e não é pedido de novo.
 
 `catalog:update` raspa as páginas de Notas Técnicas, Instruções Normativas e Legislação/Regularização do site do CBMERJ e regera `src/data/documents.js`. `search:update` baixa o PDF de cada documento, extrai o texto (com `pdf-parse`) e gera `public/search-index.json`, o índice usado pela busca no navegador (MiniSearch). Rode `search:update` sempre que o catálogo mudar — o índice antigo continua funcionando, só fica desatualizado.
+
+`search:update` também grava `scripts/data/pdf-metadata.json` com o boletim de publicação lido no cabeçalho do PDF ("Publicado no Boletim da SEDEC/CBMERJ nº 059, de 31 de março de 2022"); o catálogo usa esse dado para preencher o ano de atos cujo título não o traz (caso das ICGs). PDFs digitalizados, sem camada de texto, passam por OCR quando `pdftoppm` (poppler) e `tesseract` estão instalados — de preferência com o idioma `por` (`brew install tesseract-lang` no macOS).
+
+### Curadoria: cadastro manual e correções em lote
+
+As planilhas em `data/` são a parte do banco mantida por pessoas. Podem ser editadas no Excel ou no Google Planilhas (exportando como CSV, com `;` ou `,`) e são reaplicadas a cada geração, então não se perdem numa nova coleta. Uma linha inválida interrompe a geração com a mensagem do erro, em vez de publicar dado errado.
+
+- `data/documentos-manuais.csv` — um documento por linha, para cadastrar em lote o que não está em nenhuma página coletada. Colunas: `tipo;numero;titulo;ano;data_publicacao;boletim;situacao;fonte_situacao;tema;url_pdf;url_fonte;descricao`. Obrigatórios: `tipo`, `titulo` e `url_pdf` (ou `url_fonte`). `url_pdf` pode ser uma URL oficial ou um arquivo copiado para `public/acervo/` (ex.: `acervo/portaria-1234.pdf`). Qualquer `situacao` diferente de "Não verificada" exige `fonte_situacao`.
+- `data/correcoes.csv` — corrige um campo de um registro coletado: `id;campo;valor;justificativa`. O `id` aparece em `src/data/documents.js` e é estável (derivado da URL do PDF). Campos corrigíveis: `tipo`, `numero`, `titulo`, `ano`, `tema`, `situacao`, `fonte_situacao`, `descricao`, `edicao`, `boletim`, `data_publicacao`. A justificativa é exibida como fonte da informação.
+- `data/livro-de-ordens-manual.csv` — itens do Livro de Ordens: `item;assunto;ato;boletim;data_boletim;url;observacao`. Com o número de um item existente, corrige esse item; sem número, acrescenta um item novo (exige `assunto`, `boletim` e `data_boletim`). `url` torna o item clicável.
+
+### Livro de Ordens
+
+`livro:update` gera `public/livro-de-ordens.json`, carregado pela seção "Livro de Ordens" do site, a partir de:
+
+1. o Livro de Ordens 2002–2019 (PDF de 570 páginas, 7.576 itens). O PDF fica fora do repositório (que é público): coloque `LIVRO-DE-ORDENS-2002-a-2019.pdf` na raiz para regenerar a extração, versionada em `scripts/data/livro-de-ordens-2002-2019.json`;
+2. os documentos do acervo com boletim de publicação identificado — a continuação do livro depois de 2019;
+3. `data/livro-de-ordens-manual.csv`.
+
+Cada item é ligado ao documento do acervo quando o ato citado (nota por órgão/número/ano, portaria, decreto, lei, resolução, ICG, NT) está no catálogo: aí o item abre o documento. Quando não está, o site mostra onde consultá-lo — boletim, data, página do livro original, e o acesso à Intranet do CBMERJ (restrito) ou a busca na ALERJ, para leis. Itens que o livro original deixou incompletos (sem assunto, sem boletim ou sem ato identificável) vão para `data/livro-de-ordens-pendencias.csv`.
 
 A base atual inclui notas técnicas, instruções normativas, leis estaduais, decretos, resoluções e notas administrativas publicadas pelo CBMERJ. Os metadados de situação jurídica são provisórios e não constituem declaração de vigência.
 
@@ -30,6 +51,7 @@ A base atual inclui notas técnicas, instruções normativas, leis estaduais, de
 
 - **Cobertura de texto**: a extração baixa cada PDF da fonte oficial; downloads que expiram por timeout ou retornam 404 ficam sem texto indexado (permanecem pesquisáveis por título/número/tema). Rodar `npm run search:update` novamente tenta de novo apenas os que falharam — sucessos ficam em cache local (`.cache/`, não versionado).
 - **Duplicatas entre páginas**: o mesmo ato pode estar publicado em mais de uma página oficial com nomes de arquivo diferentes (ex.: o Decreto-Lei 247/1975 aparece tanto em Notas Técnicas quanto em Legislação/Regularização). A deduplicação atual é por URL exata; não há comparação de conteúdo entre URLs distintas.
+- **Ligação livro ↔ acervo é por número do ato**: um item que cita um ato só de passagem (ex.: "altera o Decreto 897") é ligado a esse ato; a ligação indica o ato citado, não necessariamente o documento publicado naquele boletim.
 - **Tema é a página de origem, não uma taxonomia curada**: os únicos valores hoje são "Notas Técnicas", "Instruções Normativas" e "Legislação e regularização". Uma classificação temática mais fina (Regularização, extintores, eventos etc., como descrito no plano de implementação) exige curadoria manual.
 - **Situação jurídica**: só é preenchida quando uma fonte oficial a informa, e cada registro guarda essa fonte em `statusSource`:
   - Leis estaduais: situação da ficha técnica da ALERJ ("Em Vigor", "Revogada"...). Leis que também estão na página do CBMERJ recebem essa situação e o link para o texto na ALERJ.

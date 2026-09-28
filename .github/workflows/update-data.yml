@@ -1,0 +1,66 @@
+name: Update data
+
+# Recoleta semanal do acervo: páginas do CBMERJ, leis da ALERJ, texto dos PDFs (com OCR) e o
+# Livro de Ordens. O resultado não vai direto para o site: abre (ou atualiza) um pull request,
+# para que a curadoria revise o que mudou antes de publicar. O merge dispara o deploy.
+# Requer, em Settings → Actions → General, "Allow GitHub Actions to create and approve pull
+# requests".
+on:
+  schedule:
+    - cron: '0 9 * * 1' # segundas, 06:00 em Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install OCR tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por
+      # Fichas da ALERJ e texto dos PDFs já lidos: sem o cache, cada execução refaria ~40 min de
+      # requisições à ALERJ, que limita a taxa.
+      - name: Restore collection cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: collection-${{ github.run_id }}
+          restore-keys: collection-
+      - name: Collect ALERJ laws
+        # Uma falha da ALERJ não impede a atualização do restante: o arquivo versionado anterior
+        # continua valendo.
+        continue-on-error: true
+        timeout-minutes: 120
+        run: npm run alerj:update
+      - name: Rebuild catalog, search index and Livro de Ordens
+        run: npm run data:update
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/weekly-update
+          commit-message: 'data: weekly collection update'
+          title: 'Atualização semanal do acervo'
+          body: |
+            Recoleta automática das fontes oficiais (CBMERJ, ALERJ), do texto dos PDFs e do Livro de Ordens.
+
+            Antes do merge, revise no diff:
+            - `src/data/documents.js`: documentos novos, removidos ou com situação alterada;
+            - `scripts/data/alerj-laws.json`: leis novas ou com situação alterada na ALERJ;
+            - `data/livro-de-ordens-pendencias.csv`: itens que precisam de curadoria.
+          delete-branch: true
