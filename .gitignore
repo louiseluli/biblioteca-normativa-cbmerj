@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Cache de texto extraído dos PDFs (scripts/extract-text.mjs); regenerável a partir das
+# fontes oficiais, não precisa ser versionado.
+.cache/
 .env
 .env.*
 !.env.example
