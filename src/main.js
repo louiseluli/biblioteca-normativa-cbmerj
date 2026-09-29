@@ -39,7 +39,7 @@ document.querySelector('#app').innerHTML = `
     <p class="hero-copy">Um lugar para encontrar, conferir e consultar as normas que orientam o trabalho do CBMERJ.</p>
     <form id="search-form" class="searchbar"><label class="sr-only" for="search-input">Buscar por palavra, assunto ou número</label><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Busque por assunto, número ou expressão..." autocomplete="off"><button type="submit">Buscar <span aria-hidden="true">↵</span></button></form>
     <p class="search-hint">Experimente <button class="text-button" data-query="extintores">“extintores”</button>, <button class="text-button" data-query="1120/2020">“1120/2020”</button>, <button class="text-button" data-query="guarda-vidas">“guarda-vidas”</button> ou <button class="text-button" data-query="regularização">“regularização”</button></p>
-  </div><div class="hero-stamp" aria-hidden="true"><span>190</span><small>anos de<br>serviço</small></div></section>
+  </div><div class="hero-stamp" aria-hidden="true"><span>1856</span><small>desde a<br>fundação</small></div></section>
   <section class="stats-strip" aria-label="Resumo do acervo">
     <div><strong>${documents.length}</strong><span>documentos<br>no acervo</span></div>
     <div><strong>${unique('type').length}</strong><span>tipos<br>documentais</span></div>
