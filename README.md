@@ -105,5 +105,6 @@ O MVP versiona um pacote pequeno de PDFs públicos oficiais em `public/acervo/`,
   - `npm run intranet:agendar -- --remover` desfaz. O log fica em `intranet-acervo/coleta.log`. A coleta roda enquanto sua sessão do Mac estiver aberta e o Mac tiver acesso à Intranet.
 
   Para publicar um documento da Intranet, confirme que ele pode ser divulgado, copie o arquivo para `public/acervo/` e cadastre-o em `data/documentos-manuais.csv`; links da Intranet nas planilhas são recusados pelo build.
+
 - Qualquer ingestão autenticada deve rodar em processo separado, em infraestrutura institucional, com segredo armazenado no gerenciador de segredos e revisão de autorização.
 - Os documentos públicos atuais apontam para as URLs oficiais e não armazenam credenciais.
