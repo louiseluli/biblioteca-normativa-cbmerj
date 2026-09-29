@@ -488,6 +488,8 @@ function readHash() {
         : value;
   }
   if (!pageSizes.includes(state.pageSize)) state.pageSize = defaults.pageSize;
+  // Mesma correção de setFilter, para um link compartilhado que já traga o filtro na URL.
+  if (state.theme.endsWith("· cita o CBMERJ")) state.mentions = "mostrar";
 }
 
 function relatedMarkup(document) {
@@ -569,6 +571,10 @@ function setQuery(value) {
 }
 function setFilter(field, value) {
   state[field] = value;
+  // Uma classificação "· cita o CBMERJ" só existe entre os registros ocultos por padrão; sem
+  // isto, escolhê-la no filtro de Classificação sempre daria zero resultados.
+  if (field === "theme" && value.endsWith("· cita o CBMERJ"))
+    state.mentions = "mostrar";
   state.page = 1;
   render();
 }
