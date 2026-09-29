@@ -282,6 +282,9 @@ for (const row of await readCsv('data/documentos-manuais.csv')) {
   if (!allowedStatuses.includes(status)) { curationErrors.push(`${where}: situacao "${status}" não é uma de ${allowedStatuses.join(', ')}`); continue }
   if (status !== 'Não verificada' && !row.fonte_situacao) { curationErrors.push(`${where}: situacao "${status}" exige fonte_situacao (onde isso foi verificado)`); continue }
   if (row.url_pdf && !/^https?:\/\//.test(row.url_pdf) && !existsSync(`public/${row.url_pdf}`)) { curationErrors.push(`${where}: arquivo public/${row.url_pdf} não existe`); continue }
+  // Links da Intranet exigem login e o site é público: um documento da Intranet só entra depois
+  // de autorizado, copiado para public/acervo/ e cadastrado com esse caminho.
+  if (/intranet\.cbmerj/i.test(`${row.url_pdf} ${row.url_fonte}`)) { curationErrors.push(`${where}: links da Intranet não podem ir para o site público; copie o arquivo autorizado para public/acervo/`); continue }
   if (unique.some((doc) => doc.pdf === url)) { curationErrors.push(`${where}: ${url} já está no catálogo; use correcoes.csv para alterar o registro`); continue }
   unique.push({
     id: `manual-${slugify(row.tipo)}-${urlId(url)}`,

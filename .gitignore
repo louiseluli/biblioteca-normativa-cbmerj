@@ -33,3 +33,7 @@ dist-ssr
 # PDF-fonte do Livro de Ordens: não é publicado no repositório (público). Versiona-se só a
 # extração, scripts/data/livro-de-ordens-2002-2019.json (ver scripts/build-livro.mjs).
 /LIVRO-DE-ORDENS-*.pdf
+
+# Documentos baixados da Intranet do CBMERJ (scripts/fetch-intranet.mjs): uso interno, nunca
+# versionados nem publicados sem autorização.
+/intranet-acervo/
