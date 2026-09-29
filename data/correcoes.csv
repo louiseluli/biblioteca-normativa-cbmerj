@@ -1,1 +1,8 @@
 id;campo;valor;justificativa
+alerj-resolucao-alerj-566-1990;titulo;Resolução nº 566;A ficha da ALERJ (contlei.nsf) não tem ementa separada do texto do Regimento Interno, e o extrator pegou um trecho do artigo IV como título
+alerj-resolucao-alerj-566-1990;descricao;Aprova o Regimento Interno da Assembleia Legislativa do Estado do Rio de Janeiro.;Assunto indicado na ficha da ALERJ ("Regimento Interno"), confirmado pelo texto integral (Título I - Do Funcionamento)
+alerj-resolucao-alerj-566-1990;situacao;Revogada;Página da ALERJ: "Texto da Resolução [ Revogado ]" no cabeçalho, consulta de 2026-09-29
+alerj-indicacao-legislativa-357-2014;titulo;Indicação legislativa nº 357/2014;O extrator seguiu uma referência a outra lei ("Lei nº 6.764...") citada no corpo do texto, em vez do cabeçalho da própria indicação
+alerj-indicacao-legislativa-357-2014;descricao;Solicita ao governador do Estado do Rio de Janeiro o envio de mensagem alterando a Lei nº 6.764, de 2 de maio de 2014.;Texto integral da indicação legislativa (contlei.nsf), consulta de 2026-09-29
+alerj-indicacao-legislativa-635-2022;titulo;Indicação legislativa nº 635/2022;O extrator pegou um trecho do artigo XIII do anteprojeto anexo, em vez do cabeçalho da própria indicação
+alerj-indicacao-legislativa-635-2022;descricao;Solicita ao governador do Estado do Rio de Janeiro o envio de mensagem dispondo sobre a criação do Código de Saúde do Estado do Rio de Janeiro.;Texto integral da indicação legislativa (contlei.nsf), consulta de 2026-09-29
