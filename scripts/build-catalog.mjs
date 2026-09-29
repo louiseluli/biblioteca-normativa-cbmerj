@@ -447,14 +447,50 @@ const properNouns = [
   "Assembleia Legislativa",
   "Constituição",
 ];
+// Nomes de pessoas e de município não cabem numa lista fixa como properNouns. Capitaliza cada
+// palavra, mantendo em minúscula as preposições/artigos comuns de nomes e topônimos em
+// português ("Rocha da Silva", "Bom Jesus de Itabapoana") e preservando siglas conhecidas.
+const nameConnectors = new Set([
+  "de", "da", "do", "das", "dos", "e", "a", "à", "ao", "aos", "o", "os", "as",
+  "em", "no", "na", "nos", "nas", "com", "por", "pelo", "pela", "pelos",
+  "pelas", "para", "que", "seu", "sua", "seus", "suas", "um", "uma",
+]);
+// Siglas de instituição/graduação (ficam em caixa alta) — diferente de abreviações de
+// tratamento como "Sr." ou "Dr.", que seguem a regra normal (só a primeira letra maiúscula).
+const nameAbbreviations = new Set([
+  "bm", "cbmerj", "sedec", "pm", "pmerj", "rj", "rg", "id", "mat", "qoc",
+  "gbm", "ssp", "abmdp", "gsfma",
+  "ii", "iii", "iv", "vi", "vii", "viii", "ix", "xi", "xii",
+]);
+function titleCasePt(text) {
+  return text.replace(/[\p{L}][\p{L}'-]*/gu, (word, offset) => {
+    const lower = word.toLowerCase();
+    if (nameAbbreviations.has(lower)) return lower.toUpperCase();
+    if (offset > 0 && nameConnectors.has(lower)) return lower;
+    return lower.replace(/(^|-)\p{L}/gu, char => char.toUpperCase());
+  });
+}
+// Concessões de honraria ("CONCEDE A MEDALHA TIRADENTES AO CORONEL... FULANO DE TAL") citam o
+// nome do homenageado por extenso; capitalizar a frase inteira (em vez de só os nomes próprios
+// já conhecidos) é o único jeito de não deixar o nome em minúscula.
+const honorific = /\bCONCEDE\b[\s\S]*\b(MEDALHA|T[ÍI]TULO|COMENDA|DIPLOMA|PLACA)\b/;
 function sentenceCase(value) {
   if (value !== value.toUpperCase()) return value;
+  if (honorific.test(value)) return titleCasePt(value.toLowerCase());
   let text = value.toLowerCase().replace(/^./, char => char.toUpperCase());
   for (const noun of properNouns)
     text = text.replace(new RegExp(noun.toLowerCase(), "g"), noun);
-  return text.replace(
+  text = text.replace(
     /\b(cbmerj|sedec|pmerj|rj|ii|iii|iv|vi|vii|viii|ix|xi)\b/g,
     match => match.toUpperCase(),
+  );
+  // Nome do município citado em homologações de calamidade/emergência ("no Município de
+  // Itaperuna", "Prefeito Municipal de Barra do Piraí"): capitaliza só o nome, não a frase toda.
+  // "Mucípio" é erro de digitação recorrente na própria ficha da ALERJ, mantido aqui só para
+  // capitalizar o nome da cidade (a grafia errada em si não é uma correção nossa a fazer).
+  return text.replace(
+    /\b(mu(?:ni)?c[íi]pios?|municipal)( de )([a-zà-ÿ][a-zà-ÿ '-]*?)(?=[.,;]| que | e |$)/gi,
+    (match, word, de, city) => `${word}${de}${titleCasePt(city)}`,
   );
 }
 
@@ -506,6 +542,9 @@ for (const law of alerjData.laws) {
     title: sentenceCase(law.title || `${label} nº ${law.number}/${law.year}`),
     year: law.year,
     theme: law.relevance === "mencao" ? `${base} · cita o CBMERJ` : base,
+    // Filtro do site: leis que só citam o CBMERJ de passagem (orçamento, estrutura do
+    // Executivo...) ficam ocultas por padrão, mas continuam no acervo e são filtráveis.
+    mentionOnly: law.relevance === "mencao",
     edition: "Texto compilado pela ALERJ",
     origin: "ALERJ",
     source: alerjSource,
