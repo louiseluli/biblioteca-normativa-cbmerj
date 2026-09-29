@@ -185,7 +185,7 @@ const unique = [...bestByUrl.values()].map((record) => {
 // técnica da ALERJ informa a situação oficial de cada lei. Quando a mesma lei já veio da página
 // de regularização do CBMERJ (com o PDF), o registro do CBMERJ é mantido e só recebe a situação
 // e o link para o texto na ALERJ; as demais entram como registros próprios.
-const alerjKinds = { 'lei ordinária': 'Lei estadual', 'lei complementar': 'Lei complementar', 'emenda constitucional': 'Emenda constitucional', decreto: 'Decreto', 'decreto estadual': 'Decreto', 'resolução': 'Resolução', 'decreto legislativo': 'Decreto legislativo' }
+const alerjKinds = { 'lei ordinária': 'Lei estadual', 'lei complementar': 'Lei complementar', 'emenda constitucional': 'Emenda constitucional', decreto: 'Decreto', 'decreto estadual': 'Decreto', 'resolução': 'Resolução', 'decreto legislativo': 'Decreto legislativo', 'indicação legislativa': 'Indicação legislativa' }
 const alerjLabels = { 'Lei estadual': 'Lei', 'Lei complementar': 'Lei Complementar', 'Emenda constitucional': 'Emenda Constitucional', Decreto: 'Decreto', Resolução: 'Resolução ALERJ', 'Decreto legislativo': 'Decreto Legislativo' }
 const alerjType = (kind) => alerjKinds[kind.trim().toLowerCase()] ?? (kind.trim() ? kind.trim().charAt(0).toUpperCase() + kind.trim().slice(1).toLowerCase() : 'Norma estadual')
 const numberDigits = (value) => String(value ?? '').replace(/\D/g, '')
@@ -195,9 +195,15 @@ function alerjStatus(law) {
   const situation = law.situation.trim()
   const adi = law.adiSituation && !/^n[aã]o consta$/i.test(law.adiSituation) ? ` Ação de inconstitucionalidade: ${law.adiSituation}.` : ''
   const statusSource = `Ficha técnica da ALERJ: “${situation || 'situação não informada'}” (coleta de ${alerjData.collectedAt}).${adi}`
-  if (!situation) return { status: 'Não verificada', statusSource }
+  // A ALERJ usa várias redações ("Revogação Expressa", "Revogação Tácita", "Declarado
+  // Parcialmente Inconstitucional"...); a situação é normalizada e a redação original fica na fonte.
+  // "Parcialmente" não vira inconstitucional por inteiro: a norma segue em vigor no restante.
+  if (!situation || /^(n[aã]o consta|trabalhando o texto)$/i.test(situation)) return { status: 'Não verificada', statusSource }
   if (/em vigor/i.test(situation)) return { status: 'Em vigor', statusSource }
-  if (/revogad/i.test(situation)) return { status: 'Revogada', statusSource }
+  if (/revoga/i.test(situation)) return { status: 'Revogada', statusSource }
+  if (/parcialmente inconstitucional/i.test(situation)) return { status: 'Parcialmente inconstitucional', statusSource }
+  if (/inconstitucional/i.test(situation)) return { status: 'Inconstitucional', statusSource }
+  if (/suspens/i.test(situation)) return { status: 'Suspensa', statusSource }
   return { status: situation.charAt(0).toUpperCase() + situation.slice(1).toLowerCase(), statusSource }
 }
 
@@ -215,6 +221,7 @@ const alerjPath = 'scripts/data/alerj-laws.json'
 const alerjData = existsSync(alerjPath) ? JSON.parse(await readFile(alerjPath, 'utf8')) : { collectedAt: null, laws: [] }
 const alerjSource = 'https://www3.alerj.rj.gov.br/lotus_notes/default.asp?id=144'
 let alerjMerged = 0
+const usedAlerjIds = new Set()
 for (const law of alerjData.laws) {
   const type = alerjType(law.kind)
   const digits = numberDigits(law.number)
@@ -227,7 +234,9 @@ for (const law of alerjData.laws) {
   // acervo, mas separadas das que tratam do tema, para o filtro de página de origem.
   const base = law.view === 'executivo' ? 'Decretos estaduais (ALERJ)' : 'Legislação estadual (ALERJ)'
   unique.push({
-    id: `alerj-${slugify(label)}-${digits}-${law.year}`,
+    // Tipo, número e ano não bastam: duas resoluções de órgãos diferentes podem coincidir. No
+    // empate, o id ganha um sufixo da URL da ficha, que é única.
+    id: usedAlerjIds.has(`alerj-${slugify(label)}-${digits}-${law.year}`) ? `alerj-${slugify(label)}-${digits}-${law.year}-${urlId(law.url).slice(0, 6)}` : `alerj-${slugify(label)}-${digits}-${law.year}`,
     type,
     number: `${label} ${formatLawNumber(law.number)}`,
     title: sentenceCase(law.title || `${label} nº ${law.number}/${law.year}`),
@@ -241,6 +250,7 @@ for (const law of alerjData.laws) {
     description: sentenceCase(law.ementa),
     ...extra,
   })
+  usedAlerjIds.add(unique.at(-1).id)
 }
 
 // Boletim de publicação lido no próprio PDF (scripts/data/pdf-metadata.json, gerado por
