@@ -370,7 +370,8 @@ const unique = [...bestByUrl.values()].map(record => {
     ...(unavailablePublicFiles(record.url)
       ? { format: "source", originalPdf: record.url }
       : {}),
-    description: `Registro coletado da página oficial: ${record.group}. Metadados sujeitos a revisão curatorial.`,
+    // A página de origem já aparece como classificação; sem ementa própria, a descrição fica vazia.
+    description: "",
   };
 });
 

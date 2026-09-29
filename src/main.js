@@ -38,6 +38,8 @@ const typeIcons = {
   "Instrução normativa": "IN",
   "Parecer técnico": "PAR",
   "Regulamento técnico": "RT",
+  "Decreto legislativo": "DLG",
+  "Indicação legislativa": "IND",
   "Documento relacionado": "DOC",
 };
 // Situações que vêm de uma fonte oficial (ALERJ, página do CBMERJ); "Não verificada" é o
@@ -111,16 +113,15 @@ document.querySelector("#app").innerHTML = `
 <a class="skip-link" href="#top">Pular para o conteúdo</a>
 <header class="site-header"><div class="header-inner">
   <a class="brand" href="#top" aria-label="Biblioteca Normativa CBMERJ, início"><span class="brand-mark">CB</span><span><strong>Biblioteca Normativa</strong><small>Corpo de Bombeiros Militar do Estado do Rio de Janeiro</small></span></a>
-  <nav aria-label="Navegação principal"><a href="#acervo">Acervo</a><a href="#livro">Livro de Ordens</a><a href="#situacao">Situação jurídica</a><a href="#sobre">Sobre o projeto</a><a class="header-button" href="${officialSources.cbmerj}" target="_blank" rel="noreferrer">Fontes oficiais <span aria-hidden="true">↗</span></a></nav>
+  <nav aria-label="Navegação principal"><a href="#acervo">Acervo</a><a href="#livro">Livro de Ordens</a><a href="#situacao">Situação jurídica</a><a href="#sobre">Sobre</a><a class="header-button" href="${officialSources.cbmerj}" target="_blank" rel="noreferrer">Fontes oficiais <span aria-hidden="true">↗</span></a></nav>
 </div></header>
 <main id="top" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title"><div class="hero-inner">
-    <div class="eyebrow"><span class="signal-dot"></span> ACERVO PILOTO · CBMERJ + ALERJ</div>
-    <h1 id="hero-title">A norma certa,<br><em>na hora certa.</em></h1>
-    <p class="hero-copy">Um lugar para encontrar, conferir e consultar as normas que orientam o trabalho do CBMERJ.</p>
+    <h1 id="hero-title">Biblioteca Normativa</h1>
+    <p class="hero-copy">Normas do CBMERJ e legislação estadual, com a situação informada pela fonte oficial.</p>
     <form id="search-form" class="searchbar"><label class="sr-only" for="search-input">Buscar por palavra, assunto ou número</label><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Busque por assunto, número ou expressão..." autocomplete="off"><button type="submit">Buscar <span aria-hidden="true">↵</span></button></form>
     <p class="search-hint">Experimente <button class="text-button" data-query="extintores">“extintores”</button>, <button class="text-button" data-query="1120/2020">“1120/2020”</button>, <button class="text-button" data-query="guarda-vidas">“guarda-vidas”</button> ou <button class="text-button" data-query="regularização">“regularização”</button></p>
-  </div><div class="hero-stamp" aria-hidden="true"><span>1856</span><small>desde a<br>fundação</small></div></section>
+  </div></section>
   <section class="stats-strip" aria-label="Resumo do acervo">
     <div><strong>${documents.length}</strong><span>documentos<br>no acervo</span></div>
     <div><strong>${unique("type").length}</strong><span>tipos<br>documentais</span></div>
@@ -128,17 +129,17 @@ document.querySelector("#app").innerHTML = `
     <div class="stats-note"><strong>${verifiedCount}</strong><span>com situação<br>informada por fonte oficial</span></div>
   </section>
   <section id="acervo" class="collection-section">
-    <div class="section-heading"><div><p class="eyebrow">NAVEGUE PELO ACERVO</p><h2>O que você procura?</h2></div><p class="section-intro">Comece por um tipo de documento<br>ou refine sua busca com filtros.</p></div>
+    <div class="section-heading"><h2>Tipos de documento</h2></div>
     <div class="type-grid" id="type-grid"></div>
   </section>
   <div class="view-tabs" role="tablist" aria-label="Base de consulta">
     <button type="button" role="tab" id="tab-acervo" aria-controls="painel-acervo" data-view="acervo">Acervo <span>${documents.length}</span></button>
     <button type="button" role="tab" id="tab-livro" aria-controls="livro" data-view="livro">Livro de Ordens <span id="livro-tab-count"></span></button>
   </div>
-  <p class="view-explainer" id="view-explainer">O Acervo reúne normas catalogadas e documentos com acesso direto. O Livro de Ordens funciona como índice de publicações em boletim e pode apontar para referências que exigem acesso à Intranet do CBMERJ.</p>
+  <p class="view-explainer" id="view-explainer">Acervo: normas catalogadas, com acesso ao texto. Livro de Ordens: índice das publicações em boletim.</p>
   <section id="painel-acervo" class="results-section" role="tabpanel" aria-labelledby="tab-acervo">
     <div class="results-toolbar">
-      <div><p class="eyebrow">RESULTADOS DA BUSCA</p><h2 id="results-title">Acervo completo <span id="result-count"></span></h2></div>
+      <div><h2 id="results-title">Acervo completo <span id="result-count"></span></h2></div>
       <div class="toolbar-controls">
         <label class="sort-control">Ordenar por <select id="sort-select"><option value="relevance">Relevância</option><option value="recent">Mais recentes</option><option value="oldest">Mais antigos</option><option value="az">Título (A–Z)</option></select></label>
         <label class="sort-control">Por página <select id="page-size">${pageSizes.map(size => `<option value="${size}">${size}</option>`).join("")}</select></label>
@@ -159,11 +160,11 @@ document.querySelector("#app").innerHTML = `
     <nav id="pagination" class="pagination" aria-label="Paginação dos resultados"></nav>
   </section>
   <section id="livro" class="results-section livro-section" role="tabpanel" aria-labelledby="tab-livro" hidden>
-    <div class="results-toolbar"><div><p class="eyebrow">LIVRO DE ORDENS</p><h2 id="livro-title">O que foi publicado em boletim</h2></div><p class="section-intro">Cada item indica onde o ato está:<br>no acervo, ou em qual boletim consultar.</p></div>
+    <div class="results-toolbar"><div><h2 id="livro-title">Livro de Ordens</h2></div><p class="section-intro">Cada item indica onde o ato está:<br>no acervo, ou em qual boletim consultar.</p></div>
     <div id="livro-root"></div>
   </section>
   <section id="situacao" class="status-section" aria-labelledby="status-title">
-    <div><p class="eyebrow">SITUAÇÃO JURÍDICA</p><h2 id="status-title">De onde vem cada situação</h2></div>
+    <div><h2 id="status-title">Situação jurídica</h2><p class="section-intro">De onde vem cada situação exibida.</p></div>
     <dl class="status-legend">
       <div><dt><span class="tag in-force">Em vigor</span></dt><dd>Leis: a ficha técnica da ALERJ informa “Em Vigor”. Notas técnicas e ICGs: listadas como versão atual na página oficial do CBMERJ.</dd></div>
       <div><dt><span class="tag revoked">Revogada</span></dt><dd>A ALERJ informa revogação (ou outra situação, como inconstitucionalidade), com o texto da revogação quando disponível.</dd></div>
@@ -172,12 +173,11 @@ document.querySelector("#app").innerHTML = `
     </dl>
   </section>
   <section id="sobre" class="about-section">
-    <div class="about-marker">01<br><span>/</span></div>
-    <div><p class="eyebrow">SOBRE ESTE MVP</p><h2>Um acervo organizado<br>para servir melhor.</h2></div>
-    <div class="about-copy"><p>Este é um primeiro recorte da Biblioteca Normativa CBMERJ. Os documentos apontam para fontes oficiais — o site do CBMERJ e a base de legislação da ALERJ — e cada registro informa sua natureza, edição e procedência.</p><p class="muted">A situação exibida reproduz o que a fonte oficial informa na data da coleta; não substitui a consulta ao Diário Oficial.</p><a class="arrow-link" href="${officialSources.alerj}" target="_blank" rel="noreferrer">Base de legislação da ALERJ <span aria-hidden="true">→</span></a></div>
+    <div><h2>Sobre o acervo</h2></div>
+    <div class="about-copy"><p>Os documentos apontam para as fontes oficiais — o site do CBMERJ e a base de legislação da ALERJ — e cada registro informa sua natureza, edição e procedência.</p><p class="muted">A situação exibida reproduz o que a fonte oficial informa na data da coleta; não substitui a consulta ao Diário Oficial.</p><a class="arrow-link" href="${officialSources.alerj}" target="_blank" rel="noreferrer">Base de legislação da ALERJ <span aria-hidden="true">→</span></a></div>
   </section>
 </main>
-<footer><div class="footer-brand"><span class="brand-mark">CB</span><span><strong>Biblioteca Normativa</strong><small>Um projeto de organização e acesso</small></span></div><p>Acervo piloto · Última coleta: ${escapeHtml(collectedAt)}</p></footer>
+<footer><div class="footer-brand"><span class="brand-mark">CB</span><span><strong>Biblioteca Normativa</strong><small>CBMERJ</small></span></div><p>Última coleta: ${escapeHtml(collectedAt.split("-").reverse().join("/"))}</p></footer>
 <dialog id="document-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" aria-label="Fechar detalhes">×</button><div id="dialog-content"></div></dialog>`;
 
 const $ = selector => document.querySelector(selector);
@@ -312,7 +312,7 @@ function resultMarkup(document) {
     <div class="result-main">
       <div class="result-meta"><span>${escapeHtml(document.type)}</span><span>·</span><span>${document.year ?? "Ano não informado"}</span>${statusTag(document)}</div>
       <h3>${document.number && !titleRepeatsNumber(document) ? `${escapeHtml(document.number)} <span>—</span> ` : ""}${escapeHtml(document.title)}</h3>
-      <p>${escapeHtml(document.description)}</p>
+      ${document.description ? `<p>${escapeHtml(document.description)}</p>` : ""}
       <div class="result-tags"><span>${escapeHtml(document.origin)}</span><span>${escapeHtml(document.theme)}</span></div>
     </div>
     <div class="result-actions"><button class="read-button" data-open="${document.id}">Ver detalhes <span aria-hidden="true">→</span></button><a href="${escapeHtml(document.pdf)}" target="_blank" rel="noreferrer">${documentLinkLabel(document)}</a></div>
@@ -510,7 +510,7 @@ function showDocument(id) {
       <div><dt>Classificação</dt><dd>${escapeHtml(document.theme)}</dd></div>
       ${extra.map(([label, value]) => `<div class="wide"><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>`).join("")}
     </dl>
-    <p class="dialog-note">${escapeHtml(document.description)}</p>
+    ${document.description ? `<p class="dialog-note">${escapeHtml(document.description)}</p>` : ""}
     ${relatedMarkup(document)}
     <div class="dialog-actions">
       <a class="primary-button" href="${escapeHtml(document.pdf)}" target="_blank" rel="noreferrer">${document.format === "html" ? "Ler texto integral" : document.format === "source" ? "Ver fonte oficial" : "Abrir PDF"} <span aria-hidden="true">↗</span></a>
