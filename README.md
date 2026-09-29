@@ -82,6 +82,8 @@ npm run interno              # processa, junta ao Livro de Ordens e abre http://
 
 O projeto foi preparado para hospedagem estática. O build de produção é gerado em `dist/` e não deve ser versionado.
 
+O MVP versiona um pacote pequeno de PDFs públicos oficiais em `public/acervo/`, para que a demonstração continue funcionando mesmo sem acesso externo. A lista está em `scripts/data/mvp-files.json`; para baixar ou conferir o pacote, rode `npm run mvp:pdfs`. PDFs da Intranet e boletins internos continuam fora do GitHub.
+
 ## Segurança
 
 - Nunca coloque usuário, senha, token, cookie de sessão ou arquivo `.env` no repositório.

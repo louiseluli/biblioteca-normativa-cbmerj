@@ -13,9 +13,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO-LEI-No-247-DE-21-DE-JULHO-DE-1975.pdf",
+    "pdf": "acervo/decreto-lei-247-1975.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO-LEI-No-247-DE-21-DE-JULHO-DE-1975.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "decreto-db2681493b",
@@ -29,11 +31,13 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/COSCIP_DEC_42-2018_COMPILADO.pdf",
+    "pdf": "acervo/coscip-decreto-42-2018-compilado.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
       "decreto-b9951db027"
-    ]
+    ],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/COSCIP_DEC_42-2018_COMPILADO.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "portaria-0213fcdccd",
@@ -95,9 +99,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/Portaria-CBMERJ-no-1120-DE-22-DE-SETEMBRO-DE-2020_1601400145.pdf",
+    "pdf": "acervo/portaria-1120-2020.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/Portaria-CBMERJ-no-1120-DE-22-DE-SETEMBRO-DE-2020_1601400145.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "portaria-403d412221",
@@ -223,7 +229,7 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/PORTARIA_CBMERJ_1317_2025.pdf",
+    "pdf": "acervo/portaria-1317-2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
       "nota-tecnica-a9f6262d17",
@@ -231,7 +237,9 @@ export const documents = [
       "nota-tecnica-7fa1d1cac0",
       "nota-tecnica-98f46a23fd",
       "nota-tecnica-b01e9147b1"
-    ]
+    ],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/PORTARIA_CBMERJ_1317_2025.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "nota-tecnica-a9f6262d17",
@@ -368,9 +376,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-07-Atividades-economicas-de-baixo-risco-2020.pdf",
+    "pdf": "acervo/nt-1-07-baixo-risco-2020.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-07-Atividades-economicas-de-baixo-risco-2020.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "nota-tecnica-cf6592a881",
@@ -384,11 +394,13 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-02-Aprovada-pela-Portaria-CBMERJ-1120_2020_1601400175.pdf",
+    "pdf": "acervo/nt-2-01-extintores-v2-2020.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
       "nota-tecnica-6524c0883c"
-    ]
+    ],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-02-Aprovada-pela-Portaria-CBMERJ-1120_2020_1601400175.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "nota-tecnica-b926462719",
@@ -420,11 +432,13 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-Sistemas-de-chuveiros-automticos-sprinklers-Parte-1-Requisitos-gerais-2019-atualizada_1647374313.pdf",
+    "pdf": "acervo/nt-2-03-sprinklers-2020.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
       "nota-tecnica-24118ce71b"
-    ]
+    ],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-Sistemas-de-chuveiros-automticos-sprinklers-Parte-1-Requisitos-gerais-2019-atualizada_1647374313.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "nota-tecnica-24118ce71b",
@@ -1886,12 +1900,14 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____0938.pdf",
+    "pdf": "acervo/lei-938-1985.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
     "alerjUrl": "https://alerjln1.alerj.rj.gov.br/contlei.nsf/f25edae7e64db53b032564fe005262ef/3c62838630b29af303256554006b4013?OpenDocument",
     "revocation": "",
     "author": "ÁTILA NUNES",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Lei_Estadual_N____0938.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "lei-estadual-36ecd7026b",
@@ -2460,9 +2476,11 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_284_-_25-04-2005.pdf",
+    "pdf": "acervo/resolucao-sedec-284-2005.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Resolucao_SEDEC_Nr_284_-_25-04-2005.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "resolucao-aec2134dec",
@@ -3358,7 +3376,7 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
-    "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/11_ICG_1-11_Frias-Licenas-Afastamentos-e-Averbaes.pdf",
+    "pdf": "acervo/icg-1-11-ferias.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
     "publication": {
       "bulletin": "085",
@@ -3366,7 +3384,9 @@ export const documents = [
       "source": "Cabeçalho do PDF"
     },
     "yearSource": "Boletim da SEDEC/CBMERJ nº 085, de 15/05/2023",
-    "relatedIds": []
+    "relatedIds": [],
+    "originalPdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/11_ICG_1-11_Frias-Licenas-Afastamentos-e-Averbaes.pdf",
+    "format": "pdf-local"
   },
   {
     "id": "instrucao-normativa-1a6a9aa64e",

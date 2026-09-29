@@ -771,6 +771,18 @@ for (const doc of unique) {
   }
 }
 
+const mvpFilesPath = "scripts/data/mvp-files.json";
+if (existsSync(mvpFilesPath)) {
+  const mvpFiles = JSON.parse(await readFile(mvpFilesPath, "utf8"));
+  for (const entry of mvpFiles) {
+    const doc = byId.get(entry.id);
+    if (!doc) continue;
+    doc.originalPdf = doc.pdf;
+    doc.pdf = `acervo/${entry.file}`;
+    doc.format = "pdf-local";
+  }
+}
+
 await mkdir("src/data", { recursive: true });
 await writeFile(
   "src/data/documents.js",
