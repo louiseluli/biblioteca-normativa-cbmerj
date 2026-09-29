@@ -445,7 +445,6 @@ const properNouns = [
   "Governo",
   "Poder Executivo",
   "Assembleia Legislativa",
-  "Constituição",
 ];
 // Nomes de pessoas e de município não cabem numa lista fixa como properNouns. Capitaliza cada
 // palavra, mantendo em minúscula as preposições/artigos comuns de nomes e topônimos em
@@ -473,7 +472,7 @@ function titleCasePt(text) {
 // Concessões de honraria ("CONCEDE A MEDALHA TIRADENTES AO CORONEL... FULANO DE TAL") citam o
 // nome do homenageado por extenso; capitalizar a frase inteira (em vez de só os nomes próprios
 // já conhecidos) é o único jeito de não deixar o nome em minúscula.
-const honorific = /\bCONCEDE\b[\s\S]*\b(MEDALHA|T[ÍI]TULO|COMENDA|DIPLOMA|PLACA)\b/;
+const honorific = /\b(CONCEDE|CONFERE)\b[\s\S]*\b(MEDALHA|T[ÍI]TULO|COMENDA|DIPLOMA|PLACA)\b/;
 function sentenceCase(value) {
   if (value !== value.toUpperCase()) return value;
   if (honorific.test(value)) return titleCasePt(value.toLowerCase());
@@ -483,6 +482,20 @@ function sentenceCase(value) {
   text = text.replace(
     /\b(cbmerj|sedec|pmerj|rj|ii|iii|iv|vi|vii|viii|ix|xi)\b/g,
     match => match.toUpperCase(),
+  );
+  // "Estado" na lista de nomes próprios (acima) é para "Estado do/da Rio de Janeiro", mas o
+  // mesmo texto usa "estado de calamidade/emergência" como termo genérico ("condição"), não
+  // como o ente federativo: desfaz a maiúscula só nesse par de expressões fixas.
+  text = text.replace(
+    /\bEstado de (calamidade|emerg[eê]ncia)\b/g,
+    (match, word) => `estado de ${word}`,
+  );
+  // "Constituição" também aparece no sentido genérico de criação/formação ("dispõe sobre sua
+  // constituição", falando de um fundo ou comissão), não só como a Carta Magna: só capitaliza
+  // quando seguida de um dos qualificadores que indicam o documento.
+  text = text.replace(
+    /\bconstitui[çc][ãa]o\b(?= (estadual|federal|do estado|da rep[úu]blica))/gi,
+    match => `C${match.slice(1)}`,
   );
   // Nome do município citado em homologações de calamidade/emergência ("no Município de
   // Itaperuna", "Prefeito Municipal de Barra do Piraí"): capitaliza só o nome, não a frase toda.
