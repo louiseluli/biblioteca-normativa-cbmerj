@@ -14,7 +14,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check:ui": "node scripts/check-ui.mjs",
-    "intranet:fetch": "node scripts/fetch-intranet.mjs"
+    "intranet:fetch": "node scripts/fetch-intranet.mjs",
+    "intranet:agendar": "node scripts/schedule-intranet.mjs"
   },
   "devDependencies": {
     "pdf-parse": "^2.4.5",

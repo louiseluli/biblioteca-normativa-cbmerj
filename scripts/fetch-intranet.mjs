@@ -1,29 +1,39 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { createHash } from 'node:crypto'
+import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 import readline from 'node:readline/promises'
 import { chromium } from 'playwright-core'
 
-// Coleta LOCAL dos documentos do painel de downloads da Intranet do CBMERJ, para curadoria.
+// Coleta LOCAL de documentos da Intranet do CBMERJ, para curadoria. Roda só nesta máquina; os
+// arquivos vão para intranet-acervo/ (fora do git) e nada chega ao site público sem cadastro
+// manual depois de autorizado.
 //
-// Credenciais: o script nunca pede, lê nem grava usuário ou senha. Ele abre o Chrome instalado
-// numa janela visível; a pessoa faz o login ali, como faria normalmente, e confirma no terminal.
-// A sessão vive só na memória desse navegador (contexto não persistente): nenhum cookie ou
-// token vai para o disco, e ela termina quando a janela fecha.
+// Login, em um de dois modos. Em nenhum deles a senha é gravada em arquivo, log ou terminal,
+// e a sessão (cookies) vive só na memória do navegador, que é fechado ao final:
+// - assistido (padrão): abre o Chrome, a pessoa faz o login na tela do site e confirma no
+//   terminal. O script nunca vê a senha.
+// - --keychain: lê usuário e senha do Chaves (Keychain) do macOS, item "cbmerj-intranet",
+//   e preenche o formulário de login. Permite rodar agendado, sem ninguém presente. Cadastro:
+//   security add-generic-password -s cbmerj-intranet -a SEU_USUARIO -w
+//   (sem valor depois de -w, o macOS pede a senha sem mostrá-la nem gravá-la no histórico).
 //
-// Escopo: só as seções listadas em SECTIONS, sem boletins; só leitura (GET), uma requisição por
-// vez, com pausa. Os arquivos vão para intranet-acervo/ (fora do git). Nada daqui chega ao site
-// público automaticamente: publicar um documento exige copiá-lo para public/acervo/ e cadastrá-lo
-// em data/documentos-manuais.csv, depois de confirmar que ele pode ser divulgado.
+// O que coletar:
+// - padrão: painel de downloads (Legislações, Corregedorias, Chefia de Gabinete, EMG), sem boletins;
+// - --boletins: Boletins da SEDEC/CBMERJ, percorrendo a área de boletins (anos → edições → PDFs).
+//   --anos 2020-2026 limita os anos percorridos.
 //
-// Uso: npm run intranet:fetch            (baixa)
-//      npm run intranet:fetch -- --listar (só lista o que seria baixado)
+// Sempre só leitura (GET), uma requisição por vez, com pausa; links de sair/logout são ignorados.
+// --listar mostra o que seria baixado, sem baixar.
 const INTRANET = 'https://intranet.cbmerj.rj.gov.br'
 const LOGIN_URL = `${INTRANET}/entrada`
 const PANEL_URL = `${INTRANET}/sistemas/downloads//painel/painelSemPermissaoDeApagar`
-// Nome da seção no painel e o id do bloco recolhível correspondente (o id é um palpite a partir
-// dos links do painel; se mudar, a seção é achada pelo título).
+// Pontos de entrada da área de boletins (links "BOLETIM SEDEC / CBMERJ" e "BM/1" do menu).
+const BULLETIN_ROOTS = [
+  ['boletim-sedec-cbmerj', `${INTRANET}/sistemas/boletim/index.php/boletim/boletimSelecionarAno/3`],
+  ['boletim-bm1', `${INTRANET}/sistemas/boletim/index.php/boletim/boletimSelecionarAno/4`],
+]
 const SECTIONS = [
   ['LEGISLAÇÕES', 'collapse_30'],
   ['CORREGEDORIA GERAL DA SEDEC', 'collapse_7'],
@@ -31,31 +41,95 @@ const SECTIONS = [
   ['CHEFIA DE GABINETE', 'collapse_5'],
   ['CHEFIA DO ESTADO-MAIOR GERAL', 'collapse_6'],
 ]
-const isBulletin = (link) => /\/boletim/i.test(link.href) || /\bboletim\b/i.test(link.text)
+const KEYCHAIN_SERVICE = 'cbmerj-intranet'
 const OUT_DIR = 'intranet-acervo'
 const DELAY_MS = 1500
+const MAX_PAGES = 5000
+const isBulletin = (link) => /\/boletim/i.test(link.href) || /\bboletim\b/i.test(link.text)
+const isLogout = (href) => /sair|logout|logoff|desconectar|encerrar/i.test(href)
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-const listOnly = process.argv.includes('--listar')
 const slug = (value) => value.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+const args = process.argv.slice(2)
+const listOnly = args.includes('--listar')
+const useKeychain = args.includes('--keychain')
+const bulletins = args.includes('--boletins')
+const yearRange = args[args.indexOf('--anos') + 1]?.match(/^(\d{4})(?:-(\d{4}))?$/)
+const [firstYear, lastYear] = yearRange ? [Number(yearRange[1]), Number(yearRange[2] ?? yearRange[1])] : [null, null]
 
 if (process.env.CI) {
-  console.error('Este script é só para uso local, com login feito por uma pessoa; não roda em CI.')
+  console.error('Este script é só para uso local; não roda em CI.')
+  process.exit(1)
+}
+// O modo de depuração do Playwright registra os valores digitados, o que exporia a senha.
+if (/pw:|\*/.test(process.env.DEBUG ?? '')) {
+  console.error('Desative DEBUG antes de rodar: o log de depuração do Playwright mostraria a senha.')
   process.exit(1)
 }
 
-const browser = await chromium.launch({ channel: 'chrome', headless: false })
-try {
-  const context = await browser.newContext({ acceptDownloads: false })
-  const page = await context.newPage()
-  await page.goto(LOGIN_URL)
-  const terminal = readline.createInterface({ input: process.stdin, output: process.stdout })
-  await terminal.question('\nFaça o login na janela do Chrome que abriu. Quando estiver dentro da Intranet, pressione Enter aqui. ')
-  terminal.close()
+function keychainCredentials() {
+  try {
+    const attributes = execFileSync('security', ['find-generic-password', '-s', KEYCHAIN_SERVICE], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+    const user = attributes.match(/"acct"<blob>="([^"]*)"/)?.[1]
+    const password = execFileSync('security', ['find-generic-password', '-s', KEYCHAIN_SERVICE, '-w'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).replace(/\n$/, '')
+    if (!user || !password) throw new Error('item incompleto')
+    return { user, password }
+  } catch {
+    throw new Error(`Credencial "${KEYCHAIN_SERVICE}" não encontrada no Chaves do macOS. Cadastre com: security add-generic-password -s ${KEYCHAIN_SERVICE} -a SEU_USUARIO -w`)
+  }
+}
 
+const loggedOut = (page) => /entrada|login/i.test(new URL(page.url()).pathname)
+
+async function login(page) {
+  await page.goto(LOGIN_URL, { waitUntil: 'networkidle' })
+  if (!useKeychain) {
+    const terminal = readline.createInterface({ input: process.stdin, output: process.stdout })
+    await terminal.question('\nFaça o login na janela do Chrome que abriu. Quando estiver dentro da Intranet, pressione Enter aqui. ')
+    terminal.close()
+    return
+  }
+  let { user, password } = keychainCredentials()
+  const passwordField = page.locator('input[type="password"]').first()
+  const userField = page.locator('form input:not([type="password"]):not([type="hidden"]):not([type="checkbox"]):not([type="submit"])').first()
+  await userField.fill(user)
+  await passwordField.fill(password)
+  password = null
+  user = null
+  await Promise.all([page.waitForLoadState('networkidle'), passwordField.press('Enter')])
+  // Verificação em duas etapas, captcha ou tela nova: para aqui, sem tentar contornar.
+  if (loggedOut(page) || (await page.locator('input[type="password"]').count())) {
+    throw new Error('O login automático não foi concluído (senha errada, captcha, verificação em duas etapas ou tela diferente). Rode sem --keychain e faça o login manualmente.')
+  }
+}
+
+async function loadManifest() {
+  const manifestPath = path.join(OUT_DIR, 'manifesto.json')
+  const manifest = existsSync(manifestPath) ? JSON.parse(await readFile(manifestPath, 'utf8')) : { items: [] }
+  return { manifestPath, manifest, known: new Set(manifest.items.map((item) => item.url)) }
+}
+
+// Baixa um link autenticado pelo contexto do navegador. Devolve o registro salvo, "html" quando
+// a resposta é uma página (navegação, não documento) ou null quando falha.
+async function download(context, link, folder, section) {
+  const response = await context.request.get(link.href)
+  await sleep(DELAY_MS)
+  const contentType = response.headers()['content-type'] ?? ''
+  if (!response.ok()) return null
+  if (contentType.includes('text/html')) return 'html'
+  const body = await response.body()
+  const disposition = response.headers()['content-disposition'] ?? ''
+  const original = decodeURIComponent(disposition.match(/filename\*?=(?:UTF-8'')?"?([^";]+)/i)?.[1] ?? new URL(link.href).pathname.split('/').pop() ?? 'arquivo')
+  const extension = path.extname(original) || (contentType.includes('pdf') ? '.pdf' : '')
+  const hash = createHash('sha256').update(body).digest('hex')
+  const file = path.join(OUT_DIR, folder, `${slug(link.text || path.basename(original, extension)).slice(0, 80) || 'arquivo'}-${hash.slice(0, 8)}${extension}`)
+  await mkdir(path.dirname(file), { recursive: true })
+  await writeFile(file, body)
+  return { section, title: link.text, url: link.href, file, bytes: body.length, sha256: hash, contentType: contentType.split(';')[0], downloadedAt: new Date().toISOString() }
+}
+
+async function panelLinks(page) {
   await page.goto(PANEL_URL, { waitUntil: 'networkidle' })
-  if (/entrada|login/i.test(new URL(page.url()).pathname)) throw new Error('O painel redirecionou para o login: a sessão não está ativa. Rode de novo e conclua o login antes de pressionar Enter.')
-
-  // Links de cada seção: acha o bloco pelo id conhecido ou pelo título da seção e lê os <a>.
+  if (loggedOut(page)) throw new Error('O painel redirecionou para o login: a sessão não está ativa.')
   const sections = await page.evaluate((wanted) => {
     const normalize = (value) => value.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, ' ').trim().toUpperCase()
     return wanted.map(([name, id]) => {
@@ -64,51 +138,78 @@ try {
       const target = toggle?.getAttribute('href')?.split('#')[1] ?? toggle?.dataset.target?.replace('#', '') ?? toggle?.dataset.bsTarget?.replace('#', '')
       if (target) panel = document.getElementById(target) ?? panel
       if (!panel) return { name, found: false, links: [] }
-      const links = [...panel.querySelectorAll('a[href]')].map((a) => ({ text: a.textContent.replace(/\s+/g, ' ').trim(), href: a.href })).filter((link) => !link.href.includes('#'))
-      return { name, found: true, links }
+      return { name, found: true, links: [...panel.querySelectorAll('a[href]')].map((a) => ({ text: a.textContent.replace(/\s+/g, ' ').trim(), href: a.href })).filter((link) => !link.href.includes('#')) }
     })
   }, SECTIONS)
+  return sections.flatMap((section) => {
+    if (!section.found) { console.warn(`Seção não encontrada no painel: ${section.name}`); return [] }
+    const links = section.links.filter((link) => new URL(link.href).origin === INTRANET && !isBulletin(link) && !isLogout(link.href))
+    console.log(`${section.name}: ${links.length} links`)
+    return links.map((link) => ({ ...link, folder: slug(section.name), section: section.name }))
+  })
+}
 
-  const manifestPath = path.join(OUT_DIR, 'manifesto.json')
-  const manifest = existsSync(manifestPath) ? JSON.parse(await readFile(manifestPath, 'utf8')) : { items: [] }
-  const known = new Set(manifest.items.map((item) => item.url))
-  let downloaded = 0
-  const skipped = []
-
-  for (const section of sections) {
-    if (!section.found) { console.warn(`Seção não encontrada no painel: ${section.name}`); continue }
-    const links = section.links.filter((link) => new URL(link.href).origin === INTRANET && !isBulletin(link))
-    console.log(`\n${section.name}: ${links.length} links (${section.links.length - links.length} ignorados: boletins ou fora da Intranet)`)
-    for (const link of links) {
-      if (listOnly) { console.log(` - ${link.text || '(sem título)'} → ${link.href}`); continue }
-      if (known.has(link.href)) continue
-      const response = await context.request.get(link.href)
+// Percorre a área de boletins em largura, só dentro de /sistemas/boletim/: páginas de ano, listas
+// de edições e, por fim, os arquivos. Numa página de seleção de ano, só segue os anos pedidos.
+async function* bulletinLinks(page) {
+  for (const [name, root] of BULLETIN_ROOTS) {
+    const queue = [root]
+    const seen = new Set(queue)
+    let visited = 0
+    while (queue.length && visited < MAX_PAGES) {
+      const url = queue.shift()
+      await page.goto(url, { waitUntil: 'networkidle' })
       await sleep(DELAY_MS)
-      const contentType = response.headers()['content-type'] ?? ''
-      // Uma página HTML é navegação (subpasta, listagem), não um documento: fica registrada para
-      // revisão em vez de ser salva como arquivo.
-      if (!response.ok() || contentType.includes('text/html')) { skipped.push(`${section.name}: ${link.text} (${response.status()} ${contentType.split(';')[0]}) ${link.href}`); continue }
-      const body = await response.body()
-      const disposition = response.headers()['content-disposition'] ?? ''
-      const original = decodeURIComponent(disposition.match(/filename\*?=(?:UTF-8'')?"?([^";]+)/i)?.[1] ?? new URL(link.href).pathname.split('/').pop() ?? 'arquivo')
-      const extension = path.extname(original) || (contentType.includes('pdf') ? '.pdf' : '')
-      const file = path.join(OUT_DIR, slug(section.name), `${slug(link.text || path.basename(original, extension)).slice(0, 80) || 'arquivo'}${extension}`)
-      await mkdir(path.dirname(file), { recursive: true })
-      await writeFile(file, body)
-      manifest.items.push({ section: section.name, title: link.text, url: link.href, file, bytes: body.length, sha256: createHash('sha256').update(body).digest('hex'), contentType: contentType.split(';')[0], downloadedAt: new Date().toISOString() })
-      known.add(link.href)
-      downloaded += 1
-      console.log(` ✓ ${link.text}`)
+      visited += 1
+      if (loggedOut(page)) throw new Error('A área de boletins redirecionou para o login: a sessão expirou.')
+      const links = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => ({ text: a.textContent.replace(/\s+/g, ' ').trim(), href: a.href.split('#')[0] })))
+      for (const link of links) {
+        if (!link.href.startsWith(`${INTRANET}/sistemas/boletim/`) || isLogout(link.href) || seen.has(link.href)) continue
+        const year = link.text.match(/^(19|20)\d{2}$/) ? Number(link.text) : null
+        if (year && firstYear && (year < firstYear || year > lastYear)) continue
+        seen.add(link.href)
+        // Arquivo (PDF ou download) é entregue para baixar; o resto é navegação.
+        if (/\.pdf(\?|$)|download|visualizar|arquivo/i.test(link.href)) yield { ...link, folder: path.join('boletins', name), section: name }
+        else queue.push(link.href)
+      }
     }
+    if (visited >= MAX_PAGES) console.warn(`${name}: limite de ${MAX_PAGES} páginas atingido; rode de novo com --anos para continuar por partes.`)
   }
+}
 
-  if (!listOnly) {
+if (useKeychain) {
+  try { execFileSync('security', ['find-generic-password', '-s', KEYCHAIN_SERVICE], { stdio: 'ignore' }) } catch {
+    console.error(`Credencial "${KEYCHAIN_SERVICE}" não encontrada no Chaves do macOS. Cadastre com: security add-generic-password -s ${KEYCHAIN_SERVICE} -a SEU_USUARIO -w`)
+    process.exit(1)
+  }
+}
+
+const browser = await chromium.launch({ channel: 'chrome', headless: useKeychain })
+try {
+  const context = await browser.newContext({ acceptDownloads: false })
+  const page = await context.newPage()
+  await login(page)
+  const { manifestPath, manifest, known } = await loadManifest()
+  const skipped = []
+  let downloaded = 0
+  const links = bulletins ? bulletinLinks(page) : await panelLinks(page)
+  for await (const link of links) {
+    if (listOnly) { console.log(` - [${link.section}] ${link.text || '(sem título)'} → ${link.href}`); continue }
+    if (known.has(link.href)) continue
+    const record = await download(context, link, link.folder, link.section)
+    if (!record || record === 'html') { skipped.push(`${link.section}: ${link.text} ${link.href}`); continue }
+    manifest.items.push(record)
+    known.add(link.href)
+    downloaded += 1
+    console.log(` ✓ ${link.text || record.file}`)
+    // Grava o manifesto a cada arquivo: uma coleta longa interrompida continua de onde parou.
     await mkdir(OUT_DIR, { recursive: true })
     await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
-    // Planilha para a curadoria decidir o que pode ser publicado (mesmas colunas de
-    // data/documentos-manuais.csv, com o arquivo local no lugar da URL).
+  }
+  if (!listOnly) {
     const cell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`
     const rows = manifest.items.map((item) => [item.section, item.title, item.file, item.downloadedAt.slice(0, 10)].map(cell).join(';'))
+    await mkdir(OUT_DIR, { recursive: true })
     await writeFile(path.join(OUT_DIR, 'indice.csv'), `secao;titulo;arquivo_local;baixado_em\n${rows.join('\n')}\n`, 'utf8')
     console.log(`\n${downloaded} arquivos novos em ${OUT_DIR}/ (${manifest.items.length} no total). Índice: ${OUT_DIR}/indice.csv`)
     if (skipped.length) console.log(`Não baixados (páginas ou erros), para revisar:\n${skipped.map((line) => ` - ${line}`).join('\n')}`)
