@@ -4,12 +4,15 @@ import { execFileSync } from 'node:child_process'
 import os from 'node:os'
 import path from 'node:path'
 
-// Agenda a coleta da Intranet no próprio Mac (launchd), todo dia às 07:00, no modo --keychain:
-// a senha fica no Chaves do macOS e é lida só na hora do login. Roda enquanto a sessão do
+// Agenda a coleta da Intranet no próprio Mac (launchd), todo dia às 07:00, em um de dois modos:
+// - --assistido: abre a janela da Intranet e avisa com uma notificação; a pessoa faz o login e a
+//   coleta segue sozinha. Nenhuma senha é guardada; sem login em 15 minutos, não coleta nada.
+// - padrão (--keychain): a senha fica no Chaves do macOS e é lida só na hora do login. Roda enquanto a sessão do
 // usuário estiver aberta e o Mac estiver na rede (ou VPN) que acessa a Intranet. O log vai para
 // intranet-acervo/coleta.log, que não é versionado e não contém dados de login.
 //
-// Uso: npm run intranet:agendar             (instala ou atualiza)
+// Uso: npm run intranet:agendar -- --assistido (instala, com login feito por você)
+//      npm run intranet:agendar             (instala, com login pelo Chaves do macOS)
 //      npm run intranet:agendar -- --remover (desinstala)
 const LABEL = 'br.gov.rj.cbmerj.biblioteca.intranet'
 const plistPath = path.join(os.homedir(), 'Library', 'LaunchAgents', `${LABEL}.plist`)
@@ -31,20 +34,21 @@ if (process.argv.includes('--remover')) {
   process.exit(0)
 }
 
-try {
-  execFileSync('security', ['find-generic-password', '-s', 'cbmerj-intranet'], { stdio: 'ignore' })
-} catch {
-  console.error('Cadastre antes a credencial no Chaves do macOS:\n  security add-generic-password -s cbmerj-intranet -a SEU_USUARIO -w')
-  process.exit(1)
+const assisted = process.argv.includes('--assistido')
+if (!assisted) {
+  try {
+    execFileSync('security', ['find-generic-password', '-s', 'cbmerj-intranet'], { stdio: 'ignore' })
+  } catch {
+    console.error('Cadastre antes a credencial no Chaves do macOS:\n  security add-generic-password -s cbmerj-intranet -a SEU_USUARIO -w\nou agende com login feito por você: npm run intranet:agendar -- --assistido')
+    process.exit(1)
+  }
 }
 
-// Boletins do ano corrente e do anterior (para pegar publicações atrasadas) e o painel de downloads.
+// Boletins do ano corrente e do anterior (para pegar publicações atrasadas) e o painel de
+// downloads, com um único login.
 const year = new Date().getFullYear()
-const command = [
-  `cd "${project}"`,
-  `"${node}" scripts/fetch-intranet.mjs --keychain --boletins --anos ${year - 1}-${year}`,
-  `"${node}" scripts/fetch-intranet.mjs --keychain`,
-].join(' && ')
+const mode = assisted ? '--avisar' : '--keychain'
+const command = `cd "${project}" && "${node}" scripts/fetch-intranet.mjs ${mode} --tudo --anos ${year - 1}-${year}`
 const escape = (value) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 const log = path.join(project, 'intranet-acervo', 'coleta.log')
 const plist = `<?xml version="1.0" encoding="UTF-8"?>
@@ -64,4 +68,4 @@ await mkdir(path.dirname(log), { recursive: true })
 await writeFile(plistPath, plist, { encoding: 'utf8', mode: 0o600 })
 bootout()
 execFileSync('launchctl', ['bootstrap', `gui/${uid}`, plistPath])
-console.log(`Coleta agendada para todo dia às 07:00 (${plistPath}).\nLog: ${log}\nPara rodar agora: launchctl kickstart gui/${uid}/${LABEL}`)
+console.log(`Coleta agendada para todo dia às 07:00, ${assisted ? 'com login feito por você' : 'com login pelo Chaves do macOS'} (${plistPath}).\nLog: ${log}\nPara rodar agora: launchctl kickstart gui/${uid}/${LABEL}`)

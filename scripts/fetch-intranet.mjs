@@ -3,7 +3,6 @@ import { existsSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import path from 'node:path'
-import readline from 'node:readline/promises'
 import { chromium } from 'playwright-core'
 
 // Coleta LOCAL de documentos da Intranet do CBMERJ, para curadoria. Roda só nesta máquina; os
@@ -12,8 +11,9 @@ import { chromium } from 'playwright-core'
 //
 // Login, em um de dois modos. Em nenhum deles a senha é gravada em arquivo, log ou terminal,
 // e a sessão (cookies) vive só na memória do navegador, que é fechado ao final:
-// - assistido (padrão): abre o Chrome, a pessoa faz o login na tela do site e confirma no
-//   terminal. O script nunca vê a senha.
+// - assistido (padrão): abre o Chrome, a pessoa faz o login na tela do site e o script percebe
+//   sozinho quando ela entrou (pelo endereço da página). O script nunca vê a senha. Com --avisar
+//   (usado pelo agendamento), mostra antes uma notificação do macOS pedindo o login.
 // - --keychain: lê usuário e senha do Chaves (Keychain) do macOS, item "cbmerj-intranet",
 //   e preenche o formulário de login. Permite rodar agendado, sem ninguém presente. Cadastro:
 //   security add-generic-password -s cbmerj-intranet -a SEU_USUARIO -w
@@ -22,7 +22,8 @@ import { chromium } from 'playwright-core'
 // O que coletar:
 // - padrão: painel de downloads (Legislações, Corregedorias, Chefia de Gabinete, EMG), sem boletins;
 // - --boletins: Boletins da SEDEC/CBMERJ, percorrendo a área de boletins (anos → edições → PDFs).
-//   --anos 2020-2026 limita os anos percorridos.
+//   --anos 2020-2026 limita os anos percorridos;
+// - --tudo: boletins e painel, com um único login.
 //
 // Sempre só leitura (GET), uma requisição por vez, com pausa; links de sair/logout são ignorados.
 // --listar mostra o que seria baixado, sem baixar.
@@ -45,6 +46,7 @@ const KEYCHAIN_SERVICE = 'cbmerj-intranet'
 const OUT_DIR = 'intranet-acervo'
 const DELAY_MS = 1500
 const MAX_PAGES = 5000
+const LOGIN_WAIT_MIN = 15
 const isBulletin = (link) => /\/boletim/i.test(link.href) || /\bboletim\b/i.test(link.text)
 const isLogout = (href) => /sair|logout|logoff|desconectar|encerrar/i.test(href)
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -52,7 +54,8 @@ const slug = (value) => value.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCa
 const args = process.argv.slice(2)
 const listOnly = args.includes('--listar')
 const useKeychain = args.includes('--keychain')
-const bulletins = args.includes('--boletins')
+const everything = args.includes('--tudo')
+const bulletins = args.includes('--boletins') || everything
 const yearRange = args[args.indexOf('--anos') + 1]?.match(/^(\d{4})(?:-(\d{4}))?$/)
 const [firstYear, lastYear] = yearRange ? [Number(yearRange[1]), Number(yearRange[2] ?? yearRange[1])] : [null, null]
 
@@ -83,9 +86,15 @@ const loggedOut = (page) => /entrada|login/i.test(new URL(page.url()).pathname)
 async function login(page) {
   await page.goto(LOGIN_URL, { waitUntil: 'networkidle' })
   if (!useKeychain) {
-    const terminal = readline.createInterface({ input: process.stdin, output: process.stdout })
-    await terminal.question('\nFaça o login na janela do Chrome que abriu. Quando estiver dentro da Intranet, pressione Enter aqui. ')
-    terminal.close()
+    // O script só observa o endereço da página para saber quando o login terminou; não lê o que
+    // é digitado. Agendado (--avisar), mostra uma notificação do macOS pedindo o login.
+    if (args.includes('--avisar')) execFileSync('osascript', ['-e', 'display notification "Faça o login na janela da Intranet para atualizar o acervo." with title "Biblioteca Normativa CBMERJ" sound name "Glass"'])
+    console.log(`\nFaça o login na janela do Chrome que abriu. A coleta começa sozinha quando você entrar (espera até ${LOGIN_WAIT_MIN} minutos).`)
+    const deadline = Date.now() + LOGIN_WAIT_MIN * 60_000
+    while (loggedOut(page) || (await page.locator('input[type="password"]').count())) {
+      if (Date.now() > deadline || page.isClosed()) throw new Error('O login não foi feito a tempo; nada foi coletado. A próxima execução tenta de novo.')
+      await sleep(2000)
+    }
     return
   }
   let { user, password } = keychainCredentials()
@@ -192,7 +201,12 @@ try {
   const { manifestPath, manifest, known } = await loadManifest()
   const skipped = []
   let downloaded = 0
-  const links = bulletins ? bulletinLinks(page) : await panelLinks(page)
+  // --tudo: boletins e painel com o mesmo login.
+  async function* selectedLinks() {
+    if (bulletins) yield* bulletinLinks(page)
+    if (!bulletins || everything) yield* await panelLinks(page)
+  }
+  const links = selectedLinks()
   for await (const link of links) {
     if (listOnly) { console.log(` - [${link.section}] ${link.text || '(sem título)'} → ${link.href}`); continue }
     if (known.has(link.href)) continue
