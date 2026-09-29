@@ -52,9 +52,7 @@ export function initLivro({ root, documentsById, showDocument, escapeHtml, norma
     const categories = Object.entries(countBy('cat')).sort((a, b) => b[1] - a[1])
     const parts = Object.entries(countBy('parte')).sort((a, b) => a[0].localeCompare(b[0], 'pt-BR'))
     const origins = Object.entries(countBy('src')).map(([value, total]) => [value, total])
-    const bulletinCount = new Set(items.filter((item) => item.bol).map((item) => item.bol)).size
     root.innerHTML = `
-      ${meta.interno ? `<p class="livro-internal" role="note"><strong>Modo interno.</strong> Inclui ${bulletinCount.toLocaleString('pt-BR')} Boletins da SEDEC/CBMERJ baixados da Intranet para este computador. Não compartilhe capturas nem arquivos desta tela fora da corporação.</p>` : ''}
       <div class="livro-summary">
         <div><strong>${items.length.toLocaleString('pt-BR')}</strong><span>itens publicados<br>em boletim</span></div>
         <div><strong>${years.at(-1)}—${years[0]}</strong><span>período<br>coberto</span></div>
