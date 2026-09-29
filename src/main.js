@@ -18,6 +18,7 @@ const defaults = {
   theme: "Todos",
   status: "Todos",
   origin: "Todos",
+  mentions: "ocultar",
   sort: "recent",
   page: 1,
   pageSize: 20,
@@ -95,6 +96,9 @@ const yearRange = years.length
 const verifiedCount = documents.filter(
   document => document.status !== "Não verificada",
 ).length;
+const mentionOnlyCount = documents.filter(
+  document => document.mentionOnly,
+).length;
 const options = (values, counts) =>
   values
     .map(
@@ -154,6 +158,7 @@ document.querySelector("#app").innerHTML = `
       <div class="filter-field"><label for="status-filter">Situação</label><select id="status-filter"><option value="Todos">Todas</option>${options(statuses, count("status"))}</select></div>
       <button id="clear-filters" class="clear-button" type="button">Limpar filtros</button>
     </div>
+    <label class="mention-toggle"><input type="checkbox" id="mentions-filter"> Incluir leis que só citam o CBMERJ de passagem (${mentionOnlyCount})</label>
     <div id="active-filters" class="active-filters" aria-live="polite"></div>
     <p id="cross-hint" class="cross-hint" hidden></p>
     <div id="results-list" class="results-list"></div>
@@ -193,6 +198,7 @@ const elements = {
   year: $("#year-filter"),
   theme: $("#theme-filter"),
   status: $("#status-filter"),
+  mentions: $("#mentions-filter"),
   sort: $("#sort-select"),
   pageSize: $("#page-size"),
   active: $("#active-filters"),
@@ -247,9 +253,12 @@ function filteredDocuments() {
       (state.year === "Sem ano"
         ? !document.year
         : String(document.year) === state.year);
+    const mentionsMatch =
+      state.mentions === "mostrar" || !document.mentionOnly;
     return (
       textMatch &&
       yearMatch &&
+      mentionsMatch &&
       ["type", "origin", "theme", "status"].every(
         field => state[field] === "Todos" || document[field] === state[field],
       )
@@ -395,6 +404,7 @@ function syncControls() {
   for (const field of [...filterFields, "sort"])
     elements[field].value = state[field];
   elements.pageSize.value = String(state.pageSize);
+  elements.mentions.checked = state.mentions === "mostrar";
 }
 
 function render() {
@@ -412,6 +422,7 @@ const hashKeys = {
   theme: "pagina",
   year: "ano",
   status: "situacao",
+  mentions: "mencoes",
   sort: "ordem",
   page: "p",
   pageSize: "por",
@@ -581,6 +592,9 @@ for (const field of filterFields)
   elements[field].addEventListener("change", event =>
     setFilter(field, event.target.value),
   );
+elements.mentions.addEventListener("change", event =>
+  setFilter("mentions", event.target.checked ? "mostrar" : "ocultar"),
+);
 elements.sort.addEventListener("change", event => {
   state.sort = event.target.value;
   state.page = 1;
