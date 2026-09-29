@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curadoria interna | Biblioteca Normativa</title>
+  <style>
+    :root { color: #132f35; background: #f5f2ea; font: 16px/1.5 system-ui, sans-serif; }
+    body { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+    h1 { margin-bottom: 4px; } .muted { color: #67716e; }
+    form, .entry { padding: 20px; margin-top: 24px; border: 1px solid #d7d5ca; background: #fffdf8; }
+    label { display: grid; gap: 5px; margin-top: 14px; color: #67716e; font-size: 12px; font-weight: 700; }
+    input, textarea, select { width: 100%; box-sizing: border-box; padding: 9px; border: 1px solid #c4c4ba; background: #fff; font: inherit; }
+    textarea { min-height: 90px; } .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button { margin-top: 18px; padding: 10px 14px; border: 0; color: white; background: #ef553f; font-weight: 700; cursor: pointer; }
+    .entry { display: grid; gap: 6px; } .entry code { color: #0e7b72; } .message { min-height: 24px; margin-top: 14px; font-weight: 700; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <p class="muted"><a href="/">← Biblioteca</a> · Modo interno, somente nesta máquina</p>
+  <h1>Curadoria do Livro de Ordens</h1>
+  <p class="muted">Adicione ou corrija itens sem sobrescrever a extração original. Toda alteração exige justificativa.</p>
+  <form id="curation-form">
+    <div class="grid">
+      <label>Item existente (opcional)<input name="itemId" placeholder="ex.: lo-1109"></label>
+      <label>Boletim<input name="bulletin" placeholder="ex.: 220"></label>
+      <label>Data do boletim<input name="bulletinDate" type="date"></label>
+      <label>Página<input name="page" type="number" min="1"></label>
+    </div>
+    <label>Assunto<input name="subject" required></label>
+    <label>Ato / identificação<input name="act" placeholder="ex.: Nota CHEMG 1300/2019"></label>
+    <label>Observação<textarea name="note"></textarea></label>
+    <label>Justificativa<textarea name="justification" required></textarea></label>
+    <button type="submit">Salvar curadoria</button>
+    <div class="message" id="message" role="status"></div>
+  </form>
+  <h2>Alterações recentes</h2>
+  <div id="entries"><p class="muted">Carregando…</p></div>
+  <script type="module" src="/curadoria.js"></script>
+</body>
+</html>

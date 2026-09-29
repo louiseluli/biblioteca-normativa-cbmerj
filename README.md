@@ -29,6 +29,8 @@ Toda segunda-feira o workflow `Update data` (`.github/workflows/update-data.yml`
 
 ### Curadoria: cadastro manual e correções em lote
 
+CSV é o formato de troca e revisão em lote, não o banco operacional: ele é simples de versionar, mas não oferece histórico transacional, validação concorrente ou relações. No modo interno, as alterações do Livro de Ordens são gravadas de forma append-only em `intranet-acervo/acervo-interno.db`, na tabela `curadoria`; a extração original não é sobrescrita.
+
 As planilhas em `data/` são a parte do banco mantida por pessoas. Podem ser editadas no Excel ou no Google Planilhas (exportando como CSV, com `;` ou `,`) e são reaplicadas a cada geração, então não se perdem numa nova coleta. Uma linha inválida interrompe a geração com a mensagem do erro, em vez de publicar dado errado.
 
 - `data/documentos-manuais.csv` — um documento por linha, para cadastrar em lote o que não está em nenhuma página coletada. Colunas: `tipo;numero;titulo;ano;data_publicacao;boletim;situacao;fonte_situacao;tema;url_pdf;url_fonte;descricao`. Obrigatórios: `tipo`, `titulo` e `url_pdf` (ou `url_fonte`). `url_pdf` pode ser uma URL oficial ou um arquivo copiado para `public/acervo/` (ex.: `acervo/portaria-1234.pdf`). Qualquer `situacao` diferente de "Não verificada" exige `fonte_situacao`.
@@ -74,6 +76,7 @@ npm run interno              # processa, junta ao Livro de Ordens e abre http://
 - **Nenhuma entrada do sumário é descartada:** cada uma recebe uma categoria (Item, Anexo, Serviços diários, Abertura, Sem alteração, Título de parte/seção/subseção), filtrável na interface.
 - **Livro de Ordens interno:** `build-livro.mjs --interno` junta as entradas dos boletins ao livro 2002–2019 e ao acervo, liga cada uma ao documento do acervo pelo ato e, quando um item do livro original é o mesmo de uma entrada de boletim, liga o item ao PDF em vez de duplicar. O resultado fica em `intranet-acervo/livro-de-ordens-completo.json`.
 - **Site interno** (`scripts/serve-interno.mjs`): o site normal, com o livro completo, filtros por fonte, categoria e parte do boletim, links que abrem o PDF do boletim na página do item, e busca no texto integral dos boletins. Escuta só em `127.0.0.1`: outras máquinas não conseguem acessar.
+- **Painel de curadoria**: em `http://127.0.0.1:4310/curadoria.html`, permite adicionar item ou corrigir assunto, ato, boletim, data, página e observação. Toda gravação exige justificativa e fica registrada com data; o painel não está disponível no GitHub Pages.
 
 ## Publicação
 

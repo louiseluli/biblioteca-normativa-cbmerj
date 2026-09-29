@@ -1821,7 +1821,9 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
-    "pdf": "https://www.cbmerj.rj.gov.br/pdfs/notas-tecnicas/163%20-%20prorroga%C3%A7%C3%A3o%20de%20prazo%20da%20nota%20274_1604516029.pdf",
+    "pdf": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
+    "format": "source",
+    "originalPdf": "https://www.cbmerj.rj.gov.br/pdfs/notas-tecnicas/163%20-%20prorroga%C3%A7%C3%A3o%20de%20prazo%20da%20nota%20274_1604516029.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
     "publication": {
       "bulletin": "164",
@@ -2152,7 +2154,9 @@ export const documents = [
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
-    "pdf": "https://www.cbmerj.rj.gov.br/pdfs/from_dgst/DECRETO_TAC_N%C2%BA_10.2018_-_DI%C3%81RIO_OFICIAL_DE_12.06.2018.pdf",
+    "pdf": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
+    "format": "source",
+    "originalPdf": "https://www.cbmerj.rj.gov.br/pdfs/from_dgst/DECRETO_TAC_N%C2%BA_10.2018_-_DI%C3%81RIO_OFICIAL_DE_12.06.2018.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
     "relatedIds": []
   },
