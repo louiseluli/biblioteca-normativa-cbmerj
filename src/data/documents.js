@@ -1,8 +1,8 @@
-// Gerado por scripts/build-catalog.mjs em 2026-09-28
-export const collectedAt = "2026-09-28"
+// Gerado por scripts/build-catalog.mjs em 2026-09-29
+export const collectedAt = "2026-09-29"
 export const documents = [
   {
-    "id": "decreto-lei-1",
+    "id": "decreto-lei-89bf9df2d9",
     "type": "Decreto-lei",
     "number": "DECRETO-LEI 247",
     "title": "DECRETO-LEI Nº 247, DE 21 DE JULHO DE 1975",
@@ -18,7 +18,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-2",
+    "id": "decreto-db2681493b",
     "type": "Decreto",
     "number": "Decreto 42",
     "title": "CÓDIGO DE SEGURANÇA CONTRA INCÊNDIO E PÂNICO - COSCIP (Decreto nº 42 de 17/12/2018, alterado pelo Decreto nº 46.925, de 05/02/2020) - versão compilada",
@@ -32,11 +32,11 @@ export const documents = [
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/COSCIP_DEC_42-2018_COMPILADO.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "decreto-88"
+      "decreto-b9951db027"
     ]
   },
   {
-    "id": "portaria-3",
+    "id": "portaria-0213fcdccd",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1071",
     "title": "PORTARIA CBMERJ Nº 1071, DE 27 DE AGOSTO DE 2019",
@@ -52,7 +52,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-4",
+    "id": "portaria-5d438b37b8",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1102",
     "title": "PORTARIA CBMERJ Nº 1102, DE 16 DE ABRIL DE 2020",
@@ -68,7 +68,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-5",
+    "id": "portaria-7be3379315",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1109",
     "title": "PORTARIA CBMERJ Nº 1109, DE 20 DE MAIO DE 2020",
@@ -84,7 +84,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-6",
+    "id": "portaria-4c288a762f",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1120",
     "title": "PORTARIA CBMERJ Nº 1120, DE 22 DE SETEMBRO DE 2020",
@@ -100,7 +100,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-7",
+    "id": "portaria-403d412221",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1125",
     "title": "PORTARIA CBMERJ Nº 1125, DE 21 DE OUTUBRO DE 2020",
@@ -116,7 +116,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-8",
+    "id": "portaria-75f97c1b4a",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1151",
     "title": "PORTARIA CBMERJ Nº 1151, DE 10 DE MAIO DE 2021",
@@ -132,7 +132,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-9",
+    "id": "portaria-e5f88b3045",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1167",
     "title": "PORTARIA CBMERJ Nº 1167, DE 02 DE FEVEREIRO DE 2022",
@@ -148,7 +148,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-10",
+    "id": "portaria-63a40fb28c",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1179",
     "title": "PORTARIA CBMERJ Nº 1179, DE 11 DE ABRIL DE 2022",
@@ -164,7 +164,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-11",
+    "id": "portaria-c066b62b73",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1239",
     "title": "PORTARIA CBMERJ Nº 1239, DE 22 DE NOVEMBRO DE 2023",
@@ -180,7 +180,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-12",
+    "id": "portaria-05f5c9664d",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1244",
     "title": "PORTARIA CBMERJ Nº 1244, DE 07 DE FEVEREIRO DE 2024",
@@ -196,7 +196,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-13",
+    "id": "portaria-c5ec9af174",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1280",
     "title": "PORTARIA CBMERJ Nº 1280, DE 20 DE DEZEMBRO DE 2024",
@@ -212,7 +212,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-14",
+    "id": "portaria-fde82ee096",
     "type": "Portaria",
     "number": "PORTARIA CBMERJ 1317",
     "title": "PORTARIA CBMERJ Nº 1317, DE 10 DE DEZEMBRO DE 2025",
@@ -226,61 +226,61 @@ export const documents = [
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/PORTARIA_CBMERJ_1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-15",
-      "nota-tecnica-24",
-      "nota-tecnica-31",
-      "nota-tecnica-42",
-      "nota-tecnica-46"
+      "nota-tecnica-a9f6262d17",
+      "nota-tecnica-b926462719",
+      "nota-tecnica-7fa1d1cac0",
+      "nota-tecnica-98f46a23fd",
+      "nota-tecnica-b01e9147b1"
     ]
   },
   {
-    "id": "nota-tecnica-15",
+    "id": "nota-tecnica-a9f6262d17",
     "type": "Nota técnica",
     "number": "NT 1-01",
     "title": "NT 1-01 - Procedimentos administrativos para regularização e fiscalização - Parte 1 (Regularização) - 1ª edição - 2019 - atualizada - Portaria 1317/2025",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_1-01_Parte1_alterada_Portaria_1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-16",
-      "nota-tecnica-67",
-      "portaria-14"
+      "nota-tecnica-6ef33cff4a",
+      "nota-tecnica-7540ed2680",
+      "portaria-fde82ee096"
     ]
   },
   {
-    "id": "nota-tecnica-16",
+    "id": "nota-tecnica-6ef33cff4a",
     "type": "Nota técnica",
     "number": "NT 1-01",
     "title": "NT 1-01 - Procedimentos Administrativos para Regularização e Fiscalização - Parte 2 - (Fiscalização) - 2ª edição - 2021",
     "year": 2021,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT_1-01-Procedimentos-Administrativos-para-Regularizacao-e-Fiscalizacao-Parte-2-Fiscalizacao_2021_1620759470.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-15",
-      "nota-tecnica-67"
+      "nota-tecnica-a9f6262d17",
+      "nota-tecnica-7540ed2680"
     ]
   },
   {
-    "id": "nota-tecnica-17",
+    "id": "nota-tecnica-8e8dff7cb0",
     "type": "Nota técnica",
     "number": "NT 1-02",
     "title": "NT 1-02 - Terminologia de segurança contra incêndio e pânico - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -289,32 +289,32 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-18",
+    "id": "nota-tecnica-cddcc5d907",
     "type": "Nota técnica",
     "number": "NT 1-03",
     "title": "NT 1-03 - Símbolos gráficos para projetos de segurança contra incêndio e pânico - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT1-03_2Edio_2023.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-68"
+      "nota-tecnica-7d82ef1fb4"
     ]
   },
   {
-    "id": "nota-tecnica-19",
+    "id": "nota-tecnica-bd0548f8e8",
     "type": "Nota técnica",
     "number": "NT 1-04",
     "title": "NT 1-04 - Classificação das edificações e áreas de risco quanto ao risco de incêndio - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -323,14 +323,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-20",
+    "id": "nota-tecnica-9b73e90c3f",
     "type": "Nota técnica",
     "number": "NT 1-05",
     "title": "NT 1-05 - Edificações anteriores - Adequação ao COSCIP - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -339,32 +339,32 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-21",
+    "id": "nota-tecnica-b3b6fb7d23",
     "type": "Nota técnica",
     "number": "NT 1-06",
     "title": "NT 1-06 - Processo Administrativo em tramitação por adequação normativa - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT1-06_2Edio_2023.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-69"
+      "nota-tecnica-9626fc6702"
     ]
   },
   {
-    "id": "nota-tecnica-22",
+    "id": "nota-tecnica-4d36dd32d1",
     "type": "Nota técnica",
     "number": "NT 1-07",
     "title": "NT 1-07 - Atividades Econômicas de Baixo Risco - 1ª edição - 2020",
     "year": 2020,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -373,123 +373,123 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-23",
+    "id": "nota-tecnica-cf6592a881",
     "type": "Nota técnica",
     "number": "NT 2-01",
     "title": "NT 2-01 - Sistema de proteção por extintores de incêndio - 2ª edição - 2020",
     "year": 2020,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-02-Aprovada-pela-Portaria-CBMERJ-1120_2020_1601400175.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-70"
+      "nota-tecnica-6524c0883c"
     ]
   },
   {
-    "id": "nota-tecnica-24",
+    "id": "nota-tecnica-b926462719",
     "type": "Nota técnica",
     "number": "NT 2-02",
     "title": "NT 2-02 - Sistemas de hidrantes e de mangotinhos para combate a incêndio - 1ª edição - 2019 - atualizada - Portaria 1317/2025",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_2-02_alterada-pela-Portaria-1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "portaria-14"
+      "portaria-fde82ee096"
     ]
   },
   {
-    "id": "nota-tecnica-25",
+    "id": "nota-tecnica-62d049e423",
     "type": "Nota técnica",
     "number": "NT 2-03",
     "title": "NT 2-03 - Sistemas de chuveiros automáticos sprinklers - Parte 1 - Requisitos gerais - 1ª edição - 2019 - atualizada 2020",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-Sistemas-de-chuveiros-automticos-sprinklers-Parte-1-Requisitos-gerais-2019-atualizada_1647374313.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-26"
+      "nota-tecnica-24118ce71b"
     ]
   },
   {
-    "id": "nota-tecnica-26",
+    "id": "nota-tecnica-24118ce71b",
     "type": "Nota técnica",
     "number": "NT 2-03",
     "title": "NT 2-03 - Sistemas de chuveiros automáticos sprinklers - Parte 2 - Áreas de armazenamento - 1ª edição - 2019 - atualizada 2020",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-03-sprinklers-Parte-2-Minuta-das-alteracoes_1604941555.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-25"
+      "nota-tecnica-62d049e423"
     ]
   },
   {
-    "id": "nota-tecnica-27",
+    "id": "nota-tecnica-3a4d18865b",
     "type": "Nota técnica",
     "number": "NT 2-04",
     "title": "NT 2-04 - Conjunto de pressurização para sistemas de combate a incêndio - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-04_2Edio_2023.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-71"
+      "nota-tecnica-d17385e3a7"
     ]
   },
   {
-    "id": "nota-tecnica-28",
+    "id": "nota-tecnica-3cc92d2c64",
     "type": "Nota técnica",
     "number": "NT 2-05",
     "title": "NT 2-05 - Sinalização de segurança contra incêndio e pânico - 3ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-05_3Edio_2023.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-72",
-      "nota-tecnica-73"
+      "nota-tecnica-68783cd5f4",
+      "nota-tecnica-68273c3d2e"
     ]
   },
   {
-    "id": "nota-tecnica-29",
+    "id": "nota-tecnica-0a34937c9a",
     "type": "Nota técnica",
     "number": "NT 2-06",
     "title": "NT 2-06 - Iluminação de emergência - 1ª edição - 2019 - atualizada 2020",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -498,14 +498,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-30",
+    "id": "nota-tecnica-f21db90cb5",
     "type": "Nota técnica",
     "number": "NT 2-07",
     "title": "NT 2-07 - Sistema de detecção e alarme de incêndio - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -514,50 +514,50 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-31",
+    "id": "nota-tecnica-7fa1d1cac0",
     "type": "Nota técnica",
     "number": "NT 2-08",
     "title": "NT 2-08 - Saídas de emergência em edificações - 1ª edição - 2019 - atualizada - Portaria 1317/2025",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_2-08_1Ed_2019_alterada_Portaria_1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "portaria-14"
+      "portaria-fde82ee096"
     ]
   },
   {
-    "id": "nota-tecnica-32",
+    "id": "nota-tecnica-6654fd0445",
     "type": "Nota técnica",
     "number": "NT 2-09",
     "title": "NT 2-09 - Pressurização de escada de emergência, elevador de emergência, antecâmaras e áreas de refúgio - 2ª edição - 2025",
     "year": 2025,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/12/NT_2_09_2Ed_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-74"
+      "nota-tecnica-1ed4f8745d"
     ]
   },
   {
-    "id": "nota-tecnica-33",
+    "id": "nota-tecnica-33c79f020c",
     "type": "Nota técnica",
     "number": "NT 2-10",
     "title": "NT 2-10 - Plano de emergência contra incêndio e pânico (PECIP) - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -566,14 +566,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-34",
+    "id": "nota-tecnica-9773141cce",
     "type": "Nota técnica",
     "number": "NT 2-11",
     "title": "NT 2-11 - Brigadas de incêndio - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -582,14 +582,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-35",
+    "id": "nota-tecnica-488abf56d5",
     "type": "Nota técnica",
     "number": "NT 2-12",
     "title": "NT 2-12 - Sistema de proteção contra descargas atmosféricas (SPDA) - 1ª edição - 2019 - atualizada 2022",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -598,32 +598,32 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-36",
+    "id": "nota-tecnica-2dba6e87ba",
     "type": "Nota técnica",
     "number": "NT 2-13",
     "title": "NT 2-13 - Sistemas fixos de gases para combate a incêndio - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT2-13_2Edio_2023.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-75"
+      "nota-tecnica-d7f8a8e065"
     ]
   },
   {
-    "id": "nota-tecnica-37",
+    "id": "nota-tecnica-a1e9246794",
     "type": "Nota técnica",
     "number": "NT 2-14",
     "title": "NT 2-14 - Controle de fumaça - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -632,50 +632,50 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-38",
+    "id": "nota-tecnica-ec122522fd",
     "type": "Nota técnica",
     "number": "NT 2-15",
     "title": "NT 2-15 - Hidrante urbano - 2ª edição - 2025",
     "year": 2025,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/12/NT_2_15_2Ed_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-76"
+      "nota-tecnica-5f4d609f34"
     ]
   },
   {
-    "id": "nota-tecnica-39",
+    "id": "nota-tecnica-10cc4546c6",
     "type": "Nota técnica",
     "number": "NT 2-16",
     "title": "NT 2-16 - Acesso de viaturas em edificações - 2ª edição - 2020",
     "year": 2020,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-16-Acesso-de-viaturas-em-edificacoes-2020-versao-02.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-77"
+      "nota-tecnica-66718bf1e7"
     ]
   },
   {
-    "id": "nota-tecnica-40",
+    "id": "nota-tecnica-3a2f9d9b9a",
     "type": "Nota técnica",
     "number": "NT 2-17",
     "title": "NT 2-17 - Separação entre edificações - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -684,51 +684,51 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-41",
+    "id": "nota-tecnica-c78bdc0ac4",
     "type": "Nota técnica",
     "number": "NT 2-18",
     "title": "NT 2-18 - Compartimentação horizontal e vertical - 2ª edição - 2022",
     "year": 2022,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/NT-2-18-Compartimentao-horizontal-e-vertical-2022_1649879739.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-78"
+      "nota-tecnica-d0b444ce16"
     ]
   },
   {
-    "id": "nota-tecnica-42",
+    "id": "nota-tecnica-98f46a23fd",
     "type": "Nota técnica",
     "number": "NT 2-19",
     "title": "NT 2-19 - Segurança estrutural contra incêndio - Resistência ao fogo dos elementos de construção - 2ª edição - 2025 - atualizada Portaria 1317/2025",
     "year": 2025,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT2_19_2Ed_2025_alterada_Portaria_1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-79",
-      "portaria-14"
+      "nota-tecnica-f9763ea20f",
+      "portaria-fde82ee096"
     ]
   },
   {
-    "id": "nota-tecnica-43",
+    "id": "nota-tecnica-a510c42f69",
     "type": "Nota técnica",
     "number": "NT 2-20",
     "title": "NT 2-20 - Controle de materiais de acabamento e de revestimento - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -737,14 +737,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-44",
+    "id": "nota-tecnica-3fc46dcb69",
     "type": "Nota técnica",
     "number": "NT 3-01",
     "title": "NT 3-01 - Cozinha profissional - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -753,50 +753,50 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-45",
+    "id": "nota-tecnica-e3a305527a",
     "type": "Nota técnica",
     "number": "NT 3-02",
     "title": "NT 3-02 - Gás (GLP-GN) - Uso em edificações e áreas de risco - 2ª edição - 2023 - atualizada 2025",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/02/NT3-02_2Ed_2023_alterada_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-80"
+      "nota-tecnica-27282a347c"
     ]
   },
   {
-    "id": "nota-tecnica-46",
+    "id": "nota-tecnica-b01e9147b1",
     "type": "Nota técnica",
     "number": "NT 3-03",
     "title": "NT 3-03 - Motogeradores de energia em edificações e áreas de risco - 1ª edição - 2019 - atualizada - Portaria 1317/2025",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/NT_3-03_1Ed_2019_alterada_Portaria_1317_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "portaria-14"
+      "portaria-fde82ee096"
     ]
   },
   {
-    "id": "nota-tecnica-47",
+    "id": "nota-tecnica-427e9371f0",
     "type": "Nota técnica",
     "number": "NT 3-04",
     "title": "NT 3-04 - Subestações elétricas - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -805,14 +805,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-48",
+    "id": "nota-tecnica-fa33334dc6",
     "type": "Nota técnica",
     "number": "NT 3-05",
     "title": "NT 3-05 - Caldeiras e vasos de pressão - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -821,14 +821,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-49",
+    "id": "nota-tecnica-743995feb3",
     "type": "Nota técnica",
     "number": "NT 3-06",
     "title": "NT 3-06 - Armazenagem de líquidos inflamáveis e combustíveis - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -837,14 +837,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-50",
+    "id": "nota-tecnica-c88ceef9ad",
     "type": "Nota técnica",
     "number": "NT 3-07",
     "title": "NT 3-07 - Heliponto e heliporto - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -853,14 +853,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-51",
+    "id": "nota-tecnica-af98473964",
     "type": "Nota técnica",
     "number": "NT 4-01",
     "title": "NT 4-01 - Quiosques e áreas para exposição ou venda de produtos e serviços - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -869,14 +869,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-52",
+    "id": "nota-tecnica-5f40acfa39",
     "type": "Nota técnica",
     "number": "NT 4-02",
     "title": "NT 4-02 - Edificações destinadas à restrição de liberdade - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -885,14 +885,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-53",
+    "id": "nota-tecnica-e495b1b504",
     "type": "Nota técnica",
     "number": "NT 4-03",
     "title": "NT 4-03 - Edificações tombadas - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -901,14 +901,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-54",
+    "id": "nota-tecnica-df1a6020de",
     "type": "Nota técnica",
     "number": "NT 4-04",
     "title": "NT 4-04 - Munições, explosivos e artefatos pirotécnicos - Fabricação, armazenagem e comércio - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -917,14 +917,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-55",
+    "id": "nota-tecnica-1fdd1f06c4",
     "type": "Nota técnica",
     "number": "NT 4-05",
     "title": "NT 4-05 - Gás (GLP-GN) - Manipulação, armazenamento e comercialização - 2ª edição - 2022",
     "year": 2022,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -933,14 +933,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-56",
+    "id": "nota-tecnica-c984f189ca",
     "type": "Nota técnica",
     "number": "NT 4-06",
     "title": "NT 4-06 - Postos de serviços e abastecimento de veículos - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -949,14 +949,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-57",
+    "id": "nota-tecnica-dce152927e",
     "type": "Nota técnica",
     "number": "NT 4-07",
     "title": "NT 4-07 - Edificações e estruturas para garagens - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -965,14 +965,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-58",
+    "id": "nota-tecnica-c971a36f55",
     "type": "Nota técnica",
     "number": "NT 4-08",
     "title": "NT 4-08 - Pátios para armazenagens diversas - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -981,14 +981,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-59",
+    "id": "nota-tecnica-0865450902",
     "type": "Nota técnica",
     "number": "NT 4-09",
     "title": "NT 4-09 - Túneis - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -997,14 +997,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-60",
+    "id": "nota-tecnica-4bf22215e4",
     "type": "Nota técnica",
     "number": "NT 4-10",
     "title": "NT 4-10 - Canteiro de obras - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -1013,14 +1013,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-61",
+    "id": "nota-tecnica-a54aaff6f2",
     "type": "Nota técnica",
     "number": "NT 4-11",
     "title": "NT 4-11 - Estruturas temporárias de atendimento médico para enfrentamento da Covid-19 - 2ª edição - 2023",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -1029,14 +1029,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-62",
+    "id": "nota-tecnica-93ff0cd896",
     "type": "Nota técnica",
     "number": "NT 5-01",
     "title": "NT 5-01 - Centros esportivos, de eventos e de exibição - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -1045,50 +1045,50 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-63",
+    "id": "nota-tecnica-a5f3f0d717",
     "type": "Nota técnica",
     "number": "NT 5-02",
     "title": "NT 5-02 - Eventos pirotécnicos - 3ª edição - 2025",
     "year": 2025,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT_5-02_3Ed_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-81"
+      "nota-tecnica-a6fc72ec51"
     ]
   },
   {
-    "id": "nota-tecnica-64",
+    "id": "nota-tecnica-3496a6b0a2",
     "type": "Nota técnica",
     "number": "NT 5-03",
     "title": "NT 5-03 - Carros alegóricos, trios elétricos e carros de som - 2ª edição - 2025",
     "year": 2025,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT_5-03_2Ed_2025.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-82"
+      "nota-tecnica-54dd29d77a"
     ]
   },
   {
-    "id": "nota-tecnica-65",
+    "id": "nota-tecnica-4a839d31d3",
     "type": "Nota técnica",
     "number": "NT 5-04",
     "title": "NT 5-04 - Eventos temporários de reunião de público - 1ª edição - 2019 - atualizada 2022",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -1097,14 +1097,14 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-66",
+    "id": "nota-tecnica-6108ea55d0",
     "type": "Nota técnica",
     "number": "NT 5-05",
     "title": "NT 5-05 - Atendimento médico para eventos de reunião de público - 1ª edição - 2019",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
@@ -1113,298 +1113,298 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-tecnica-67",
+    "id": "nota-tecnica-7540ed2680",
     "type": "Nota técnica",
     "number": "NT 1-01",
     "title": "NT 1-01 - Procedimentos Administrativos para Regularização e Fiscalização - Parte 2 (Fiscalização)- Versão 01 - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-01-Procedimentos-Administrativos-para-Regularizacao-e-Fiscalizacao-Parte-2-Fiscalizacao.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-15",
-      "nota-tecnica-16"
+      "nota-tecnica-a9f6262d17",
+      "nota-tecnica-6ef33cff4a"
     ]
   },
   {
-    "id": "nota-tecnica-68",
+    "id": "nota-tecnica-7d82ef1fb4",
     "type": "Nota técnica",
     "number": "NT 1-03",
     "title": "NT 1-03 - Símbolos gráficos para projetos de segurança contra incêndio e pânico - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-03-Simbolos-graficos-para-projetos-de-seguranca-contra-incendio-e-panico.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-18"
+      "nota-tecnica-cddcc5d907"
     ]
   },
   {
-    "id": "nota-tecnica-69",
+    "id": "nota-tecnica-9626fc6702",
     "type": "Nota técnica",
     "number": "NT 1-06",
     "title": "NT 1-06 - Processo Administrativo em tramitação por adequação normativa - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-1-06-Processo-Administrativo-em-tramitacao-por-adequacao-normativa.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-21"
+      "nota-tecnica-b3b6fb7d23"
     ]
   },
   {
-    "id": "nota-tecnica-70",
+    "id": "nota-tecnica-6524c0883c",
     "type": "Nota técnica",
     "number": "NT 2-01",
     "title": "NT 2-01 - Sistema de proteção por extintores de incêndio - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-01-Sistema-de-protecao-por-extintores-de-incendio-versao-01-2019_1601400198.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-23"
+      "nota-tecnica-cf6592a881"
     ]
   },
   {
-    "id": "nota-tecnica-71",
+    "id": "nota-tecnica-d17385e3a7",
     "type": "Nota técnica",
     "number": "NT 2-04",
     "title": "NT 2-04 - Conjunto de pressurização para sistemas de combate a incêndio - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-04-Conjunto-de-pressurizacao-para-sistemas-de-combate-a-incendio-Minuta-das-alteracoes_1604941570.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-27"
+      "nota-tecnica-3a4d18865b"
     ]
   },
   {
-    "id": "nota-tecnica-72",
+    "id": "nota-tecnica-68783cd5f4",
     "type": "Nota técnica",
     "number": "NT 2-05",
     "title": "NT 2-05 - Sinalização de segurança contra incêndio e pânico - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-05-Sinalizacao-de-seguranca-contra-incendio-e-panico.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-28",
-      "nota-tecnica-73"
+      "nota-tecnica-3cc92d2c64",
+      "nota-tecnica-68273c3d2e"
     ]
   },
   {
-    "id": "nota-tecnica-73",
+    "id": "nota-tecnica-68273c3d2e",
     "type": "Nota técnica",
     "number": "NT 2-05",
     "title": "NT 2-05 - Sinalização de segurança contra incêndio e pânico - 2ª edição - 2020 - Revogada",
     "year": 2020,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-05-Sinalizacao-de-seguranca-contra-incendio-e-panico-2020-versao-02.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-28",
-      "nota-tecnica-72"
+      "nota-tecnica-3cc92d2c64",
+      "nota-tecnica-68783cd5f4"
     ]
   },
   {
-    "id": "nota-tecnica-74",
+    "id": "nota-tecnica-1ed4f8745d",
     "type": "Nota técnica",
     "number": "NT 2-09",
     "title": "NT 2-09 - Pressurização de escada de emergência, elevador de emergência, antecâmaras e áreas de refúgio - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-09-Pressurizacao-de-escada-de-emergencia-elevador-de-emergencia-antecamaras-e-areas-de-refugi.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-32"
+      "nota-tecnica-6654fd0445"
     ]
   },
   {
-    "id": "nota-tecnica-75",
+    "id": "nota-tecnica-d7f8a8e065",
     "type": "Nota técnica",
     "number": "NT 2-13",
     "title": "NT 2-13 - Sistemas fixos de gases para combate a incêndio - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-13-Sistemas-fixos-de-gases-para-combate-a-incendio.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-36"
+      "nota-tecnica-2dba6e87ba"
     ]
   },
   {
-    "id": "nota-tecnica-76",
+    "id": "nota-tecnica-5f4d609f34",
     "type": "Nota técnica",
     "number": "NT 2-15",
     "title": "NT 2-15 - Hidrante urbano - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-15-Hidrante-urbano.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-38"
+      "nota-tecnica-ec122522fd"
     ]
   },
   {
-    "id": "nota-tecnica-77",
+    "id": "nota-tecnica-66718bf1e7",
     "type": "Nota técnica",
     "number": "NT 2-16",
     "title": "NT 2-16 - Acesso de viaturas em edificações - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-16-Acesso-de-viaturas-em-edificacoes.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-39"
+      "nota-tecnica-10cc4546c6"
     ]
   },
   {
-    "id": "nota-tecnica-78",
+    "id": "nota-tecnica-d0b444ce16",
     "type": "Nota técnica",
     "number": "NT 2-18",
     "title": "NT 2-18 - Compartimentação horizontal e vertical - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-18-Compartimentacao-horizontal-e-vertical.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-41"
+      "nota-tecnica-c78bdc0ac4"
     ]
   },
   {
-    "id": "nota-tecnica-79",
+    "id": "nota-tecnica-f9763ea20f",
     "type": "Nota técnica",
     "number": "NT 2-19",
     "title": "NT 2-19 - Segurança estrutural contra incêndio - Resistência ao fogo dos elementos de construção - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-2-19-Seguranca-estrutural-contra-incendio-Resistencia-ao-fogo-dos-elementos-de-construcao.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-42"
+      "nota-tecnica-98f46a23fd"
     ]
   },
   {
-    "id": "nota-tecnica-80",
+    "id": "nota-tecnica-27282a347c",
     "type": "Nota técnica",
     "number": "NT 3-02",
     "title": "NT 3-02 - Gás (GLPGN) - Uso predial - 1ª edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/NT-3-02-Gas-GLPGN-Uso-predial.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-45"
+      "nota-tecnica-e3a305527a"
     ]
   },
   {
-    "id": "nota-tecnica-81",
+    "id": "nota-tecnica-a6fc72ec51",
     "type": "Nota técnica",
     "number": "NT 5-02",
     "title": "NT 5-02 - Eventos Pirotécnicos - 2ª Edição - 2023 - Revogada",
     "year": 2023,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT5-02_2Ed_2023_Revogada.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-63"
+      "nota-tecnica-a5f3f0d717"
     ]
   },
   {
-    "id": "nota-tecnica-82",
+    "id": "nota-tecnica-54dd29d77a",
     "type": "Nota técnica",
     "number": "NT 5-03",
     "title": "NT 5-03 - Carros Alegóricos, trios elétricos e carros de som - 1ª Edição - 2019 - Revogada",
     "year": 2019,
     "theme": "Notas Técnicas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/notas-tecnicas/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/12/NT5-03_1Ed_2019_Revogada.pdf",
     "description": "Registro coletado da página oficial: Notas Técnicas. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "nota-tecnica-64"
+      "nota-tecnica-3496a6b0a2"
     ]
   },
   {
-    "id": "decreto-lei-83",
+    "id": "decreto-lei-9e9aba0226",
     "type": "Decreto-lei",
     "number": "Decreto Lei 247",
     "title": "Decreto Lei Nº 247, de 21 de Julho de 1975 (Dispõe sobre segurança contra incêndio e pânico)",
@@ -1420,7 +1420,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-84",
+    "id": "decreto-8bac3e8ba3",
     "type": "Decreto",
     "number": "Decreto 897",
     "title": "Decreto Nº 897, de 21 de Setembro de 1976 (Código de Segurança Contra Incêndio e Pânico - CoSCIP)",
@@ -1436,7 +1436,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-85",
+    "id": "decreto-66ad6d410b",
     "type": "Decreto",
     "number": "Decreto 42",
     "title": "Decreto Nº 42, de 26 de dezembro de 2018, alterado pelo Decreto Nº 46.925, de 05 de fevereiro de 2020 (Novo Código de Segurança Contra Incêndio e Pânico - Novo COSCIP - Compilado)",
@@ -1450,11 +1450,11 @@ export const documents = [
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/DECRETO_42_2018_COSCIP_COMPILADO.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "decreto-88"
+      "decreto-b9951db027"
     ]
   },
   {
-    "id": "decreto-86",
+    "id": "decreto-2926477d66",
     "type": "Decreto",
     "number": "Decreto 42/2018",
     "title": "Decreto Nº 42/2018, publicado em 26 de dezembro de 2018 (Novo Código de Segurança Contra Incêndio e Pânico - CoSCIP). Este Decreto entrará em vigor 180 dias após sua publicação.",
@@ -1470,7 +1470,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-87",
+    "id": "decreto-8cac23fd25",
     "type": "Decreto",
     "number": "Decreto 46792",
     "title": "Decreto Nº 46792, de 14 de outubro de 2019 (Dispõe sobre o procedimento assistido a ser adotado no âmbito do Corpo de Bombeiros Militar do Estado do Rio de Janeiro para a emissão de Certificado de Aprovação, e dá outras providências.)",
@@ -1486,7 +1486,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-88",
+    "id": "decreto-b9951db027",
     "type": "Decreto",
     "number": "Decreto 46925",
     "title": "Decreto Nº 46925, de 05 de fevereiro de 2020 (Altera o Decreto Nº 42, de 17 de dezembro de 2018, que regulamenta o Decreto-Lei Nº 247, de 21 de julho de 1975, dispondo sobre o código de segurança contra incêndio e pânico - COSCIP, no âmbito do Estado do Rio de Janeiro.)",
@@ -1500,12 +1500,12 @@ export const documents = [
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Decreto-No-46.925_05.02.2020_retificado_DOERJ-036_27.02.2020.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
     "relatedIds": [
-      "decreto-2",
-      "decreto-85"
+      "decreto-db2681493b",
+      "decreto-66ad6d410b"
     ]
   },
   {
-    "id": "nota-administrativa-89",
+    "id": "nota-administrativa-88520e0d25",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2022",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 01/2022 - Procedimentos administrativos para cadastramento ou renovação de cadastramento de empresa formadora de bombeiro civil e brigadista voluntário de incêndio e empresa prestadora de serviço de brigada de incêndio sediadas fora do estado do Rio de Janeiro - Nota DGST Nº 204/2022 - Boletim Ostensivo SEDEC/CBMERJ nº 182, de 30/09/2022",
@@ -1518,10 +1518,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/CADASTRAMENTO-DE-EMPRESAS-FORMADORAS-E-PRESTADORAS-DE-SERVICO-DE-BRIGADA_1715713612.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "182",
+      "date": "2022-09-30",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-90",
+    "id": "nota-administrativa-b72c7cfe35",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2023",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 01/2023 - Procedimentos administrativos para cadastramento ou renovação de cadastramento de empresa de projetos e profissionais autônomos sediados/estabelecidos fora do estado do Rio de Janeiro - Republicação - Nota DGST Nº 053/2023 - Boletim Ostensivo SEDEC/CBMERJ nº 066 de 12/04/2023",
@@ -1534,10 +1539,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/aditamento-administrativo-01_2023-republicado_1715713612.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "066",
+      "date": "2023-04-12",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-91",
+    "id": "nota-administrativa-e6f9581f94",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02/2023",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 02/2023 - Procedimentos administrativos para uso de assinaturas eletrônicas em processos na DGST e SSTs componentes do Sistema de Segurança Contra Incêndio e Pânico - Nota DGST Nº 263/2023 - Boletim Ostensivo SEDEC/CBMERJ nº 236, de 27/12/2023",
@@ -1550,10 +1560,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/ADITAMENTO-ADMINISTRATIVO-DE-SERVICOS-TECNICOS-No-02-2023-%E2%80%93-USO-DE-ASSINATURAS-ELETRONICAS-1_1715713612.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "236",
+      "date": "2023-12-27",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-92",
+    "id": "nota-administrativa-b592c873a6",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2024",
     "title": "Aditamento Administrativo de Serviços Técnicos 01/2024 - Exigência de solicitação de documento de Responsabilidade Técnica relativa ao Levantamento Arquitetônico em Processos de Segurança Contra Incêndio e Pânico - Nota DGST 123/2024 - Boletim Ostensivo SEDEC/CBMERJ Nº 085, de 10/05/2024",
@@ -1566,10 +1581,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/123-BOL-085-DE-10-05-24-ADITAMENTO-ADMINISTRATIVO-RESPONSABILIDADE-TECNICA-REFERENTE-AO-LEVANTAMENTO-ARQUITETONICO.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "085",
+      "date": "2024-05-10",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-93",
+    "id": "nota-administrativa-8c7feea71c",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02/2024",
     "title": "Aditamento Administrativo de Serviços Técnicos 02/2024 – Apresentação de documentos relacionados à aprovação de edificações ou áreas de risco com exigência de hidrantes urbanos – Nota DGST 195/2024 – Boletim Ostensivo SEDEC/CBMERJ Nº 133, de 22/07/2024",
@@ -1582,10 +1602,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/07/Aditamento-Administrativo-de-Servicos-Tecnicos-02-2024-Nota-DGST-195-2024-Isencao-de-hidrante-urbano_1722279095.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "133",
+      "date": "2024-07-22",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-94",
+    "id": "nota-administrativa-de65293aa8",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 03/2024",
     "title": "Aditamento Administrativo de Serviços Técnicos 03/2024 – Solicitação de Autorização de Certificado de Aprovação para parte de Loteamentos e Agrupamentos de Edificações – Nota DGST 198/2024 – Boletim Ostensivo SEDEC/CBMERJ Nº 133, de 22/07/2024",
@@ -1598,10 +1623,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/08/Aditamento-Administrativo-de-Servicos-Tecnicos-03-2024-Nota-DGST-198-2024-Autorizacao-para-emissao-de-certificado-aprovacao-parcial.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "133",
+      "date": "2024-07-22",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-95",
+    "id": "nota-administrativa-bc7b1002c0",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2025",
     "title": "Aditamento Administrativo de Serviços Técnicos 01/2025 – Procedimentos para implantação do formato híbrido no processo de análise de projetos de segurança contra incêndio e pânico - Nota DGST 034/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 035, de 20/02/2025, Nota DGST 080/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 072, de 24/04/2025 e Nota DGST 091/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 111, de 24/06/2025",
@@ -1614,10 +1644,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/06/aditamento-administrativo-01-de-2025-consolidado-nota-DGST-034-2025-nota-DGST-080-2025-e-nota-DGST-091-2025_1750859331.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "035",
+      "date": "2025-02-20",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-96",
+    "id": "nota-administrativa-53f0c8e5c2",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2025",
     "title": "Aditamento Administrativo de Serviços Técnicos 01/2025 – Procedimentos para implantação do formato híbrido no processo de análise de projetos de segurança contra incêndio e pânico - Nota DGST 034/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 035, de 20/02/2025 e Nota DGST 080/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 072, de 24/04/2025",
@@ -1630,10 +1665,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/04/aditamento-administrativo-01-de-2025-consolidado-nota-DGST-034-2025-e-nota-DGST-080-2025_1745592861.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "035",
+      "date": "2025-02-20",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-97",
+    "id": "nota-administrativa-3dc4555945",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2025",
     "title": "Aditamento Administrativo de Serviços Técnicos 01/2025 – Procedimentos para implantação do formato híbrido no processo de análise de projetos de segurança contra incêndio e pânico – Nota DGST 034/2025 – Boletim Ostensivo SEDEC/CBMERJ Nº 035, de 20/02/2025",
@@ -1646,11 +1686,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/02/aditamento-administrativo-01-de-2025.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "035",
+      "date": "2025-02-20",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-98",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-4da43d286b",
+    "type": "Nota administrativa",
     "number": "Nota CHEMG 326/2025",
     "title": "Estações de recarga para veículos elétricos - Requisitos e Recomendações de Segurança - Nota CHEMG 326/2025 - Boletim Ostensivo SEDEC/CBMERJ Nº 086, de 16/05/2025",
     "year": 2025,
@@ -1662,11 +1707,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/05/NOTA-CHEMG-326-2025_1747939382.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "086",
+      "date": "2025-05-16",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-99",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-1e4b00218b",
+    "type": "Nota administrativa",
     "number": "Nota DGST 149/2025",
     "title": "Novo Portal do Requerente - Trâmite Digital do Certificado de Aprovação - 100% Digital - Nota DGST 149/2025",
     "year": 2025,
@@ -1678,11 +1728,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/09/NOTA-DGST-149-2025-Novo-Portal-do-Requerente.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "176",
+      "date": "2025-09-26",
+      "source": "Cabeçalho do PDF"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-100",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-71105a4a6d",
+    "type": "Nota administrativa",
     "number": "Nota DGST 001/2026",
     "title": "Novo Portal do Requerente - Trâmite Digital de Análise de Projeto - 100% Digital - Nota DGST 001/2026",
     "year": 2026,
@@ -1697,7 +1752,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-101",
+    "id": "nota-administrativa-39ce0e932a",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2026",
     "title": "Aditamento Administrativo de Serviços Técnicos 01/2026 - Adoção de medida compensatória adicional em agrupamentos residenciais privativos com até 12 metros de altura onde, pela avaliação das condições arquitetônicas e construtivas da edificação, não haja viabilidade do atendimento da medida de segurança acesso de viaturas, conforme prevista na Nota Técnica 2-16 (Acesso de Viaturas em Edificações) - Nota DGST 048/2026",
@@ -1713,7 +1768,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-102",
+    "id": "nota-administrativa-18e17a0ab9",
     "type": "Nota administrativa",
     "number": "Nota DGST 246/2019",
     "title": "Nota DGST Nº 246/2019 - Boletim Ostensivo SEDEC/CBMERJ nº 221, de 27/11/2019 - Sistema de Segurança Contra Incêndio e Pânico - Parecer sobre aceitação de Termo de Responsabilidade Técnica - TRT.",
@@ -1726,10 +1781,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_dgst_246_2019.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "221",
+      "date": "2019-11-27",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-103",
+    "id": "nota-administrativa-77a845ebc5",
     "type": "Nota administrativa",
     "number": "Nota DGST 274/2019",
     "title": "Nota DGST Nº 274/2019 - Boletim Ostensivo SEDEC/CBMERJ nº 205, de 01/11/2019 - Sistema de Segurança Contra Incêndio e Pânico - Análise de Projetos de Segurança Contra Incêndio e Pânico em tramitação por adequação normativa.",
@@ -1742,10 +1802,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_analise_proj_seguranca_adequacao_normativa.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "205",
+      "date": "2019-11-01",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-104",
+    "id": "nota-administrativa-9fe9ac1551",
     "type": "Nota administrativa",
     "number": "NOTA DGST 163/2020",
     "title": "NOTA DGST Nº 163/2020 - Boletim Ostensivo SEDEC/CBMERJ nº 164, de 10/09/2020 – Prorrogação do prazo contido na nota DGST Nº 274/2019 - Sistema de Segurança Contra Incêndio e Pânico.",
@@ -1758,10 +1823,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/pdfs/notas-tecnicas/163%20-%20prorroga%C3%A7%C3%A3o%20de%20prazo%20da%20nota%20274_1604516029.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "164",
+      "date": "2020-09-10",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-105",
+    "id": "nota-administrativa-99a8733c0f",
     "type": "Nota administrativa",
     "number": "Nota DGST 090/2021",
     "title": "Nota DGST Nº 090/2021 - Boletim Ostensivo SEDEC/CBMERJ nº 108, de 11/06/2021 - Análise de Solicitação de Desinterdição por Inércia - Sistema de Segurança Contra Incêndio e Pânico - Padronização de Procedimentos.",
@@ -1774,10 +1844,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/analise_de_solicitacao_de_desinterdicao_por_inercia_NOTA_DGST_090-2021_1624975476.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "108",
+      "date": "2021-06-11",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-106",
+    "id": "nota-administrativa-7f62d31f0f",
     "type": "Nota administrativa",
     "number": "Nota DGST 115/2020",
     "title": "Nota DGST Nº 115/2020 - Aditamento Administrativo de Serviços Técnicos Nº 02/2020 - Boletim Ostensivo SEDEC/CBMERJ nº 119, de 08/07/2020 - Procedimentos administrativos para elaboração de novo projeto de segurança contra incêndio e pânico, segundo o Decreto Nº 42/2018, para edificações possuidoras de laudos de exigências anteriormente expedidos de acordo com o Decreto Nº 897/1976.",
@@ -1790,10 +1865,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/nota_dgst_115-2020.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "119",
+      "date": "2020-07-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-107",
+    "id": "lei-estadual-e80a5b0a67",
     "type": "Lei estadual",
     "number": "Lei 938",
     "title": "Lei Nº 938, de 16 de Dezembro de 1985 (Dispõe sobre providências que garantam a segurança dos assistentes de espetáculos públicos e dá outras providências)",
@@ -1809,7 +1889,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-108",
+    "id": "lei-estadual-36ecd7026b",
     "type": "Lei estadual",
     "number": "Lei 1.535",
     "title": "Lei Nº 1.535, de 26 de Setembro de 1989 (Dispõe sobre a obrigatoriedade de medidas que orientem os frequentadores de recintos fechados, no caso de acidentes de grande porte, explosões, incêndios ou pânico, no Estado do Rio de Janeiro, estabelece sanções e dá outras providências)",
@@ -1825,7 +1905,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-109",
+    "id": "lei-estadual-ddb14a65d7",
     "type": "Lei estadual",
     "number": "Lei 1.587",
     "title": "Lei Nº 1.587, de 14 de Dezembro de 1989 (Dispõe sobre a fabricação e o uso de pára-raios radioativos e dá outras providências)",
@@ -1841,7 +1921,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-110",
+    "id": "lei-estadual-8c92f5a6b8",
     "type": "Lei estadual",
     "number": "Lei 1.866",
     "title": "Lei Nº 1.866. de 08 de Outubro de 1991 (Proíbe o comércio de fogos de artifício e artefatos pirotécnicos, e dá outras providências)",
@@ -1857,7 +1937,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-111",
+    "id": "lei-estadual-65db7b63ef",
     "type": "Lei estadual",
     "number": "Lei 2.026",
     "title": "Lei Nº 2.026, de 22 de Julho de 1992 (Dispõe sobre a proibição, em território fluminense, de espetáculos e atividades que impliquem maus tratos aos animais)",
@@ -1873,7 +1953,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-112",
+    "id": "lei-estadual-a99f071b9b",
     "type": "Lei estadual",
     "number": "Lei 2.780",
     "title": "Lei Nº 2.780, de 04 de Setembro de 1997 (Obriga aos condomínios fechados ao aumento das dimensões de entrada a seus parques para possibilitar o acesso de viaturas do Corpo de Bombeiros e dá outras providências)",
@@ -1889,7 +1969,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-113",
+    "id": "lei-estadual-d991aa45d8",
     "type": "Lei estadual",
     "number": "Lei 2.803",
     "title": "Lei Nº 2.803, de 07 de Outubro de 1997 (Veda a utilização e a instalação subterrânea de depósitos e tubulações metálicas, para armazenamento ou transporte de combustíveis)",
@@ -1905,7 +1985,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-114",
+    "id": "lei-estadual-56650255d7",
     "type": "Lei estadual",
     "number": "Lei 3.021",
     "title": "Lei Nº 3.021, de 23 de Julho de 1998 (Autoriza a realização de eventos denominados rodeios e vaquejadas no âmbito do Estado do Rio de Janeiro)",
@@ -1921,7 +2001,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-estadual-115",
+    "id": "lei-estadual-356b348a8e",
     "type": "Lei estadual",
     "number": "Lei 3.714",
     "title": "Lei Nº 3.714, de 21 de Novembro de 2001 (O presidente da Assembléia Legislativa do Estado do Rio de Janeiro, em conformidade com o que dispõe o § 3º combinado com o § 7º do Art. 115 da Constituição Estadual, promulga a Lei Nº 3.714, de 21 de Novembro de 2001, oriunda do Projeto de Lei Nº 2634, de 2001)",
@@ -1937,7 +2017,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "lei-federal-116",
+    "id": "lei-federal-9515ef0f1c",
     "type": "Lei federal",
     "number": "Lei 10.519",
     "title": "Lei Nº 10.519, de 17 de Julho de 2002 (Dispõe sobre a promoção e a fiscalização da defesa sanitária animal quando da realização de rodeio e dá outras providências)",
@@ -1953,7 +2033,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-117",
+    "id": "decreto-6e689d202a",
     "type": "Decreto",
     "number": "Decreto 718",
     "title": "Decreto Nº 718, de 20 de Maio de 1976 (Dispõe sobre a fabricação, o trânsito, o depósito, o comércio e a queima de fogos no Estado do Rio de Janeiro e dá outras providências)",
@@ -1969,7 +2049,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-118",
+    "id": "decreto-9404fa220c",
     "type": "Decreto",
     "number": "Decreto 16.695",
     "title": "Decreto Nº 16.695, de 12 de Julho de 1991 (Transfere à Secretaria de Estado da Defesa Civil as atividades de controle e fiscalização das casas de diversões, e dá outras providências)",
@@ -1985,7 +2065,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-119",
+    "id": "decreto-3dbc3d3c8d",
     "type": "Decreto",
     "number": "Decreto 35.671",
     "title": "Decreto Nº 35.671, de 09 de Junho de 2004 (Dispõe sobre a segurança contra incêndio e pânico nas edificações construídas anteriormente a vigência do Decreto Nº 897, de 21 de Setembro de 1976 e dá outras providências)",
@@ -2001,7 +2081,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-120",
+    "id": "decreto-6bf26a9c0f",
     "type": "Decreto",
     "number": "Decreto 37.913",
     "title": "Decreto Nº 37.913, de 01 de Julho de 2005 (Regulamenta o Art. 4º da Lei Nº 3.714, de 21 de Novembro de 2001, que proíbe a participação de animais em espetáculos circences no Estado do Rio de Janeiro, e dá outras providências)",
@@ -2017,7 +2097,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-121",
+    "id": "decreto-4d8bfbaccf",
     "type": "Decreto",
     "number": "Decreto 44.035",
     "title": "Decreto Nº 44.035, de 18 de Janeiro de 2013 (Estabelece os requisitos mínimos de segurança contra incêndio e pânico em centros esportivos, de eventos e de exibição e dá outras providências)",
@@ -2033,7 +2113,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-122",
+    "id": "decreto-49caadc822",
     "type": "Decreto",
     "number": "Decreto 44.089",
     "title": "Decreto Nº 44.089, de 28 de Fevereiro de 2013 (Modifica os requisitos máximos para o armazenamento de líquidos combustíveis em postos de abastecimentos instalados em áreas rurais ou áreas atendidas por rodovias fora do perímetro urbano e dá outras providências)",
@@ -2049,7 +2129,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "decreto-123",
+    "id": "decreto-5dd1a84d56",
     "type": "Decreto",
     "number": "Decreto 10",
     "title": "Decreto Nº Decreto Nº 10, de 05 de Junho de 2018 (Autoriza o Corpo de Bombeiros Militar do Estado do Rio de Janeiro a celebrar Termo de Ajustamento de Conduta às exigências legais para a regularização de imóveis ou estabelecimentos)",
@@ -2065,9 +2145,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-124",
+    "id": "resolucao-3ef7008d85",
     "type": "Resolução",
-    "number": "Resolução N 094",
+    "number": "Resolução 094",
     "title": "Resolução Nº 094, de 18 de Junho de 1991 (Define Medidas de Segurança Contra Incêndio para o Comércio Ambulante)",
     "year": 1991,
     "theme": "Legislação e regularização",
@@ -2081,9 +2161,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-125",
+    "id": "resolucao-419b121f36",
     "type": "Resolução",
-    "number": "Resolução N 097",
+    "number": "Resolução 097",
     "title": "Resolução Nº 097, de 04 de Novembro de 1991 (Regulamenta a Lei Nº 1.535, de 26 de Setembro de 1989, que dispõe sobre a obrigatoriedade de medidas que orientem os frequentadores de recintos fechados, no caso de acidentes de grande porte, explosões, incêndios ou pânico, no Estado do Rio de Janeiro, estabelece sanções e dá outras providências)",
     "year": 1991,
     "theme": "Legislação e regularização",
@@ -2097,9 +2177,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-126",
+    "id": "resolucao-761abca7d9",
     "type": "Resolução",
-    "number": "Resolução N 108",
+    "number": "Resolução 108",
     "title": "Resolução Nº 108, de 06 de Janeiro de 1993 (Define medidas de Segurança Contra Incêndio para as alegorias carnavalescas (carros alegóricos), tendo em vista a omissão do assunto pelo CoSCIP (Decreto nº 897, de 21 de setembro de 1976), estabelece sanções e dá outras providências)",
     "year": 1993,
     "theme": "Legislação e regularização",
@@ -2113,9 +2193,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-127",
+    "id": "resolucao-aef134ee45",
     "type": "Resolução",
-    "number": "Resolução N 109",
+    "number": "Resolução 109",
     "title": "Resolução Nº 109, de 21 de Janeiro de 1993 (Aprova as Normas Técnicas nº EMG BM/7 001/93 e 002/93, que definem a classificação quanto aos riscos de incêndio, establecendo parâmetros mínimos de pressão e vazão para cálculo hidráulico dos hidrantes)",
     "year": 1993,
     "theme": "Legislação e regularização",
@@ -2129,9 +2209,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-128",
+    "id": "resolucao-f2a74d7d1e",
     "type": "Resolução",
-    "number": "Resolução N 124",
+    "number": "Resolução 124",
     "title": "Resolução Nº 124, de 17 de Junho de 1993 (Aprova as Normas Técnicas nº EMG BM/7-003, 004 e 005/93, que definem a padronização dos sistemas de bombas de incêndio, os critérios na aplicação de notificações e autos de infração e define a reserva técnica de incêndio para ocupação industrial de risco médio)",
     "year": 1993,
     "theme": "Legislação e regularização",
@@ -2145,9 +2225,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-129",
+    "id": "resolucao-74bb359251",
     "type": "Resolução",
-    "number": "Resolução N 125",
+    "number": "Resolução 125",
     "title": "Resolução Nº 125, de 29 de Junho de 1993 (Aprova a Norma Técnica nº EMG BM/7-006/93, que fixa os critérios e parâmetros a serem observados na avaliação dos riscos de transmissão do fogo, em edificações distintas, de uma mesma propriedade, definindo-lhes afastamentos mínimos, a fim de determinar o cálculo da área total construída para efeito da exigência dos sistemas fixos de combate a incêndio)",
     "year": 1993,
     "theme": "Legislação e regularização",
@@ -2161,9 +2241,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-130",
+    "id": "resolucao-395ab2cc89",
     "type": "Resolução",
-    "number": "Resolução N 135",
+    "number": "Resolução 135",
     "title": "Resolução Nº 135, de 16 de Setembro de 1993 (Somente a Diretoria Geral de Serviços Técnicos (DGST) emitirá o Laudo de Exigências para os pontos de venda ou depósitos de Gás Liquefeito de Petróleo-GLP)",
     "year": 1993,
     "theme": "Legislação e regularização",
@@ -2177,9 +2257,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-131",
+    "id": "resolucao-0c01ce7b23",
     "type": "Resolução",
-    "number": "Resolução N 142",
+    "number": "Resolução 142",
     "title": "Resolução Nº 142, de 15 de Março de 1994 (Baixa instruções complementares para execução do Código de Segurança Contra Incêndio e Pânico (CoSCIP), dando nova redação à Portaria 002/78, e às Notas Técnicas, Normas Técnicas e Ordens de Serviço emitidas após a vigência do mesmo, até o ano de 1992)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2193,9 +2273,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-132",
+    "id": "resolucao-ccca2f0312",
     "type": "Resolução",
-    "number": "Resolução N 148",
+    "number": "Resolução 148",
     "title": "Resolução Nº 148, de 25 de Maio de 1994 (Define normas de procedimento na análise dos projetos de edificações com cobertura do tipo \"duplex\", construídas ou licenciadas posteriormente à vigência do Decreto nº 897/76 - CoSCIP)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2209,9 +2289,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-133",
+    "id": "resolucao-5783097dde",
     "type": "Resolução",
-    "number": "Resolução N 166",
+    "number": "Resolução 166",
     "title": "Resolução Nº 166, de 10 de Novembro de 1994 (Baixa instruções suplementares ao Decreto nº 897/76 - CoSCIP e as normas que o complementam)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2225,9 +2305,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-134",
+    "id": "resolucao-8786b4c0c6",
     "type": "Resolução",
-    "number": "Resolução N 169",
+    "number": "Resolução 169",
     "title": "Resolução Nº 169, de 28 de Novembro de 1994 (Baixa instruções complementares para a apresentação de projetos de segurança contra incêndio e pânico na Diretoria Geral de Serviços Técnicos do Corpo de Bombeiros Militar do Estado do Rio de Janeiro)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2241,9 +2321,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-135",
+    "id": "resolucao-318cea2de9",
     "type": "Resolução",
-    "number": "Resolução N 170",
+    "number": "Resolução 170",
     "title": "Resolução Nº 170, de 12 de Dezembro de 1994 (Torna sem efeito o constante no Art. 154 da Resolução Nº 142, desta Secretaria, por contrariar o Art. 192 do Decreto nº 897, de 21 de Setembro de 1976 - CoSCIP)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2257,9 +2337,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-136",
+    "id": "resolucao-6acff0d150",
     "type": "Resolução",
-    "number": "Resolução N 172",
+    "number": "Resolução 172",
     "title": "Resolução Nº 172, de 22 de Dezembro de 1994 (Define procedimentos administrativos para o licenciamento de microempresas e empresas de pequeno porte que funcionem na residência de seus titulares)",
     "year": 1994,
     "theme": "Legislação e regularização",
@@ -2273,9 +2353,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-137",
+    "id": "resolucao-894d5c16ad",
     "type": "Resolução",
-    "number": "Resolução N 180",
+    "number": "Resolução 180",
     "title": "Resolução Nº 180, de 16 de Março de 1999 (Aprova a utilização das tubulações de cobre nas instalações preventivas e dá outras providências)",
     "year": 1999,
     "theme": "Legislação e regularização",
@@ -2289,9 +2369,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-138",
+    "id": "resolucao-d996c0ae50",
     "type": "Resolução",
-    "number": "Resolução N 186",
+    "number": "Resolução 186",
     "title": "Resolução Nº 186, de 26 de Maio de 1999 (Cria o Selo de Qualidade em Prevenção Contra Incêndio e Pânico, sem aumento de despesas, e dá outras providências)",
     "year": 1999,
     "theme": "Legislação e regularização",
@@ -2305,7 +2385,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-139",
+    "id": "resolucao-d8b8aecd68",
     "type": "Resolução",
     "number": "Resolução SEDEC 206/2000",
     "title": "Resolução SEDEC Nº 206/2000, de 12 de Julho de 2000 (Anula todo o teor da Resolução SEDEC nº 195, de 13 de Setembro de 1999, em virtude da dificuldade de operacionalizar os efeitos causados pela mesma)",
@@ -2321,7 +2401,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-140",
+    "id": "resolucao-0bb137a17e",
     "type": "Resolução",
     "number": "Resolução SEDEC 278",
     "title": "Resolução SEDEC Nº 278, de 21 de Dezembro de 2004 (Dá nova redação a resolução SEDEC Nº 112, de 09 de Fevereiro de 1993)",
@@ -2337,9 +2417,9 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-141",
+    "id": "resolucao-4ddbdb5a94",
     "type": "Resolução",
-    "number": "Resolução N 279",
+    "number": "Resolução 279",
     "title": "Resolução Nº 279, de 11 de Janeiro de 2005 (Dispõe sobre a avaliação e a habilitação do bombeiro profissional civil, o dimensionamento de brigadas de incêndio e estabelece exigências às edificações licenciadas ou construídas em data anterior a vigência do Decreto Nº 897, de 21 de Setembro de 1976, e dá outras providências)",
     "year": 2005,
     "theme": "Legislação e regularização",
@@ -2353,7 +2433,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-142",
+    "id": "resolucao-35945aa830",
     "type": "Resolução",
     "number": "Resolução SEDEC 284",
     "title": "Resolução SEDEC Nº 284, de 25 de Abril de 2005 (Institui novo modelo de Documento de Arrecadação de Emolumentos (DAEM) do CBMERJ e dá outras providências)",
@@ -2369,7 +2449,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-143",
+    "id": "resolucao-aec2134dec",
     "type": "Resolução",
     "number": "Resolução SEDEC 293",
     "title": "Resolução SEDEC Nº 293, de 18 de Outubro de 2005 (Baixa instruções complementares para regulamentação do Decreto Nº 37.913, de 01 de Julho de 2005, na forma que menciona)",
@@ -2385,7 +2465,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-144",
+    "id": "resolucao-174801fbb7",
     "type": "Resolução",
     "number": "Resolução SEDEC 300",
     "title": "Resolução SEDEC Nº 300, de 21 de Março de 2006 (Aprova as normas complementares para aplicação do Decreto Nº 897, de 21 de Setembro de 1976 -Código de Segurança Contra Incêndio e Pânico - CoSCIP)",
@@ -2401,7 +2481,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-145",
+    "id": "resolucao-824a637947",
     "type": "Resolução",
     "number": "Resolução SEDEC 31",
     "title": "Resolução SEDEC Nº 31, de 10 de Janeiro de 2013 (Dispõe sobre o credenciamento de empresas especializadas para realizar curso de formação, curso de atualização e habilitação de bombeiro civil (BC), de empresas especializadas para realizar curso de formação e atualização de brigadistas voluntários de incêndio (BVI), sobre o serviço de brigadas de incêndio e do credenciamento de empresas especializadas para prestação de serviço de bombeiro civil (BC) nas edificações, eventos e áreas de risco no Estado do Rio de Janeiro, e dá outras providências.)",
@@ -2417,7 +2497,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-146",
+    "id": "resolucao-ef7f611d35",
     "type": "Resolução",
     "number": "Resolução SSP 056",
     "title": "Resolução SSP Nº 056, de 08 de Agosto de 1995 (Altera a disposição contida no Art. 6º da Resolução SEDEC Nº 135/93 publicada no DOERJ Nº 177, de 17/set/93, e dá outras providências)",
@@ -2433,7 +2513,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-147",
+    "id": "resolucao-1c11849ce6",
     "type": "Resolução",
     "number": "Resolução SSP 071",
     "title": "Resolução SSP Nº 071, de 18 de Setembro de 1995 (Regula procedimentos dos Órgãos da SSP/Rio de Janeiro nas ocorrências de pertubação do trabalho ou do sossego alheios, por Diversões Públicas)",
@@ -2449,7 +2529,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "resolucao-148",
+    "id": "resolucao-4939cb4267",
     "type": "Resolução",
     "number": "Resolução CREMERJ 187",
     "title": "Resolução CREMERJ Nº 187, de 08 de Janeiro de 2003 (Disciplina a prestação de serviços médicos à população em eventos especiais)",
@@ -2465,7 +2545,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-149",
+    "id": "portaria-a795e18f3d",
     "type": "Portaria",
     "number": "Portaria 078",
     "title": "Portaria Nº 078, de 06 de Setembro de 1993 (Organiza a operacionalidade do Sistema de Controle e Fiscalização de Diversões Públicas do Corpo de Bombeiros do Estado do Rio de Janeiro)",
@@ -2481,7 +2561,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-150",
+    "id": "portaria-eca197f232",
     "type": "Portaria",
     "number": "Portaria 084",
     "title": "Portaria Nº 084, de 14 de Junho de 1994 (Baixa instruções normativas para a operacionalidade do Sistema de Segurança Contra Incêndio e Pânico)",
@@ -2497,7 +2577,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-151",
+    "id": "portaria-2378700f86",
     "type": "Portaria",
     "number": "Portaria CBMERJ 0156",
     "title": "Portaria CBMERJ Nº 0156, de 31 de Outubro de 2000 (Complementa as exigências do CoSCIP, tendo em vista o disposto no Art. 233 do Decreto nº 897, de 21 de Setembro de 1976 - CoSCIP)",
@@ -2513,7 +2593,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-152",
+    "id": "portaria-65c73a6b40",
     "type": "Portaria",
     "number": "Portaria CBMERJ 383",
     "title": "Portaria CBMERJ Nº 383, de 10 de Março de 2005 (Regulamenta dispositivos da Resolução SEDEC nº 279, de 11 de Janeiro de 2005, e dá outras providências)",
@@ -2529,7 +2609,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-153",
+    "id": "portaria-7f9c949340",
     "type": "Portaria",
     "number": "Portaria CBMERJ 722",
     "title": "Portaria CBMERJ Nº 722, de 04 de Fevereiro de 2013 (Obriga as edificações de reunião de público que desenvolvam as atividades de casa noturna, boates, casa de espetáculos e congêneres a afixarem, nos acessos de entrada, de forma visível ao consumidor, placa informativa com registros relativos à Segurança Contra Incêndio e Pânico, em todo o Estado do Rio de Janeiro)",
@@ -2545,7 +2625,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-154",
+    "id": "portaria-b8e8586d68",
     "type": "Portaria",
     "number": "Portaria CBMERJ 727",
     "title": "Portaria CBMERJ Nº 727, de 09 de Abril de 2013 (Fixa os critérios para definição de exigências de adequação de segurança contra incêndio e pânico em edificações de reunião de público, construídas ou licenciadas anteriormente a vigência do Decreto Nº 897, de 21 de setembro de 1976, que desenvolvam as atividades de casa noturna, boates, casas de espetáculos e congêneres, em todo o território do Estado do Rio de Janeiro)",
@@ -2561,7 +2641,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-155",
+    "id": "portaria-701cc116a0",
     "type": "Portaria",
     "number": "Portaria CBMERJ 1008",
     "title": "Portaria CBMERJ Nº 1008, de 06 de Setembro de 2018 (Estabelece procedimentos a serem adotados pelo Corpo de Bombeiros Militar do Estado do Rio de Janeiro para celebração de compromisso de ajustamento de conduta às exigências legais para regularização de imóveis e estabelecimentos, e dá providências) - Termo de Ajustamento de Conduta - TAC",
@@ -2577,7 +2657,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "portaria-156",
+    "id": "portaria-385acb8291",
     "type": "Portaria",
     "number": "Portaria CBMERJ 1051",
     "title": "Portaria CBMERJ Nº 1051, de 09 de maio de 2019 (Modifica critérios de adequação e segurança contra incêndio e pânico estabelecidos pela Portaria CBMERJ nº 727, de 09 de abril de 2013)",
@@ -2593,7 +2673,7 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-157",
+    "id": "nota-administrativa-6f48cfd2e8",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2011",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 01/2011 - Sistema de Segurança Contra Incêndio e Pânico dirigido pela DGST - Critérios para a exigência de projeto aprovado pelo CBMERJ com a expedição de Laudo de Exigências do tipo \"P\" - Nota DGST 247/2011 - Boletim Ostensivo SEDEC/CBMERJ nº 075, de 21/09/2011",
@@ -2606,10 +2686,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01_2011-Nota_DGST_247_2011.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "075",
+      "date": "2011-09-21",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-158",
+    "id": "nota-administrativa-764e0bf492",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02/2011",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 02/2011 - Sistema de Segurança Contra Incêndio e Pânico dirigido pela DGST - Diretrizes para a execução do serviço de fiscalização das condições de segurança contra incêndio e pânico de edificações - Nota DGST 271/2011 - Boletim Ostensivo SEDEC/CBMERJ nº 099, de 26/10/2011",
@@ -2622,10 +2707,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_de_Servicos_Tecnicos_02_2011.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "099",
+      "date": "2011-10-26",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-159",
+    "id": "nota-administrativa-0acf1a8388",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 01/2012",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 01/2012 - Sistema de Segurança Contra Incêndio e Pânico dirigido pela DGST - Complementação de Informações para a Análise de Projetos de Segurança Contra Incêndio e Pânico em Edificações dotadas de Jiraus ou Mezaninos - Nota DGST Nº 108/2012 - Boletim Ostensivo SEDEC/CBMERJ nº 190, de 08/10/2012",
@@ -2638,10 +2728,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01_2012-Nota_DGST_108_2012-Jirau-Definicao.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "190",
+      "date": "2012-10-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-160",
+    "id": "nota-administrativa-32392ccbac",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02/2012",
     "title": "Aditamento Administrativo de Serviços Técnicos Nº 02/2012 - Sistema de Segurança Contra Incêndio e Pânico dirigido pela DGST - Complementação de Informações para a Análise de Projetos de Segurança Contra Incêndio e Pânico quanto às Exigências do Sistema de Iluminação de Emergência e de Sinalização de Emergência - Nota DGST Nº 171/2012 - Boletim Ostensivo SEDEC/CBMERJ nº 190, de 08/10/2012",
@@ -2654,11 +2749,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_02_2012-Nt171-2012.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "190",
+      "date": "2012-10-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-161",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-10b694a933",
+    "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02",
     "title": "Anexo ao Aditamento Administrativo de Serviços Técnicos Nº 02 - Nota DGST Nº 171/2012, publicado no Boletim Ostensivo SEDEC/CBMERJ nº 190, de 08 de outubro de 2012 - Guia Simplificado para Análise e Vistoria dos Sistemas de Iluminação de Emergência baseado na NBR 10898",
     "year": 2012,
@@ -2670,11 +2770,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Anexo_Nota_DGST_171-2012-NBR_10898.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "190",
+      "date": "2012-10-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-162",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-c5c4420013",
+    "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02",
     "title": "Anexo ao Aditamento Administrativo de Serviços Técnicos Nº 02 - Nota DGST Nº 171/2012, publicado no Boletim Ostensivo SEDEC/CBMERJ nº 190, de 08 de outubro de 2012 - Guia Simplificado para Análise e Vistoria dos Sistemas de Sinalização de Emergência baseado na NBR 13434 Parte 1 e Parte 2",
     "year": 2012,
@@ -2686,11 +2791,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Anexo_Nota_DGST_171-2012-NBR_13434.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "190",
+      "date": "2012-10-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-163",
-    "type": "Documento relacionado",
+    "id": "nota-administrativa-e0ee907571",
+    "type": "Nota administrativa",
     "number": "Aditamento Administrativo de Serviços Técnicos 02/2012",
     "title": "Complemento ao Aditamento Administrativo de Serviços Técnicos Nº 02/2012 - Nota DGST Nº 212/2012 -Boletim Ostensivo SEDEC/CBMERJ nº 238, de 21/12/2012 - Prorroga para 02 de janeiro de 2013 o prazo para início da cobrança dos critérios definidos no Aditamento Administrativo de Serviços Técnicos Nº 02/2012",
     "year": 2012,
@@ -2702,10 +2812,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-DGST-2012-212-Aditamento-Administrativo-2012-02-Complemento.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "238",
+      "date": "2012-12-21",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-164",
+    "id": "nota-administrativa-8995938c4f",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 03/2014",
     "title": "Aditamento Administrativo Nº 03/2014 - Nota DGST Nº 133/2014 -Boletim Ostensivo SEDEC/CBMERJ nº 165, de 11/09/2014 - Novos procedimentos para análise de projeto de segurança contra incêndio e pânico quanto às exigências de sistema de iluminação e sinalização de emergência em escada enclausurada a prova de fumaça e escada de emergência pressurizada",
@@ -2718,10 +2833,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento-Administrativo-03-2014-Nt133-2014.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "165",
+      "date": "2014-09-11",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-165",
+    "id": "nota-administrativa-f643894249",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 06/2014",
     "title": "Aditamento Administrativo Nº 06/2014 - Nota DGST Nº 208/2014 -Republicação - Boletim Ostensivo SEDEC/CBMERJ nº 237, de 30/12/2014 - Complementação de informações para a análise de projetos de segurança contra incêndio e pânico e vistorias em edificações dotadas de centrais de GLP",
@@ -2734,10 +2854,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento-Administrativo-06-2014-Nt208-14-Centrais-de-GLP-Republicacao.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "237",
+      "date": "2014-12-30",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-166",
+    "id": "nota-administrativa-fd5d7f6cdd",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 08/2014",
     "title": "Aditamento Administrativo Nº 08/2014 - Nota DGST Nº 225/2014 -Boletim Ostensivo SEDEC/CBMERJ nº 232, de 18/12/2014 - Procedimentos de fiscalização em edificações",
@@ -2750,10 +2875,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_08_2014-Nota_DGST_225_2014.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "232",
+      "date": "2014-12-18",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-167",
+    "id": "nota-administrativa-3956345340",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 09/2014",
     "title": "Aditamento Administrativo Nº 09/2014 - Nota DGST Nº 226/2014 -Boletim Ostensivo SEDEC/CBMERJ nº 235, de 23/12/2014 - Competência para interdição de edificações",
@@ -2766,10 +2896,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_09-2014-Nt226-14-Competencia_para_Interdicao.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "235",
+      "date": "2014-12-23",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-168",
+    "id": "nota-administrativa-482823f45f",
     "type": "Nota administrativa",
     "number": "NOTA DGST 254/2020",
     "title": "NOTA DGST Nº 254/2020 - ADITAMENTO ADMINISTRATIVO Nº 020/2020 - Boletim Ostensivo SEDEC/CBMERJ nº 047, de 09/12/2020 - Sistema de Segurança Contra Incêndio e Pânico - Alteração na aplicação da Nota Técnica Nº 4-05:2019 Gás (GLP/GN) - Manipulação, armazenamento e comercialização.",
@@ -2782,10 +2917,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/254-BOL-047-DE-09-12-20-ADITAMENTO-TECNICO-ADM-N020_1614192661.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "047",
+      "date": "2020-12-09",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-169",
+    "id": "nota-administrativa-c67ed2d78a",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 01/2015",
     "title": "Aditamento Administrativo Nº 01/2015 - Nota DGST Nº 006/2015 -Boletim Ostensivo SEDEC/CBMERJ nº 004, de 08/01/2015 - Fixação de critérios técnicos para o projeto de central de geração de energia elétrica em edificações utilizando moto gerador alimentado por óleo diesel",
@@ -2798,10 +2938,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Aditamento_Administrativo_01-2015-Nt006-15.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "004",
+      "date": "2015-01-08",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-170",
+    "id": "nota-administrativa-fc9ca6a08d",
     "type": "Nota administrativa",
     "number": "Aditamento Administrativo 01/2018",
     "title": "Aditamento Administrativo Nº 01/2018 - Nota DGST Nº 135/2018 -Boletim Ostensivo SEDEC/CBMERJ nº 235, de 21/12/2018 - Padroniza os procedimentos administrativos referentes ao protocolo e à análise de projetos de segurança contra incêndio e pânico a serem adotados pelas unidades integrantes do sistema de segurança contra incêndio e pânico.",
@@ -2814,12 +2959,17 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt_135-2018-adit_adm.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "235",
+      "date": "2018-12-21",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-171",
-    "type": "Documento relacionado",
-    "number": "",
+    "id": "regulamento-tecnico-bd5b927eba",
+    "type": "Regulamento técnico",
+    "number": "Regulamento Técnico BM/5-001/2016",
     "title": "Regulamento Técnico Nº BM/5-001/2016 - Nota BM/5 010/2016 -Boletim Ostensivo SEDEC/CBMERJ nº 057, de 31/03/2016 - Isenção de rede de chuveiros automáticos do tipo sprinkler para galpões comerciais e/ou industriais com área de estoque ou industrialização composta por materiais considerados incombustíveis",
     "year": 2016,
     "theme": "Legislação e regularização",
@@ -2830,10 +2980,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/RT-BM5-001-2016-Parametros_Isencao_Sprinkler.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "057",
+      "date": "2016-03-31",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-172",
+    "id": "nota-administrativa-ca8ba20345",
     "type": "Nota administrativa",
     "number": "Nota DGST 207/2014",
     "title": "Nota DGST Nº 207/2014 - Boletim Ostensivo SEDEC/CBMERJ nº 205, de 07/11/2014 - Programa de Transferência de Atribuições para as Seções de Serviços Técnicos (SST) do Sistema de Segurança Contra Incêndio do CBMERJ gerido pela DGST - Orientação para as Seções de Serviços Técnicos das OBMs quanto a análise de processos para aprovação de lojas, salas ou pavimentos (\"PARTES\")",
@@ -2846,10 +3001,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt207-14-Descentralizacao-das-SST.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "205",
+      "date": "2014-11-07",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-173",
+    "id": "nota-administrativa-ab2c8d84d9",
     "type": "Nota administrativa",
     "number": "Nota DGST 227/2014",
     "title": "Nota DGST Nº 227/2014 - Boletim Ostensivo SEDEC/CBMERJ nº 215, de 25/11/2014 - Novos Procedimentos a serem adotados em relação à entrada de processos de Microempreendedores Individuais -MEIs",
@@ -2862,10 +3022,15 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nt227-2014-Procedimentos-para-MEIs-Isencao-de-taxas.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "215",
+      "date": "2014-11-25",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "nota-administrativa-174",
+    "id": "nota-administrativa-cadc2618c0",
     "type": "Nota administrativa",
     "number": "Nota DGST 236/2018",
     "title": "Nota DGST Nº 236/2018 - Boletim Ostensivo SEDEC/CBMERJ nº 210, de 14/11/2018 - Sistema de Segurança Contra Incêndio e Pânico - Laudos de Exigências com formato simplificado (LE) - Orientações complementares para cumprimento e inspeção das exigências.",
@@ -2878,12 +3043,17 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-DGST-236-2018.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "210",
+      "date": "2018-11-14",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-175",
-    "type": "Documento relacionado",
-    "number": "",
+    "id": "nota-administrativa-05d4173647",
+    "type": "Nota administrativa",
+    "number": "Nota GAB/CMDO-GERAL n 012/2019",
     "title": "Nota GAB/CMDO-GERAL nº 012/2019 - Boletim Ostensivo SEDEC/CBMERJ nº 003, de 04/01/2019 - Procedimentos administrativos das Seções de Serviços Técnicos - Procedimento Assistido",
     "year": 2019,
     "theme": "Legislação e regularização",
@@ -2894,11 +3064,16 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Nota-GAB-CMDO-GERAL-012-2019.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "003",
+      "date": "2019-01-04",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-176",
-    "type": "Documento relacionado",
+    "id": "parecer-tecnico-81c63e57bf",
+    "type": "Parecer técnico",
     "number": "Nota DGST 167/2008",
     "title": "Parecer Técnico Nº 016/2008 - Nota DGST 167/2008 - Boletim SUBSEDEC/CBMERJ nº 189, de 09 de outubro de 2008 (Sobre a avaliação de uma nova linha de produtos, denominada TigreFire®, que inclui tubos e conexões produzidos em CPVC (policloreto de vinila clorado) desenvolvidos e fabricados pela supracitada empresa, com objetivo de compor às instalações de combate a incêndio nas edificações, especificamente nas instalações de canalizações de chuveiros automáticos do tipo Sprinklers)",
     "year": 2008,
@@ -2910,12 +3085,17 @@ export const documents = [
     "source": "https://www.cbmerj.rj.gov.br/para-o-cidadao/regularizacao/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/05/Parecer_T_cnico_N_016_2008.pdf",
     "description": "Registro coletado da página oficial: Legislação e regularização. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "189",
+      "date": "2008-10-09",
+      "source": "Título na página oficial"
+    },
     "relatedIds": []
   },
   {
-    "id": "documento-relacionado-177",
-    "type": "Documento relacionado",
-    "number": "",
+    "id": "parecer-tecnico-66e3fc2225",
+    "type": "Parecer técnico",
+    "number": "Parecer Técnico PT-00012/11",
     "title": "Parecer Técnico PT-00012/11 - Referente ao Processo nº E08/8543/51210/2011 de 24/05/2011 (Sobre a adoção de Mangotes Flexíveis nas instalações das canalizações de chuveiros automáticos)",
     "year": 2011,
     "theme": "Legislação e regularização",
@@ -2929,411 +3109,561 @@ export const documents = [
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-178",
+    "id": "instrucao-normativa-8cdf77cda2",
     "type": "Instrução normativa",
     "number": "ICG 1-1",
     "title": "ICG 1-1 - Uniformes",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/01_ICG_1-1_Uniformes_FORMATADA_BM1_04.04.2022v_SITE.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "059",
+      "date": "2022-03-31",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 059, de 31/03/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-179",
+    "id": "instrucao-normativa-2d72964985",
     "type": "Instrução normativa",
     "number": "ICG 1-2",
     "title": "ICG 1-2 - Efetivo e atividades",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/02_ICG_1-2_Efetivo_e_atividades_FORMATADA_BM1_04.04.22v_SITE.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "059",
+      "date": "2022-03-31",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 059, de 31/03/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-180",
+    "id": "instrucao-normativa-fe56468bd0",
     "type": "Instrução normativa",
     "number": "ICG 1-3",
     "title": "ICG 1-3 - Seleção, ingresso e incorporação",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/03_ICG_1-3_Ingresso_FORMATADA_BM1_04.04.22v_SITE.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "059",
+      "date": "2022-03-31",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 059, de 31/03/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-181",
+    "id": "instrucao-normativa-50a7860386",
     "type": "Instrução normativa",
     "number": "ICG 1-4",
     "title": "ICG 1-4 - Registro geral e carteira de identidade",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/04_ICG_1-4_RG_FORMATADA_BM1_04.04.22v_SITE.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "059",
+      "date": "2022-03-31",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 059, de 31/03/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-182",
+    "id": "instrucao-normativa-acec465115",
     "type": "Instrução normativa",
     "number": "ICG 1-5",
     "title": "ICG 1-5 - Capacitação",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2022/04/05_ICG_1-5_Capacitao_TEMPORRIOS_FORMATADA_BM1_04.04.22v_SITE.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "059",
+      "date": "2022-03-31",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 059, de 31/03/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-183",
+    "id": "instrucao-normativa-142351d725",
     "type": "Instrução normativa",
     "number": "ICG 1-6",
-    "title": "ICG 1-6 - Áreas de atuação e habilidades técnicas",
-    "year": null,
+    "title": "ICG 1-6 - Áreas de atuação e habilitações técnicas",
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-6.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "203",
+      "date": "2022-11-01",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 203, de 01/11/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-184",
+    "id": "instrucao-normativa-b4cfe32046",
     "type": "Instrução normativa",
     "number": "ICG 1-7",
     "title": "ICG 1-7 - Normas de referenciação dos cargos militares",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/BOL203_01Nov22_ICG1-7.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "203",
+      "date": "2022-11-01",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 203, de 01/11/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-185",
+    "id": "instrucao-normativa-a7aa07acbc",
     "type": "Instrução normativa",
     "number": "ICG 1-8",
     "title": "ICG 1-8 - Exclusão",
-    "year": null,
+    "year": 2023,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/08/ICG_1_8_Boletim_113__de_26.06.26.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "002",
+      "date": "2023-01-03",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 002, de 03/01/2023",
     "relatedIds": [
-      "instrucao-normativa-202"
+      "instrucao-normativa-e2a00b433f"
     ]
   },
   {
-    "id": "instrucao-normativa-186",
+    "id": "instrucao-normativa-62ab5ab2dd",
     "type": "Instrução normativa",
     "number": "ICG 1-9",
     "title": "ICG 1-9 - Prorrogação",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/07/ICG-1-9.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "126",
+      "date": "2024-07-11",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 126, de 11/07/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-187",
+    "id": "instrucao-normativa-7a3e4628d5",
     "type": "Instrução normativa",
     "number": "ICG 1-10",
     "title": "ICG 1-10 - Processo administrativo sumário",
-    "year": null,
+    "year": 2023,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/10_-ICG_1-10_Processo-Administrativo.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "085",
+      "date": "2023-05-11",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 085, de 11/05/2023",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-188",
+    "id": "instrucao-normativa-acebbb692a",
     "type": "Instrução normativa",
     "number": "ICG 1-11",
     "title": "ICG 1-11 - Férias, licenças, afastamentos e averbações",
-    "year": null,
+    "year": 2023,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/11_ICG_1-11_Frias-Licenas-Afastamentos-e-Averbaes.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "085",
+      "date": "2023-05-15",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 085, de 15/05/2023",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-189",
+    "id": "instrucao-normativa-1a6a9aa64e",
     "type": "Instrução normativa",
     "number": "ICG 2-1",
     "title": "ICG 2-1 - Norma interna de armamentos",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_2_1_Norma_Interna_de_Armamentos.pdf",
     "description": "Registro coletado da página oficial: Grupo 2 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "129",
+      "date": "2022-07-18",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 129, de 18/07/2022",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-190",
+    "id": "instrucao-normativa-e64f5489dc",
     "type": "Instrução normativa",
     "number": "ICG 3-1",
     "title": "ICG 3-1 - Sistema de comando e controle operacional do CBMERJ",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_3_1_SCCO.pdf",
     "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "040",
+      "date": "2024-03-01",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 040, de 01/03/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-191",
+    "id": "instrucao-normativa-30b1597f8b",
     "type": "Instrução normativa",
     "number": "ICG 3-2",
     "title": "ICG 3-2 - Diretrizes gerais para o emprego operacional do CBMERJ em desastres",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/ICG_3_2_GRD.pdf",
     "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "040",
+      "date": "2024-03-01",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 040, de 01/03/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-192",
+    "id": "instrucao-normativa-917f4fcbba",
     "type": "Instrução normativa",
     "number": "ICG 3-3",
     "title": "ICG 3-3 - Vítimas de violência doméstica e familiar",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/06/ICG_3_3.pdf",
     "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "104",
+      "date": "2024-06-10",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 104, de 10/06/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-193",
+    "id": "instrucao-normativa-b1a4918d87",
     "type": "Instrução normativa",
     "number": "ICG 3-4",
     "title": "ICG 3-4 - Solicitação de pagamento do RAS em operações especiais",
-    "year": null,
+    "year": 2025,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/08/ICG-3-4-Diretrizes-para-a-solicitacao-de-pagamento-do-RAS-em-Operacoes-Especiais.pdf",
     "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "115",
+      "date": "2025-06-30",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 115, de 30/06/2025",
     "relatedIds": [
-      "instrucao-normativa-194"
+      "instrucao-normativa-739f415f57"
     ]
   },
   {
-    "id": "instrucao-normativa-194",
+    "id": "instrucao-normativa-739f415f57",
     "type": "Instrução normativa",
     "number": "ICG 3-4",
     "title": "ICG 3-4 - Grupo de operações especiais (GOESP) - instruções gerais",
-    "year": null,
+    "year": 2026,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_3-4.pdf",
     "description": "Registro coletado da página oficial: Grupo 3 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "081",
+      "date": "2026-05-11",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 081, de 11/05/2026",
     "relatedIds": [
-      "instrucao-normativa-193"
+      "instrucao-normativa-b1a4918d87"
     ]
   },
   {
-    "id": "instrucao-normativa-195",
+    "id": "instrucao-normativa-2c724fb213",
     "type": "Instrução normativa",
     "number": "ICG 4-2",
     "title": "ICG 4-2 - Normas gerais de ação do almoxarifado médico",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_2.pdf",
     "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "089",
+      "date": "2024-05-16",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 089, de 16/05/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-196",
+    "id": "instrucao-normativa-b6335feb49",
     "type": "Instrução normativa",
     "number": "ICG 4-3",
     "title": "ICG 4-3 - Almoxarifado odontológico",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_3.pdf",
     "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "122",
+      "date": "2024-07-05",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 122, de 05/07/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-197",
+    "id": "instrucao-normativa-14a9e75732",
     "type": "Instrução normativa",
     "number": "ICG 4-4",
     "title": "ICG 4-4 - Almoxarifado geral do CBMERJ",
-    "year": null,
+    "year": 2024,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2025/07/ICG-4_4.pdf",
     "description": "Registro coletado da página oficial: Grupo 4 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "139",
+      "date": "2024-07-30",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 139, de 30/07/2024",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-198",
+    "id": "instrucao-normativa-340143093a",
     "type": "Instrução normativa",
     "number": "ICG 5-1",
     "title": "ICG 5-1 - Concessão da gratificação de raio X e outras providências",
-    "year": null,
+    "year": 2026,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/01/ICG-5-01.pdf",
     "description": "Registro coletado da página oficial: Grupo 5 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "016",
+      "date": "2026-01-26",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 016, de 26/01/2026",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-199",
+    "id": "instrucao-normativa-5cabe38f90",
     "type": "Instrução normativa",
     "number": "ICG 6-1",
     "title": "ICG 6-1 - Regimento interno do Fundo de Saúde do CBMERJ",
-    "year": null,
+    "year": 2025,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/02/ICG-6-01.pdf",
     "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "233",
+      "date": "2025-12-22",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 233, de 22/12/2025",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-200",
+    "id": "instrucao-normativa-92b4c5de7f",
     "type": "Instrução normativa",
     "number": "ICG 6-2",
-    "title": "ICG 6-2 - Regimento interno do Fundo de Saúde do CBMERJ",
-    "year": null,
+    "title": "ICG 6-2 - Regimento interno do Sistema Interno de Saúde do CBMERJ",
+    "year": 2026,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_6-2.pdf",
     "description": "Registro coletado da página oficial: Grupo 6 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "045",
+      "date": "2026-03-12",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 045, de 12/03/2026",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-201",
+    "id": "instrucao-normativa-a769d0bbfb",
     "type": "Instrução normativa",
     "number": "ICG 7-1",
     "title": "ICG 7-1 - Diretrizes gerais para implementação e emprego da função de subtenente adjunto ao comando",
-    "year": null,
+    "year": 2026,
     "theme": "Instruções Normativas",
     "status": "Em vigor",
-    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Listada como versão atual na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Publicação oficial",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_7-1.pdf",
     "description": "Registro coletado da página oficial: Grupo 7 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "060",
+      "date": "2026-04-06",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 060, de 06/04/2026",
     "relatedIds": []
   },
   {
-    "id": "instrucao-normativa-202",
+    "id": "instrucao-normativa-e2a00b433f",
     "type": "Instrução normativa",
     "number": "ICG 1-8",
     "title": "ICG 1-8 - ICG 1-08 - versão anterior",
-    "year": null,
+    "year": 2022,
     "theme": "Instruções Normativas",
     "status": "Histórica",
-    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-28)",
+    "statusSource": "Indicada como versão anterior/revogada na página oficial do CBMERJ (coleta de 2026-09-29)",
     "edition": "Versão histórica",
     "origin": "CBMERJ",
     "source": "https://www.cbmerj.rj.gov.br/instrucoes-normativas-do-comando-geral/",
     "pdf": "https://www.cbmerj.rj.gov.br/wp-content/uploads/2024/04/138064-_ICG-08-EXCLUSAO-TEMPORARIO.pdf",
     "description": "Registro coletado da página oficial: Grupo 1 - Instruções Normativas. Metadados sujeitos a revisão curatorial.",
+    "publication": {
+      "bulletin": "203",
+      "date": "2022-11-01",
+      "source": "Cabeçalho do PDF"
+    },
+    "yearSource": "Boletim da SEDEC/CBMERJ nº 203, de 01/11/2022",
     "relatedIds": [
-      "instrucao-normativa-185"
+      "instrucao-normativa-a7aa07acbc"
     ]
   },
   {
