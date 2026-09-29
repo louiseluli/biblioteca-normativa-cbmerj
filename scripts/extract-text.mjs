@@ -73,27 +73,32 @@ function ocr(buffer) {
 
 async function extractOne(document) {
   if (document.format === 'html') return alerjText(document)
-  const cachePath = path.join(CACHE_DIR, `${urlId(document.pdf)}.json`)
+  // PDFs do pacote do MVP (public/acervo/, ver download-mvp-files.mjs) são lidos do disco. A
+  // identidade do registro (cache e chave em pdf-metadata.json) continua sendo a URL oficial,
+  // que é a chave consultada por build-catalog.mjs antes de apontar o documento para acervo/.
+  const local = /^acervo\//.test(document.pdf) ? path.join('public', document.pdf) : null
+  const pdf = local ? document.originalPdf ?? document.pdf : document.pdf
+  const cachePath = path.join(CACHE_DIR, `${urlId(pdf)}.json`)
   if (existsSync(cachePath)) {
     const cached = JSON.parse(await readFile(cachePath, 'utf8'))
     // Só reaproveita sucessos do cache: falhas por timeout costumam ser transitórias
     // (servidor lento numa execução específica) e devem ser tentadas de novo na próxima corrida.
-    if (cached.pdf === document.pdf && !cached.error && !(ocrAvailable && isTextless(cached.text) && !cached.ocr)) return cached
+    if (cached.pdf === pdf && !cached.error && !(ocrAvailable && isTextless(cached.text) && !cached.ocr)) return { ...cached, id: document.id }
   }
   try {
     // Uma nova tentativa: o servidor do CBMERJ às vezes estoura o tempo numa requisição isolada.
-    const buffer = await fetchWithLimits(document.pdf).catch(() => fetchWithLimits(document.pdf))
+    const buffer = local ? await readFile(local) : await fetchWithLimits(pdf).catch(() => fetchWithLimits(pdf))
     const parser = new PDFParse({ data: buffer })
     const result = await parser.getText()
     await parser.destroy()
     const ocrText = ocrAvailable && isTextless(result.text) ? ocr(buffer) : ''
     const text = (ocrText || result.text).replace(/\s+/g, ' ').trim().slice(0, MAX_TEXT_CHARS)
-    const record = { id: document.id, pdf: document.pdf, text, pages: result.pages?.length ?? null, extractedAt: new Date().toISOString(), error: null, ...(ocrText ? { ocr: ocrLanguage } : {}) }
+    const record = { id: document.id, pdf, text, pages: result.pages?.length ?? null, extractedAt: new Date().toISOString(), error: null, ...(ocrText ? { ocr: ocrLanguage } : {}) }
     await mkdir(CACHE_DIR, { recursive: true })
     await writeFile(cachePath, JSON.stringify(record), 'utf8')
     return record
   } catch (error) {
-    const record = { id: document.id, pdf: document.pdf, text: '', pages: null, extractedAt: new Date().toISOString(), error: String(error.message ?? error) }
+    const record = { id: document.id, pdf, text: '', pages: null, extractedAt: new Date().toISOString(), error: String(error.message ?? error) }
     await mkdir(CACHE_DIR, { recursive: true })
     await writeFile(cachePath, JSON.stringify(record), 'utf8')
     return record
