@@ -124,4 +124,50 @@ export function parseDecree(lines) {
   }
 }
 
-export const lawCacheId = (url) => url.match(/\/([0-9a-f]{32})\?OpenDocument/i)?.[1]
+// O cabeçalho de uma norma às vezes vem quebrado em várias linhas ("LEI Nº" / "2566, DE 05 DE
+// JUNHO DE 1996."; "RESOLUÇÃO N.º 1389," / "DE 2026"; "LEI Nº 26" / "62, DE ...") e a ementa pode
+// vir depois de linhas de ruído (".", "*", "(Redação atual)", observações de consolidação) ou
+// continuar na linha seguinte. Junta o cabeçalho até o ano e a ementa até o preâmbulo.
+const headerStart = /^(LEI|EMENDA|RESOLU|DECRETO)/i
+const headerEnd = /\bDE\s+\d{3,4}\.?$|\b(1[89]|20)\d{2}\.?$/i
+const ementaNoise = /^([.*"',;–-]+|\(Reda[çc][ãa]o atual\)|\(Revogad.*|\* ?LEI EM PROCESSO.*|obs\.?:.*|"?Art\. ?\d.*|ANO D[OE] .*|Norma submetida a a[çc][ãa]o direta.*)$/i
+const preamble = /^(,|[*"“]|(O|A) (GOVERN|ASSEMBL|PRESIDENTE|MESA|VICE)|Art\.?\s*\d|D ?E ?C ?R ?E ?T ?A|CONSIDERANDO|Fa[çc]o saber|CAP[ÍI]TULO|T[ÍI]TULO|no uso d)/i
+
+export function headerAndEmenta(text) {
+  const lines = String(text ?? '').split('\n').map((line) => line.trim()).filter(Boolean)
+  if (!headerStart.test(lines[0] ?? '')) return null
+  let title = lines[0]
+  let index = 1
+  while (!headerEnd.test(title) && index < Math.min(lines.length, 6)) {
+    const next = lines[index++]
+    title = /\d$/.test(title) && /^\d/.test(next) ? title + next : `${title} ${next}`
+  }
+  if (!headerEnd.test(title)) return null
+  while (index < lines.length && ementaNoise.test(lines[index])) index++
+  const ementa = []
+  while (index < lines.length && ementa.length < 5 && !preamble.test(lines[index])) ementa.push(lines[index++])
+  // Continuação que começa com vírgula (", DE 26/11/79, E DÁ OUTRAS PROVIDÊNCIAS.") pertence à ementa.
+  while (index < lines.length && /^,\s*\S/.test(lines[index]) && !/^,\s*(no uso|nos termos)/i.test(lines[index])) ementa.push(lines[index++])
+  const clean = (value) => value.replace(/\s+([,.])/g, '$1').replace(/\s+/g, ' ').trim()
+  return { title: clean(title).replace(/[.,]$/, ''), ementa: clean(ementa.join(' ').replace(/\s+,/g, ',')) }
+}
+
+// Sem "Ficha Técnica" (caso das resoluções), a situação vem depois de "Tipo de Revogação:".
+export function situationFromText(text) {
+  const lines = String(text ?? '').split('\n').map((line) => line.trim())
+  const index = lines.indexOf('Tipo de Revogação:')
+  const value = index === -1 ? '' : lines[index + 1] ?? ''
+  return /^(Em Vigor|Revogad[ao]|Suspens[ao]|Inconstitucional|Parcialmente|Declarad|Vetad|Sem efeito|Tornad|Anulad|Exaurid)/i.test(value) ? value : ''
+}
+
+// Aplica as duas correções acima a um registro (recém-lido ou vindo do cache). Só troca a
+// ementa lida pelo parser original quando ela está quebrada ("DE 2026", ".", "*") ou quando a
+// nova é a continuação dela; uma ementa que já estava certa não muda.
+const brokenEmenta = (ementa) => ementa.length < 40 || /^(DE\s|N[º°.]|[.*"'])/i.test(ementa)
+export function refineLaw(law) {
+  const parsed = headerAndEmenta(law.text)
+  const better = parsed && parsed.ementa.length >= 8 && (brokenEmenta(law.ementa) || !headerEnd.test(law.title) || (parsed.ementa.startsWith(law.ementa) && parsed.ementa.length > law.ementa.length))
+  return { ...law, ...(better ? parsed : {}), situation: law.situation || situationFromText(law.text) }
+}
+
+export const lawCacheId =(url) => url.match(/\/([0-9a-f]{32})\?OpenDocument/i)?.[1]

@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import path from 'node:path'
-import { SEARCH_CAP, VIEWS, fetchLawLines, lawCacheId, parseDecree, parseLaw, searchLegislation } from './lib/alerj.mjs'
+import { SEARCH_CAP, VIEWS, fetchLawLines, lawCacheId, parseDecree, parseLaw, refineLaw, searchLegislation } from './lib/alerj.mjs'
 
 // Coleta, na base da ALERJ, as normas estaduais que citam o CBMERJ — leis, emendas e resoluções
 // (visão "Legislação") e decretos (visão "Atos do Executivo") — e grava os metadados, com a
@@ -32,8 +32,12 @@ async function searchAll(query, view, depth = 0) {
   return [...await searchAll(`${query} AND ${term}`, view, depth + 1), ...await searchAll(`${query} AND NOT ${term}`, view, depth + 1)]
 }
 
+// --offline: não consulta a ALERJ; relê do cache as normas já gravadas em alerj-laws.json.
+// Serve para reaplicar uma correção do parser sem refazer os ~40 minutos de coleta.
+const OFFLINE = process.argv.includes('--offline')
 const found = new Map()
-for (const [viewName, view] of Object.entries(VIEWS)) {
+if (OFFLINE) for (const law of JSON.parse(await readFile('scripts/data/alerj-laws.json', 'utf8')).laws) found.set(law.url, law)
+else for (const [viewName, view] of Object.entries(VIEWS)) {
   for (const query of queries) {
     const rows = await searchAll(query, view)
     for (const row of rows) found.set(row.url, { ...row, view: viewName })
@@ -46,7 +50,8 @@ const isDecree = (url) => /\/decest\.nsf\//i.test(url)
 async function loadLaw(url) {
   const id = lawCacheId(url)
   const cachePath = path.join(CACHE_DIR, `${id}.json`)
-  if (existsSync(cachePath)) return JSON.parse(await readFile(cachePath, 'utf8'))
+  if (existsSync(cachePath)) return refineLaw(JSON.parse(await readFile(cachePath, 'utf8')))
+  if (OFFLINE) throw new Error('fora do cache (rode sem --offline)')
   let lines
   for (let attempt = 0; ; attempt++) {
     try { lines = await fetchLawLines(url); break } catch (error) { if (attempt >= RETRIES) throw error; await sleep(DELAY_MS * 4 * (attempt + 1)) }
@@ -55,7 +60,7 @@ async function loadLaw(url) {
   const record = { ...(isDecree(url) ? parseDecree(lines) : parseLaw(lines)), url, fetchedAt: new Date().toISOString() }
   await mkdir(CACHE_DIR, { recursive: true })
   await writeFile(cachePath, JSON.stringify(record), 'utf8')
-  return record
+  return refineLaw(record)
 }
 
 const rows = [...found.values()]
@@ -83,7 +88,9 @@ if (failures.length > rows.length * 0.2 && selected.length < previous) {
 }
 
 await mkdir('scripts/data', { recursive: true })
-await writeFile('scripts/data/alerj-laws.json', `${JSON.stringify({ collectedAt: new Date().toISOString().slice(0, 10), laws: selected }, null, 2)}\n`, 'utf8')
+// Offline não é uma coleta nova: mantém a data da última consulta à ALERJ.
+const collectedAt = OFFLINE ? JSON.parse(await readFile('scripts/data/alerj-laws.json', 'utf8')).collectedAt : new Date().toISOString().slice(0, 10)
+await writeFile('scripts/data/alerj-laws.json', `${JSON.stringify({ collectedAt, laws: selected }, null, 2)}\n`, 'utf8')
 const tally = (key) => selected.reduce((acc, law) => ({ ...acc, [law[key] || '(vazio)']: (acc[law[key] || '(vazio)'] || 0) + 1 }), {})
 console.log(`ALERJ: ${selected.length} normas gravadas em scripts/data/alerj-laws.json.`)
 console.log(tally('kind'), tally('relevance'), tally('situation'))
