@@ -294,6 +294,9 @@ async function* bulletinLinks(page) {
           yield { ...link, folder: path.join('boletins', label), section: label }
         } else children.push(link.href)
       }
+      // As listagens mensais de um ano vêm antes dos demais links da página (como o "voltar" para a
+      // seleção de ano): seguir o "voltar" primeiro trocaria o ano da sessão antes de ler os meses.
+      children.sort((a, b) => Number(isPerYear(b)) - Number(isPerYear(a)))
       for (const child of children) {
         if (isPerYear(child) ? seenThisYear.has(child) : seenPages.has(child)) continue
         if (isPerYear(child)) seenThisYear.add(child)

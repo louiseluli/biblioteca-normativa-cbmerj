@@ -4,6 +4,7 @@ import { PDFParse } from 'pdf-parse'
 import { documents } from '../src/data/documents.js'
 import { parseCsv } from './lib/csv.mjs'
 import { parseAct, parseLivro } from './lib/livro.mjs'
+import { itemActs } from './lib/boletim.mjs'
 
 // Livro de Ordens "vivo": o índice de publicações em Boletim da SEDEC/CBMERJ montado a partir de
 // três fontes, reaplicadas a cada execução:
@@ -100,6 +101,28 @@ if (errors.length) {
   process.exit(1)
 }
 
+// Modo interno (--interno, só na máquina local): junta as entradas do sumário dos Boletins da
+// SEDEC/CBMERJ baixados da Intranet (intranet-acervo/livro-interno.json, gerado por
+// process-boletins.mjs). Quando um item do livro 2002–2019 é o mesmo de uma entrada de boletim
+// (mesmo boletim, data e ato), o item ganha o link para a página do boletim em vez de duplicar.
+// O resultado vai para intranet-acervo/, nunca para public/.
+const internal = process.argv.includes('--interno')
+if (internal) {
+  const internalPath = 'intranet-acervo/livro-interno.json'
+  if (!existsSync(internalPath)) { console.error(`${internalPath} não existe; rode antes npm run boletins:processar.`); process.exit(1) }
+  const bulletinItems = JSON.parse(await readFile(internalPath, 'utf8')).items
+  const keyOf = (date, number, label) => `${date}|${Number(number)}|${(label ?? '').toUpperCase().replace(/\s+/g, '')}`
+  const byKey = new Map(entries.filter((entry) => entry.bulletin?.date && entry.act).map((entry) => [keyOf(entry.bulletin.date, entry.bulletin.number, entry.act.label), entry]))
+  let attached = 0
+  for (const item of bulletinItems) {
+    const { act, note } = item.cat && ['Item', 'Anexo', 'Serviços diários'].includes(item.cat) ? itemActs(item.s) : { act: null, note: null }
+    const same = act && byKey.get(keyOf(item.bd, item.b, act.label))
+    if (same) { Object.assign(same, { bol: item.bol, bolPage: item.p, part: item.parte, section: item.secao, category: item.cat }); attached += 1; continue }
+    entries.push({ id: item.id, item: null, page: null, subject: item.s, act, publishedBy: note?.label, actDate: null, bulletin: { number: item.b, date: item.bd }, year: item.y, flags: [], origin: 'boletim', bol: item.bol, bolPage: item.p, part: item.parte, section: item.secao, category: item.cat, unit: item.unidade })
+  }
+  console.log(`Boletins: ${bulletinItems.length} entradas; ${attached} ligadas a itens do livro 2002–2019.`)
+}
+
 // Liga cada item ao documento do acervo e registra quais documentos já estão no livro.
 const linked = new Set()
 for (const entry of entries) {
@@ -138,7 +161,7 @@ for (const entry of entries.filter((candidate) => candidate.origin === 'livro' &
   else if (!entry.act) issues.push([entry.item, entry.page, 'Ato não identificado no assunto', entry.subject])
 }
 const csvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`
-await writeFile('data/livro-de-ordens-pendencias.csv', `item;pagina;problema;assunto\n${issues.map((issue) => issue.map(csvCell).join(';')).join('\n')}\n`, 'utf8')
+if (!internal) await writeFile('data/livro-de-ordens-pendencias.csv', `item;pagina;problema;assunto\n${issues.map((issue) => issue.map(csvCell).join(';')).join('\n')}\n`, 'utf8')
 
 // Formato compacto para o navegador (o arquivo é carregado só quando o livro é aberto).
 const output = {
@@ -162,10 +185,20 @@ const output = {
     url: entry.url,
     src: entry.origin,
     note: entry.note,
+    pn: entry.publishedBy,
+    bol: entry.bol,
+    bp: entry.bolPage,
+    parte: entry.part,
+    secao: entry.section,
+    cat: entry.category,
   })),
 }
-await mkdir('public', { recursive: true })
-await writeFile('public/livro-de-ordens.json', JSON.stringify(output), 'utf8')
+if (internal) {
+  await writeFile('intranet-acervo/livro-de-ordens-completo.json', JSON.stringify({ ...output, interno: true, source: `${output.source} + Boletins da SEDEC/CBMERJ (Intranet, acervo local)` }), 'utf8')
+} else {
+  await mkdir('public', { recursive: true })
+  await writeFile('public/livro-de-ordens.json', JSON.stringify(output), 'utf8')
+}
 
 const byOrigin = entries.reduce((acc, entry) => ({ ...acc, [entry.origin]: (acc[entry.origin] || 0) + 1 }), {})
 console.log(`Livro de Ordens: ${entries.length} itens`, byOrigin)

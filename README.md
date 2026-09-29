@@ -60,6 +60,21 @@ A base atual inclui notas técnicas, instruções normativas, leis estaduais, de
 - **Leis ALERJ relevantes só pela ficha**: a seleção usa a ementa (que vem na lista de resultados); uma lei cuja relação com o CBMERJ apareça só no campo "Assunto" da ficha não entra.
 - **PDFs não são preservados localmente**: o catálogo aponta direto para as URLs do CBMERJ. Se um arquivo for movido, renomeado ou tirado do ar na fonte, o link quebra sem aviso no acervo.
 
+### Acervo interno dos boletins (só na máquina local)
+
+Os boletins baixados da Intranet viram um banco local e uma versão interna do site, sem nada ir para o site público:
+
+```bash
+npm run boletins:processar   # organiza os PDFs e atualiza o banco (incremental: só o que é novo)
+npm run interno              # processa, junta ao Livro de Ordens e abre http://127.0.0.1:4310/#livro
+```
+
+- **Arquivos:** `intranet-acervo/organizado/<boletim>/<ano>/<AAAA-MM-DD>-BOL<nº>.pdf` (links físicos para os PDFs baixados, sem ocupar espaço extra). `-- --acervo /Volumes/DISCO/intranet-acervo` inclui uma pasta de outro disco.
+- **Banco:** `intranet-acervo/acervo-interno.db` (SQLite embutido no Node, sem instalação), com três tabelas: `boletim` (unidade, número, tipo, data, páginas, arquivo, SHA-256), `item` (cada entrada do sumário: parte, seção, assunto, página, ato, nota que o publicou e **categoria**) e `pagina` (texto de cada página, com busca de texto integral sem acentos em `pagina_fts`).
+- **Nenhuma entrada do sumário é descartada:** cada uma recebe uma categoria (Item, Anexo, Serviços diários, Abertura, Sem alteração, Título de parte/seção/subseção), filtrável na interface.
+- **Livro de Ordens interno:** `build-livro.mjs --interno` junta as entradas dos boletins ao livro 2002–2019 e ao acervo, liga cada uma ao documento do acervo pelo ato e, quando um item do livro original é o mesmo de uma entrada de boletim, liga o item ao PDF em vez de duplicar. O resultado fica em `intranet-acervo/livro-de-ordens-completo.json`.
+- **Site interno** (`scripts/serve-interno.mjs`): o site normal, com o livro completo, filtros por fonte, categoria e parte do boletim, links que abrem o PDF do boletim na página do item, e busca no texto integral dos boletins. Escuta só em `127.0.0.1`: outras máquinas não conseguem acessar.
+
 ## Publicação
 
 O projeto foi preparado para hospedagem estática. O build de produção é gerado em `dist/` e não deve ser versionado.

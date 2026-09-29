@@ -15,7 +15,9 @@
     "preview": "vite preview",
     "check:ui": "node scripts/check-ui.mjs",
     "intranet:fetch": "node scripts/fetch-intranet.mjs",
-    "intranet:agendar": "node scripts/schedule-intranet.mjs"
+    "intranet:agendar": "node scripts/schedule-intranet.mjs",
+    "boletins:processar": "node --no-warnings scripts/process-boletins.mjs",
+    "interno": "npm run boletins:processar && node --no-warnings scripts/build-livro.mjs --interno && vite build && node --no-warnings scripts/serve-interno.mjs"
   },
   "devDependencies": {
     "pdf-parse": "^2.4.5",
