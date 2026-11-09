@@ -917,10 +917,6 @@
   },
   "https://www.cbmerj.rj.gov.br/wp-content/uploads/2026/05/ICG_7-1.pdf": {
     "pages": 7,
-    "publication": {
-      "bulletin": "060",
-      "date": "2026-04-06"
-    },
     "ocr": true,
     "textless": false
   },
